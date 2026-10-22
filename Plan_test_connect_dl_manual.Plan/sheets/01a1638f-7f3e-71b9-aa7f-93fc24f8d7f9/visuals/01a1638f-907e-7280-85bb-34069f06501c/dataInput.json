@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "8869989049280624700",
+        "label": "Sum of SalesAmount",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of SalesAmount"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "8869989049280624700",
+      "name": "Sum of SalesAmount",
+      "status": 10,
+      "visualId": "01a1638f-907e-7280-85bb-34069f06501c"
+    }
+  ]
+}
