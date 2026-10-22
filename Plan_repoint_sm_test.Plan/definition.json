@@ -4,11 +4,11 @@
     "partitionRefIds": []
   },
   "semanticModelReference": {
-    "artifactId": 2725442,
+    "artifactId": 2725426,
     "connectionId": "fe43ff61-f8bd-448c-b809-e27528098916",
     "datasetRelations": [
       {
-        "dependentArtifactId": 2725442,
+        "dependentArtifactId": 2725426,
         "settings": "Association"
       }
     ],
