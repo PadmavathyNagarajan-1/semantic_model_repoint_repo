@@ -1,0 +1,108 @@
+table FactExchangeRate
+	lineageTag: 218d172a-52bb-4873-864b-fa2819089d01
+
+	column ExchangeRateKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 88b5c13a-d33b-405f-b969-74950c35c78f
+		summarizeBy: count
+		sourceColumn: ExchangeRateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: a31f5bf8-0ea6-41ba-aa32-24865af66e8b
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 675aef24-5b44-4eef-a8ca-c0c79c3d1692
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column AverageRate
+		dataType: double
+		lineageTag: 2262d7ad-35a5-4f7c-a145-326df69a3ed1
+		summarizeBy: sum
+		sourceColumn: AverageRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column EndOfDayRate
+		dataType: double
+		lineageTag: d4706b28-6378-4db0-91f8-e2153d21df6f
+		summarizeBy: sum
+		sourceColumn: EndOfDayRate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8b451b84-ba3b-4b1e-9832-9da832719fda
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 1091e438-1dc5-4e20-97e1-b6dfe141c8f7
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 40e83313-8433-4444-9167-a07eb5926345
+			defaultHierarchy: LocalDateTable_03e74b91-f543-466e-ae58-1056ead62b54.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: dbd41dcd-fe43-4b29-ba41-c93cf0a3d8f1
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 4aa57371-4bd6-4898-8b69-1c75d9b9e2ce
+			defaultHierarchy: LocalDateTable_8795eecb-1bf6-495b-ad72-4aad5c578df5.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactExchangeRate = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_FactExchangeRate = ContosoRetailDW{[Schema="dbo",Item="FactExchangeRate"]}[Data]
+				in
+				    dbo_FactExchangeRate
+
+	annotation PBI_ResultType = Table
+

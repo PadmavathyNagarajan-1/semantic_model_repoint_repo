@@ -1,0 +1,399 @@
+table DimProduct
+	lineageTag: c8c0b51c-8eaa-406c-9afc-c2c54b30c853
+
+	measure 'Unit Cost' = CALCULATE(max(DimProduct[UnitCost]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: e6be3004-d15f-4929-9345-04d3f0691a0c
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Unit Price' = CALCULATE(MAX(DimProduct[UnitPrice]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		lineageTag: 2f4033ff-5966-44a1-b65c-b7f01ba47dd0
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d10c649-393e-4a2b-9df1-56ce6dbe513a
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductLabel
+		dataType: string
+		isHidden
+		lineageTag: 565fbd32-6020-499a-9f6c-0207a5decb43
+		summarizeBy: none
+		sourceColumn: ProductLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductName
+		dataType: string
+		lineageTag: 15b344ce-ac0a-4ff6-8138-b23ef27898f4
+		summarizeBy: none
+		sourceColumn: ProductName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductDescription
+		dataType: string
+		lineageTag: 15c3baff-c5fb-497f-a0fd-be9e844c64ab
+		summarizeBy: none
+		sourceColumn: ProductDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 23ed9d9a-6a37-4051-acce-aa5f6cbb6f37
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Manufacturer
+		dataType: string
+		lineageTag: daa92af0-3d01-4026-b7d9-408774dfbcae
+		summarizeBy: none
+		sourceColumn: Manufacturer
+
+		annotation SummarizationSetBy = Automatic
+
+	column BrandName
+		dataType: string
+		lineageTag: 487dc75d-9668-44eb-86dd-8083429bec7c
+		summarizeBy: none
+		sourceColumn: BrandName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClassID
+		dataType: string
+		isHidden
+		lineageTag: ca93882d-43e0-4ed7-bbfe-2b794e0acc96
+		summarizeBy: none
+		sourceColumn: ClassID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClassName
+		dataType: string
+		lineageTag: 314bc8dd-9c77-4d68-af61-a4631a5392e6
+		summarizeBy: none
+		sourceColumn: ClassName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StyleID
+		dataType: string
+		lineageTag: 84dc54cb-148f-48d6-9c3c-831ba5ee422b
+		summarizeBy: none
+		sourceColumn: StyleID
+
+		annotation SummarizationSetBy = Automatic
+
+	column StyleName
+		dataType: string
+		lineageTag: 498b9e99-986f-47f3-b4ce-d345b9bd64dd
+		summarizeBy: none
+		sourceColumn: StyleName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColorID
+		dataType: string
+		isHidden
+		lineageTag: baa10a18-e588-486c-a022-ea79db332039
+		summarizeBy: none
+		sourceColumn: ColorID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ColorName
+		dataType: string
+		lineageTag: fdfdfffa-9ae0-43a2-aca3-3e9a1ae96597
+		summarizeBy: none
+		sourceColumn: ColorName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Size
+		dataType: string
+		lineageTag: befd4f58-56a1-4295-8bff-ddc98b2d8a62
+		summarizeBy: none
+		sourceColumn: Size
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeRange
+		dataType: string
+		lineageTag: 25b87210-7a3a-4f63-a4af-0303241df52b
+		summarizeBy: none
+		sourceColumn: SizeRange
+
+		annotation SummarizationSetBy = Automatic
+
+	column SizeUnitMeasureID
+		dataType: string
+		lineageTag: d68992a8-1f82-4245-832d-c0964ccefa66
+		summarizeBy: none
+		sourceColumn: SizeUnitMeasureID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Weight
+		dataType: double
+		lineageTag: 682cdcdd-c51d-4820-ac8a-882066f4133e
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column WeightUnitMeasureID
+		dataType: string
+		lineageTag: 3831fdd6-e224-41b0-a787-fb44cab03edc
+		summarizeBy: none
+		sourceColumn: WeightUnitMeasureID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitOfMeasureID
+		dataType: string
+		lineageTag: 5df9b578-c5bb-4ad8-9486-36f407f13994
+		summarizeBy: none
+		sourceColumn: UnitOfMeasureID
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitOfMeasureName
+		dataType: string
+		lineageTag: 471d24a5-7cb0-4eaf-bd7a-75f69dd59156
+		summarizeBy: none
+		sourceColumn: UnitOfMeasureName
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockTypeID
+		dataType: string
+		isHidden
+		lineageTag: fbca3dff-08f0-4b6b-9505-ba9bf1e7defe
+		summarizeBy: none
+		sourceColumn: StockTypeID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StockTypeName
+		dataType: string
+		lineageTag: 45fb11fc-2e9c-4377-9ec1-e1fd63cde4c0
+		summarizeBy: none
+		sourceColumn: StockTypeName
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 6c6b5db9-6145-432f-a83a-3ac4bd9d25db
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column UnitPrice
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 14e16f5f-3432-4582-8d56-48cf0743db20
+		summarizeBy: sum
+		sourceColumn: UnitPrice
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column AvailableForSaleDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 08621b59-425c-4aab-a5e4-8c1c0b196b04
+		summarizeBy: none
+		sourceColumn: AvailableForSaleDate
+
+		variation Variation
+			isDefault
+			relationship: 39914516-733b-47a2-bea0-bf51d28d884d
+			defaultHierarchy: LocalDateTable_6f6ed126-3cce-4072-8663-5805912984e6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column StopSaleDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6cefcbf0-2a18-4d72-8135-39e90fe7f78b
+		summarizeBy: none
+		sourceColumn: StopSaleDate
+
+		variation Variation
+			isDefault
+			relationship: 5944bdb5-6da5-4064-802a-1e91676901a4
+			defaultHierarchy: LocalDateTable_df67470b-73f4-4114-9c91-1d7a46b4464d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: e66f6596-a5fb-4583-b5fa-ddbecc3edc0e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ImageURL
+		dataType: string
+		lineageTag: 27759061-0782-4501-ae41-7cc14e6f1873
+		summarizeBy: none
+		sourceColumn: ImageURL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductURL
+		dataType: string
+		lineageTag: 21baf3d5-29ee-4833-b74d-beeb8e35cb87
+		summarizeBy: none
+		sourceColumn: ProductURL
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 60a60dd7-6618-423d-8931-58303fc0ba97
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 743b40f7-4d4b-459d-a0fb-e4bd9ba3abc9
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 4aacb483-84bd-485d-bcd1-417f6475262b
+			defaultHierarchy: LocalDateTable_4448acc9-aaeb-4198-8768-dbd94425d4a9.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 02daf299-c02b-40b9-bff5-e78a4b5ddb8a
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 438b9a35-346d-47dc-9e26-ebc644bf70b6
+			defaultHierarchy: LocalDateTable_c8a96415-6463-462b-8e08-79b74dce2748.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryName
+		dataType: string
+		lineageTag: 6fba354e-138b-45aa-8734-bc22c7fb4145
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 45a5e6e6-8685-4268-9820-cca29d6ee3da
+		summarizeBy: count
+		sourceColumn: ProductCategoryKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryName
+		dataType: string
+		lineageTag: 75fc6466-6d46-408e-9335-317635ae14d0
+		summarizeBy: none
+		sourceColumn: ProductCategoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] Product Hierarchy'
+		lineageTag: d6bdad94-52eb-4ca4-9ec9-8c88f9133eba
+
+		level ClassName
+			lineageTag: 00b1110f-c19b-4a03-86ae-0ef5be06696a
+			column: ClassName
+
+		level BrandName
+			lineageTag: 35c0c1fa-c615-417b-9971-8e6ee812457e
+			column: BrandName
+
+		level ProductCategoryName
+			lineageTag: 9180aef5-f356-4da8-ae48-a519f08e6a23
+			column: ProductCategoryName
+
+		level ProductSubcategoryName
+			lineageTag: bfbfa640-23b5-4def-97b1-a67eb0b70adf
+			column: ProductSubcategoryName
+
+		level ProductName
+			lineageTag: 8281050c-9f07-4145-a451-e63edfc1f1c8
+			column: ProductName
+
+	partition DimProduct = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimProduct = ContosoRetailDW{[Schema="dbo",Item="DimProduct"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(dbo_DimProduct, {"ProductSubcategoryKey"}, DimProductSubcategory, {"ProductSubcategoryKey"}, "DimProductSubcategory.1", JoinKind.LeftOuter),
+				    #"Expanded DimProductSubcategory.1" = Table.ExpandTableColumn(#"Merged Queries", "DimProductSubcategory.1", {"ProductSubcategoryName", "ProductCategoryKey"}, {"ProductSubcategoryName", "ProductCategoryKey"}),
+				    #"Merged Queries1" = Table.NestedJoin(#"Expanded DimProductSubcategory.1", {"ProductCategoryKey"}, DimProductCategory, {"ProductCategoryKey"}, "DimProductCategory", JoinKind.LeftOuter),
+				    #"Expanded DimProductCategory" = Table.ExpandTableColumn(#"Merged Queries1", "DimProductCategory", {"ProductCategoryName"}, {"ProductCategoryName"})
+				in
+				    #"Expanded DimProductCategory"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

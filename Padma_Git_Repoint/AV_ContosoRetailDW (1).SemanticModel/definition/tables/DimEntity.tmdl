@@ -1,0 +1,299 @@
+table DimEntity
+	lineageTag: 8ca91d0f-4620-4c1f-ac50-0ee5c50213d4
+
+	column EntityKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2f4a31e0-d408-4fa5-b81b-87624f18c172
+		summarizeBy: none
+		sourceColumn: EntityKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityLabel
+		dataType: string
+		isHidden
+		lineageTag: 01202230-de30-4db1-9a7a-b85c3923a0e7
+		summarizeBy: none
+		sourceColumn: EntityLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentEntityKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 13aa8bb7-544e-4065-a5a3-f3ca9a564667
+		summarizeBy: count
+		sourceColumn: ParentEntityKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentEntityLabel
+		dataType: string
+		isHidden
+		lineageTag: 6f0dbd0e-b0db-459e-9891-b74e0fb849e3
+		summarizeBy: none
+		sourceColumn: ParentEntityLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityName
+		dataType: string
+		isHidden
+		lineageTag: 3d530ba1-aa76-4aff-a87f-a03a438efa64
+		summarizeBy: none
+		sourceColumn: EntityName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityDescription
+		dataType: string
+		isHidden
+		lineageTag: 7e38ab21-dbdc-4d87-b541-b1719ec0537e
+		summarizeBy: none
+		sourceColumn: EntityDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityType
+		dataType: string
+		isHidden
+		lineageTag: 05c9055d-88d6-4ea9-b805-dcded87c6f9a
+		summarizeBy: none
+		sourceColumn: EntityType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4ab89b04-b03b-4432-a436-388ba905a196
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: 0e6f93f7-a062-4829-b9f6-730e720952a5
+			defaultHierarchy: LocalDateTable_3cac7398-2589-4990-a8e2-43af417c9165.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a0fa2326-2484-40c5-a36f-c2f1c5e58210
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: c96a2108-f7fe-4dec-a2f2-8678cb209b0b
+			defaultHierarchy: LocalDateTable_2446ffc3-2690-4bd5-8f8e-393afc403eab.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: ea3bc2ec-6206-4c7b-b60d-03c05e0f8868
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: cf26c4e6-f467-462a-beed-e2dddb18728d
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: ceabc53a-674b-4cf9-8cbc-c74fb605018e
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: fda794c8-16b7-4f57-926b-45b8f932be46
+			defaultHierarchy: LocalDateTable_a1d89316-a9f6-41a4-8f2e-b510f1aae7ce.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 954e2f27-f764-4015-8952-4954e0103717
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 59559b4f-50ef-472a-861a-737cb5ddb550
+			defaultHierarchy: LocalDateTable_64d28105-521a-476a-9e17-86bdd54d7233.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Path = PATH(DimEntity[EntityKey],DimEntity[ParentEntityKey])
+		isHidden
+		lineageTag: ffd6555a-8d52-487d-bbef-984030968bfb
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Path Length' = PATHLENGTH(DimEntity[Path])
+		isHidden
+		formatString: 0
+		lineageTag: 1196a3f1-261d-4e24-8b0c-31c659ec9f30
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Continent' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimEntity[Path], 1 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimEntity[EntityDescription],
+			    DimEntity[EntityKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: bf60684d-9049-48b1-9c33-ef5c11d0984f
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Country' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimEntity[Path], 2 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimEntity[EntityDescription],
+			    DimEntity[EntityKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 3cadf9d0-5222-4680-9411-abe788e9b6f6
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity State' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimEntity[Path], 3 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimEntity[EntityDescription],
+			    DimEntity[EntityKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 01d0023b-7f52-4036-8eb6-0886e1d096ae
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Entity Store' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimEntity[Path], 4 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimEntity[EntityDescription],
+			    DimEntity[EntityKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 24a738a8-f3f2-4a5c-beab-6c64bfe2c54e
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column FlagPicturesSVG
+		dataType: string
+		lineageTag: 1e1a85a8-72b3-4211-8f58-dc487efe16ae
+		summarizeBy: none
+		sourceColumn: FlagPicturesSVG
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] Entity Hierarchy'
+		lineageTag: aefa71a5-1231-4ea7-80da-8bf0021d599e
+
+		level 'Entity Continent'
+			lineageTag: 9d49cd57-e6a1-4bd6-b51d-ac7f578ac4c8
+			column: 'Entity Continent'
+
+		level 'Entity Country'
+			lineageTag: ad89de7d-3dce-4307-8e25-4b8dd1d5b726
+			column: 'Entity Country'
+
+		level 'Entity State'
+			lineageTag: 4bfdde83-43b9-41d3-ab29-f4ae26e081c1
+			column: 'Entity State'
+
+		level 'Entity Store'
+			lineageTag: 2701698c-17df-4ed9-b08d-2815ea07ec05
+			column: 'Entity Store'
+
+	partition DimEntity = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimEntity = ContosoRetailDW{[Schema="dbo",Item="DimEntity"]}[Data],
+				    #"Merged Queries" = Table.NestedJoin(dbo_DimEntity, {"EntityName"}, DimFlagPictures, {"Country"}, "DimFlagPictures", JoinKind.LeftOuter),
+				    #"Expanded DimFlagPictures" = Table.ExpandTableColumn(#"Merged Queries", "DimFlagPictures", {"SVG"}, {"DimFlagPictures.SVG"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded DimFlagPictures",{{"DimFlagPictures.SVG", "FlagPicturesSVG"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

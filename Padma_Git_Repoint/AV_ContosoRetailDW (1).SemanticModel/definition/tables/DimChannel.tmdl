@@ -1,0 +1,102 @@
+table DimChannel
+	lineageTag: 9b2ce63f-723e-487c-90c2-f41b5ac1877a
+
+	column ChannelKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 9491801c-0146-40d0-aa87-e9f59520b1fc
+		summarizeBy: none
+		sourceColumn: ChannelKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelLabel
+		dataType: string
+		isHidden
+		lineageTag: 29226618-c532-4c5b-91bd-6d1e75f09b19
+		summarizeBy: none
+		sourceColumn: ChannelLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelName
+		dataType: string
+		lineageTag: 02ce2cbe-b609-4b81-b225-d22e939002dc
+		summarizeBy: none
+		sourceColumn: ChannelName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ChannelDescription
+		dataType: string
+		isHidden
+		lineageTag: 6bd8c3d9-edba-466b-b0a1-d46d090743ba
+		summarizeBy: none
+		sourceColumn: ChannelDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e8e9d2c7-0d9f-4ca7-9fc6-c3472df9aa26
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 31e9bb25-21bc-4913-86b3-699ff6fce1c6
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 703e56ff-6370-4208-8c17-d777e18f9ce2
+			defaultHierarchy: LocalDateTable_133aaa21-c6ec-4ab7-8062-805c62b0f52f.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: ea1078f4-df8e-4301-b57d-a670619c5ba1
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: ac5d3324-cc25-428a-bda7-b897d1314616
+			defaultHierarchy: LocalDateTable_800232d6-08c0-48e0-aeb9-3d231fa44240.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimChannel = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimChannel = ContosoRetailDW{[Schema="dbo",Item="DimChannel"]}[Data]
+				in
+				    dbo_DimChannel
+
+	annotation PBI_ResultType = Table
+

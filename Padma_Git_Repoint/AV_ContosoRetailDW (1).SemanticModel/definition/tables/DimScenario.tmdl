@@ -1,0 +1,94 @@
+table DimScenario
+	lineageTag: 3fe2434f-4a9f-42c6-956f-0f0c976ed322
+
+	column ScenarioKey
+		dataType: int64
+		formatString: 0
+		lineageTag: fd3cd495-c746-4ed3-be45-af5648784dfd
+		summarizeBy: none
+		sourceColumn: ScenarioKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScenarioLabel
+		dataType: string
+		lineageTag: ff552a1f-bf1a-4233-87be-38de6cb9fa25
+		summarizeBy: none
+		sourceColumn: ScenarioLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScenarioName
+		dataType: string
+		lineageTag: 90784033-e341-49f6-9c5c-7f157e2b2f87
+		summarizeBy: none
+		sourceColumn: ScenarioName
+
+		annotation SummarizationSetBy = Automatic
+
+	column ScenarioDescription
+		dataType: string
+		lineageTag: 05b42f4f-dcde-497c-9b0f-2c218406e336
+		summarizeBy: none
+		sourceColumn: ScenarioDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 376a5ec9-f0a3-473d-9dd4-39ad7e60643f
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: d52bb072-3a65-42ac-b83a-f3736227561b
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: cfc19ccd-74df-448e-9819-68693c7e2484
+			defaultHierarchy: LocalDateTable_b90e7ad0-9f77-4a0e-b717-ef6f8c899551.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 5b020453-624a-4bd3-96e4-c036b2350158
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 402615e4-afb3-4d12-97db-a4136b61a00e
+			defaultHierarchy: LocalDateTable_e0985be8-45b2-4b45-a684-9454e3322b94.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimScenario = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimScenario = ContosoRetailDW{[Schema="dbo",Item="DimScenario"]}[Data]
+				in
+				    dbo_DimScenario
+
+	annotation PBI_ResultType = Table
+

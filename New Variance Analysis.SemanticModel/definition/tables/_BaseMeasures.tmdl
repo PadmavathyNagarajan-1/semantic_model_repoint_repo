@@ -1,0 +1,198 @@
+table _BaseMeasures
+	lineageTag: b1fa1b93-81e4-4567-86d6-dbbc309a7f50
+
+	measure 'Revenue AC' = SUM(Financial_Data[Revenue_Actual])
+		displayFolder: _01-AC Measures
+		lineageTag: cc1046b5-d68d-46f1-944c-66d8e1a31676
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Expenses AC' = SUM(Financial_Data[Expenses_Actual])
+		displayFolder: _01-AC Measures
+		lineageTag: ae7ce8d0-9b00-4a8f-9dc3-6096d464e00f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Other Expenses AC' = SUM(Financial_Data[Other_Expenses_Actual])
+		displayFolder: _01-AC Measures
+		lineageTag: 30f54027-3d81-4bc6-b558-59d994b9728e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CAPEX AC' = SUM(Financial_Data[CAPEX_Actual])
+		displayFolder: _01-AC Measures
+		lineageTag: 84be9e57-225c-4310-88c8-6fab3bacf0d5
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Profit AC' = SUM(Financial_Data[Profit_Actual])
+		displayFolder: _01-AC Measures
+		lineageTag: deb2d76e-2652-4aba-8119-b17286722325
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Expenses AC' = [Expenses AC] + [Other Expenses AC] + [CAPEX AC]
+		displayFolder: _01-AC Measures
+		lineageTag: 53b1dcd6-55bd-4d07-bd2e-d3efbcb058e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CAPEX BUD' = ```
+			
+			CALCULATE(
+			    SUM(Financial_Data[CAPEX_Budget]),
+			    FILTER(
+			        ALLSELECTED('Calendar'),
+			        'Calendar'[Date] <= 
+			        CALCULATE(
+			            MAX(Financial_Data[Date]),
+			            Financial_Data[CAPEX_Actual] <> BLANK()
+			        )
+			    )
+			)
+			```
+		displayFolder: _02-BUD Measures
+		lineageTag: 16faed56-6442-4df7-89a3-f91d9d5db950
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Expenses BUD' = ```
+			
+			CALCULATE(
+			    SUM(Financial_Data[Expenses_Budget]),
+			    FILTER(
+			        ALLSELECTED('Calendar'),
+			        'Calendar'[Date] <= 
+			        CALCULATE(
+			            MAX(Financial_Data[Date]),
+			            Financial_Data[Expenses_Actual] <> BLANK()
+			        )
+			    )
+			)
+			```
+		displayFolder: _02-BUD Measures
+		lineageTag: c835c47c-0f6b-467e-bd4b-161dcf50d45b
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Other Expenses BUD' = ```
+			
+			CALCULATE(
+			    SUM(Financial_Data[Other_Expenses_Budget]),
+			    FILTER(
+			        ALLSELECTED('Calendar'),
+			        'Calendar'[Date] <= 
+			        CALCULATE(
+			            MAX(Financial_Data[Date]),
+			            Financial_Data[Other_Expenses_Budget] <> BLANK()
+			        )
+			    )
+			)
+			```
+		displayFolder: _02-BUD Measures
+		lineageTag: 68252efe-7faf-4ab6-a069-be195aff6895
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Profit BUD' = ```
+			
+			CALCULATE(
+			    SUM(Financial_Data[Profit_Budget]),
+			    FILTER(
+			        ALLSELECTED('Calendar'),
+			        'Calendar'[Date] <= 
+			        CALCULATE(
+			            MAX(Financial_Data[Date]),
+			            Financial_Data[Profit_Actual] <> BLANK()
+			        )
+			    )
+			)
+			```
+		displayFolder: _02-BUD Measures
+		lineageTag: 97001684-c9e6-4b7a-bc5c-dad49c685cfc
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Expenses BUD' = [Expenses BUD] + [Other Expenses BUD] + [CAPEX BUD]
+		displayFolder: _02-BUD Measures
+		lineageTag: ccc9e63e-1395-4d3c-8037-42c5924b25b4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue PY' = CALCULATE([Revenue AC],SAMEPERIODLASTYEAR('Calendar'[Date]))
+		displayFolder: _03-PY Measures
+		lineageTag: 3e9d8dfd-95ae-493e-a430-956d32fef49e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CAPEX PY' = CALCULATE([CAPEX AC],DATEADD('Calendar'[Date],-1,YEAR))
+		displayFolder: _03-PY Measures
+		lineageTag: 66856173-47d5-42d8-9fe9-d227e0daf205
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Expenses PY' = CALCULATE([Expenses AC],DATEADD('Calendar'[Date],-1,YEAR))
+		displayFolder: _03-PY Measures
+		lineageTag: 6ad26f16-1cfb-4a74-9210-8f036c618929
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Other Expenses PY' = CALCULATE([Other Expenses AC],DATEADD('Calendar'[Date],-1,YEAR))
+		displayFolder: _03-PY Measures
+		lineageTag: 11cb96d0-209c-4d36-931e-85ea2542a7ae
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Profit PY' = CALCULATE([Profit AC],DATEADD('Calendar'[Date],-1,YEAR))
+		displayFolder: _03-PY Measures
+		lineageTag: 7f6e6ee7-1bc2-45dd-bb7b-2354150579e3
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Total Expenses PY' = CALCULATE([Revenue AC],DATEADD('Calendar'[Date],-1,YEAR))
+		displayFolder: _03-PY Measures
+		lineageTag: 4a6cffa0-e9cd-45a3-a11d-02e188b5bc49
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Revenue BUD' = ```
+			
+			CALCULATE(
+			    SUM(Financial_Data[Revenue_Budget]),
+			    FILTER(
+			        ALLSELECTED('Calendar'),
+			        'Calendar'[Date] <= 
+			        CALCULATE(
+			            MAX(Financial_Data[Date]),
+			            Financial_Data[Revenue_Actual] <> BLANK()
+			        )
+			    )
+			)
+			```
+		displayFolder: _02-BUD Measures
+		lineageTag: 5328e4d3-708d-4229-a82f-5c5dd514ae8a
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: 3c336896-977f-487b-9ad0-d3060b24b941
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition _BaseMeasures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

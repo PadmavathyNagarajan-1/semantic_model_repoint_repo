@@ -1,0 +1,204 @@
+table Financial_Data
+	lineageTag: 9b8d0f5b-9aff-4529-856a-bd698a0bef1f
+
+	column Date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9c43df56-5387-4d99-994f-9bf432820a63
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		displayFolder: _RegionCountry
+		lineageTag: 71cadaaf-7732-4981-957d-24d5d0c5b73d
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		displayFolder: _RegionCountry
+		lineageTag: d688e5d9-1562-43fe-bc42-715f14ab63d2
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Division
+		dataType: string
+		displayFolder: _Division SubDivision
+		lineageTag: 4d8fdd84-6ab8-44b1-ad64-1553cdc7c44c
+		summarizeBy: none
+		sourceColumn: Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sub-Division
+		dataType: string
+		displayFolder: _Division SubDivision
+		lineageTag: 8d0d87e2-b45c-46c2-9e46-8eb791f39061
+		summarizeBy: none
+		sourceColumn: Sub-Division
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Business Type'
+		dataType: string
+		lineageTag: f6b48243-79ca-49cd-b625-01f492454947
+		summarizeBy: none
+		sourceColumn: Business Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Product Category'
+		dataType: string
+		lineageTag: e0af6361-312c-4946-a245-e51d8bd1810e
+		summarizeBy: none
+		sourceColumn: Product Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Sales Channel'
+		dataType: string
+		lineageTag: f2663ec5-5aec-4162-a580-5946b4879034
+		summarizeBy: none
+		sourceColumn: Sales Channel
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Segment'
+		dataType: string
+		lineageTag: 53a1f394-472f-48c0-b08b-228b6f2ecf9a
+		summarizeBy: none
+		sourceColumn: Customer Segment
+
+		annotation SummarizationSetBy = Automatic
+
+	column Revenue_Actual
+		dataType: double
+		displayFolder: _Actuals
+		lineageTag: c3aa42c0-9688-4509-bc5d-2d0c4b53aace
+		summarizeBy: sum
+		sourceColumn: Revenue_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Revenue_Budget
+		dataType: double
+		displayFolder: _Budget
+		lineageTag: bde32d23-5c5b-4b77-a953-8701a093c5df
+		summarizeBy: sum
+		sourceColumn: Revenue_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Expenses_Actual
+		dataType: double
+		displayFolder: _Actuals
+		lineageTag: 6cd83b1c-af3c-41d2-a53e-5c72725b9ed6
+		summarizeBy: sum
+		sourceColumn: Expenses_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Expenses_Budget
+		dataType: double
+		displayFolder: _Budget
+		lineageTag: 94768ed3-c1b7-4dec-b996-2c55402936db
+		summarizeBy: sum
+		sourceColumn: Expenses_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Other_Expenses_Actual
+		dataType: double
+		displayFolder: _Actuals
+		lineageTag: ba8c89c8-e0c4-4885-8d50-b0fd908e3ebb
+		summarizeBy: sum
+		sourceColumn: Other_Expenses_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Other_Expenses_Budget
+		dataType: double
+		displayFolder: _Budget
+		lineageTag: a214e06a-772c-4aa9-91c4-0e133f3c0de0
+		summarizeBy: sum
+		sourceColumn: Other_Expenses_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAPEX_Actual
+		dataType: double
+		displayFolder: _Actuals
+		lineageTag: 7b13e925-8897-4132-b904-ff34f46b471d
+		summarizeBy: sum
+		sourceColumn: CAPEX_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column CAPEX_Budget
+		dataType: double
+		displayFolder: _Budget
+		lineageTag: ae759631-b4e7-493e-8515-0af5534c1743
+		summarizeBy: sum
+		sourceColumn: CAPEX_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit_Actual
+		dataType: double
+		displayFolder: _Actuals
+		lineageTag: 62e2068e-29df-459e-94a8-fa16c44c6542
+		summarizeBy: sum
+		sourceColumn: Profit_Actual
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Profit_Budget
+		dataType: double
+		displayFolder: _Budget
+		lineageTag: 8db7abd4-6b52-4a5c-a088-d360e688eb93
+		summarizeBy: sum
+		sourceColumn: Profit_Budget
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Financial_Data = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\SaddamAnsari\Desktop\Kavita Behera Request file\27_Prodcut Kickoff Fabric Demo Reports\02_Tripple Varinace Analysis\Enterprise_Financial.xlsx"), null, true),
+				    Financial_Data_Sheet = Source{[Item="Financial_Data",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Financial_Data_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type datetime}, {"Region", type text}, {"Country", type text}, {"Division", type text}, {"Sub-Division", type text}, {"Business Type", type text}, {"Product Category", type text}, {"Sales Channel", type text}, {"Customer Segment", type text}, {"Revenue_Actual", type number}, {"Revenue_Budget", type number}, {"Total_Expenses_Actual", type number}, {"Total_Expenses_Budget", type number}, {"Other_Expenses_Actual", type number}, {"Other_Expenses_Budget", type number}, {"CAPEX_Actual", type number}, {"CAPEX_Budget", type number}, {"Profit_Actual", type number}, {"Profit_Budget", type number}}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Changed Type",{{"Total_Expenses_Actual", "Expenses_Actual"}, {"Total_Expenses_Budget", "Expenses_Budget"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_ResultType = Table
+

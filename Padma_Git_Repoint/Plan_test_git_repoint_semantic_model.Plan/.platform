@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Plan",
+    "displayName": "Plan_test_git_repoint_semantic_model"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "4403df41-2a3c-8df8-4c02-38568a580838"
+  }
+}

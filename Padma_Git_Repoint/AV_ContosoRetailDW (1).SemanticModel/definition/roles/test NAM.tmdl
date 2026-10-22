@@ -1,0 +1,7 @@
+role 'test NAM'
+	modelPermission: read
+
+	tablePermission DimEntity = [Entity Continent] == "Contoso North America"
+
+	annotation PBI_Id = 9d7a2034f8274073b3be229029a4c352
+

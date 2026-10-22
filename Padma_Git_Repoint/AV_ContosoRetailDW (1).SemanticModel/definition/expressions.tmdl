@@ -1,0 +1,115 @@
+expression TBD_DateCal = ```
+		let
+		    // Create a list of dates from January 1, 2022 to December 31, 2028
+		    StartDate = #date(2022, 1, 1),
+		    EndDate = #date(2028, 12, 31),
+		    DateList = List.Dates(StartDate, Duration.Days(EndDate - StartDate) + 1, #duration(1, 0, 0, 0)),
+		    
+		    // Convert the list of dates to a table
+		    DateTable = Table.FromList(DateList, Splitter.SplitByNothing(), {"Date"}, null, ExtraValues.Error),
+		    
+		    // Add custom columns
+		    AddYear = Table.AddColumn(DateTable, "Year", each Date.Year([Date])),
+		    AddMonth = Table.AddColumn(AddYear, "Month", each Date.ToText([Date], "MMMM")),
+		    AddMonthNumber = Table.AddColumn(AddMonth, "MonthNumber", each Date.Month([Date])),
+		    AddDay = Table.AddColumn(AddMonthNumber, "Day", each Date.Day([Date])),
+		    AddQuarter = Table.AddColumn(AddDay, "Quarter", each "Q" & Number.ToText(Date.QuarterOfYear([Date]))),
+		    AddWeekday = Table.AddColumn(AddQuarter, "Weekday", each Date.ToText([Date], "dddd")),
+		    AddIsWeekday = Table.AddColumn(AddWeekday, "IsWeekday", each if Date.DayOfWeek([Date], Day.Sunday) >= 1 and Date.DayOfWeek([Date], Day.Sunday) <= 5 then true else false),
+		    #"Changed Type" = Table.TransformColumnTypes(AddIsWeekday,{{"Date", type datetime}}),
+		    #"Merged Queries" = Table.NestedJoin(#"Changed Type", {"Date"}, SourceDate, {"Datekey"}, "SourceDate", JoinKind.RightOuter),
+		    #"Expanded SourceDate" = Table.ExpandTableColumn(#"Merged Queries", "SourceDate", {"IsWorkDay", "IsHoliday", "HolidayName", "EuropeSeason", "NorthAmericaSeason", "AsiaSeason"}, {"IsWorkDay", "IsHoliday", "HolidayName", "EuropeSeason", "NorthAmericaSeason", "AsiaSeason"}),
+		    #"Added Custom" = Table.AddColumn(#"Expanded SourceDate", "IsWeekDaySource", each if [IsWorkDay] = "WeekEnd" then false else true),
+		    #"Reordered Columns" = Table.ReorderColumns(#"Added Custom",{"Date", "Year", "Month", "MonthNumber", "Day", "Quarter", "Weekday", "IsWeekday", "IsWeekDaySource", "IsWorkDay", "IsHoliday", "HolidayName", "EuropeSeason", "NorthAmericaSeason", "AsiaSeason"}),
+		    Custom1 = Table.AddColumn(#"Reordered Columns", "IsWeekDayMatch", each if [IsWeekday] = [IsWeekDaySource] then 1 else 0),
+		    #"Filtered Rows" = Table.SelectRows(Custom1, each ([IsWeekDayMatch] = 0))
+		in
+		    #"Filtered Rows"
+		```
+	lineageTag: 2e06b96b-1476-46c1-8763-b5c1eac8d4cc
+	queryGroup: 'Date Cal'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression SourceDate =
+		let
+		    Source = Sql.Databases("localhost\SQLEXPRESS"),
+		    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+		    dbo_DimDate = ContosoRetailDW{[Schema="dbo",Item="DimDate"]}[Data]
+		in
+		    dbo_DimDate
+	lineageTag: 5d4f66ca-523a-4690-820d-2c952e28cf1c
+	queryGroup: 'Date Cal'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression Query1 = ```
+		let fnDateTable = (StartDate as date, EndDate as date, FYStartMonth as number) as table =>
+		  let
+		    DayCount = Duration.Days(Duration.From(EndDate - StartDate)),
+		    Source = List.Dates(StartDate,DayCount,#duration(1,0,0,0)),
+		    TableFromList = Table.FromList(Source, Splitter.SplitByNothing()),   
+		    ChangedType = Table.TransformColumnTypes(TableFromList,{{"Column1", type date}}),
+		    RenamedColumns = Table.RenameColumns(ChangedType,{{"Column1", "Date"}}),
+		    InsertYear = Table.AddColumn(RenamedColumns, "Year", each Date.Year([Date]),type text),
+		    InsertYearNumber = Table.AddColumn(RenamedColumns, "YearNumber", each Date.Year([Date])),
+		    InsertQuarter = Table.AddColumn(InsertYear, "QuarterOfYear", each Date.QuarterOfYear([Date])),
+		    InsertMonth = Table.AddColumn(InsertQuarter, "MonthOfYear", each Date.Month([Date]), type text),
+		    InsertDay = Table.AddColumn(InsertMonth, "DayOfMonth", each Date.Day([Date])),
+		    InsertDayInt = Table.AddColumn(InsertDay, "DateInt", each [Year] * 10000 + [MonthOfYear] * 100 + [DayOfMonth]),
+		    InsertMonthName = Table.AddColumn(InsertDayInt, "MonthName", each Date.ToText([Date], "MMMM"), type text),
+		    InsertCalendarMonth = Table.AddColumn(InsertMonthName, "MonthInCalendar", each (try(Text.Range([MonthName],0,3)) otherwise [MonthName]) & " " & Number.ToText([Year])),
+		    InsertCalendarQtr = Table.AddColumn(InsertCalendarMonth, "QuarterInCalendar", each "Q" & Number.ToText([QuarterOfYear]) & " " & Number.ToText([Year])),
+		    InsertDayWeek = Table.AddColumn(InsertCalendarQtr, "DayInWeek", each Date.DayOfWeek([Date])),
+		    InsertDayName = Table.AddColumn(InsertDayWeek, "DayOfWeekName", each Date.ToText([Date], "dddd"), type text),
+		    InsertWeekEnding = Table.AddColumn(InsertDayName, "WeekEnding", each Date.EndOfWeek([Date]), type date),
+		    InsertWeekNumber= Table.AddColumn(InsertWeekEnding, "Week Number", each Date.WeekOfYear([Date])),
+		    InsertMonthnYear = Table.AddColumn(InsertWeekNumber,"MonthnYear", each [Year] * 10000 + [MonthOfYear] * 100),
+		    InsertQuarternYear = Table.AddColumn(InsertMonthnYear,"QuarternYear", each [Year] * 10000 + [QuarterOfYear] * 100),
+		    ChangedType1 = Table.TransformColumnTypes(InsertQuarternYear,{{"QuarternYear", Int64.Type},{"Week Number", Int64.Type},{"Year", type text},{"MonthnYear", Int64.Type}, {"DateInt", Int64.Type}, {"DayOfMonth", Int64.Type}, {"MonthOfYear", Int64.Type}, {"QuarterOfYear", Int64.Type}, {"MonthInCalendar", type text}, {"QuarterInCalendar", type text}, {"DayInWeek", Int64.Type}}),
+		    InsertShortYear = Table.AddColumn(ChangedType1, "ShortYear", each Text.End(Text.From([Year]), 2), type text),
+		    AddFY = Table.AddColumn(InsertShortYear, "FY", each "FY"&(if [MonthOfYear]>=FYStartMonth then Text.From(Number.From([ShortYear])+1) else [ShortYear]))
+		in
+		    AddFY
+		in
+		    fnDateTable
+		```
+	lineageTag: 3c130ce1-6ba4-4aef-87e4-65a37a1474bd
+	queryGroup: 'Date Cal'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Function
+
+expression 'Invoked Function' =
+		let
+		    Source = Query1(#date(2022, 1, 1), #date(2028, 12, 31), 7),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Date", type datetime}})
+		in
+		    #"Changed Type"
+	lineageTag: 0464c212-a34e-41f7-bcbb-4dbb80a4b789
+	queryGroup: 'Date Cal'
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
+expression DimFlagPictures =
+		let
+		    Source = Csv.Document(File.Contents("C:\Users\ASHAMD\Downloads\ContosoFlags.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    #"Duplicated Column" = Table.DuplicateColumn(#"Promoted Headers", "Country", "Country - Copy"),
+		    #"Renamed Columns" = Table.RenameColumns(#"Duplicated Column",{{"Country - Copy", "RegionCountryName"}}),
+		    #"Replaced Value" = Table.ReplaceValue(#"Renamed Columns","Contoso ","",Replacer.ReplaceText,{"RegionCountryName"})
+		in
+		    #"Replaced Value"
+	lineageTag: 5b5b2b38-5080-401f-8498-5413f7aab849
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

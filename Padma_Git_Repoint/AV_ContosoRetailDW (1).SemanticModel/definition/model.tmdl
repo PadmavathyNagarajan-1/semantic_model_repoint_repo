@@ -1,0 +1,139 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		fastCombine
+		legacyRedirects
+		returnErrorValuesAsNull
+
+queryGroup 'Date Cal'
+
+	annotation PBI_QueryGroupOrder = 0
+
+annotation PBI_QueryOrder = ["DimAccount","DimChannel","DimCurrency","DimCustomer","DimEmployee","DimEntity","DimGeography","DimMachine","DimOutage","DimProduct","DimProductCategory","DimProductSubcategory","DimPromotion","DimSalesTerritory","DimScenario","DimStore","FactInventory","FactITMachine","FactExchangeRate","FactITSLA","FactOnlineSales","FactSales","FactSalesQuota","FactStrategyPlan","1-DAX_Measures","TBD_DateCal","SourceDate","Query1","Invoked Function","DimFlagPictures","DimPlantProductBridge","DimPlantMaster"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_RemovedChildren = [{"remoteItemId":{"foreignKeyRelationship":{"fromTableLocalLineageTag":"2de9f72f-8fb0-4bfe-a919-270c0a6a64a0","fromColumnLocalLineageTag":"39b8f891-973f-4519-a740-316fcaa84063","toTableLocalLineageTag":"90fd8fb0-51a6-4b2a-a73d-ba11cc4c5b44","toColumnLocalLineageTag":"fcacf84b-5d39-42dc-bf86-c6ff5965eb87"}},"objectType":"Relationship"},{"remoteItemId":{"foreignKeyRelationship":{"fromTableLocalLineageTag":"90fd8fb0-51a6-4b2a-a73d-ba11cc4c5b44","fromColumnLocalLineageTag":"8a29b38d-61b2-436d-b35b-fbb2bc44db2c","toTableLocalLineageTag":"428539c6-3f55-4787-ae4f-58d7ee5ef3d9","toColumnLocalLineageTag":"a04416b8-a39d-4939-8728-8b432511361e"}},"objectType":"Relationship"},{"remoteItemId":{"foreignKeyRelationship":{"fromTableLocalLineageTag":"33a9d910-3e48-49af-a85c-a161666c9c5d","fromColumnLocalLineageTag":"256bdf83-c065-452a-b8ea-929f1f8263a6","toTableLocalLineageTag":"428539c6-3f55-4787-ae4f-58d7ee5ef3d9","toColumnLocalLineageTag":"a04416b8-a39d-4939-8728-8b432511361e"}},"objectType":"Relationship"}]
+
+annotation PBI_ProTooling = ["WebModelingEdit","DaxCopilot_Change_Accepted_In_Desktop","DaxQueryView_Desktop","TMDLView_Desktop"]
+
+ref table DimAccount
+ref table DateTableTemplate_3c2469af-e8c6-4c34-a4cb-d51e22c639bc
+ref table LocalDateTable_dc6b1c6a-0d3d-463a-8eae-71557f8de8ec
+ref table LocalDateTable_63d730f3-8c59-4c55-8cc2-54e787cc0b43
+ref table DimChannel
+ref table LocalDateTable_133aaa21-c6ec-4ab7-8062-805c62b0f52f
+ref table LocalDateTable_800232d6-08c0-48e0-aeb9-3d231fa44240
+ref table DimCurrency
+ref table LocalDateTable_fd3dc843-38fd-4c95-a080-53a2b3170a8e
+ref table LocalDateTable_255fa37c-620a-456a-8213-5b428f271c38
+ref table DimCustomer
+ref table LocalDateTable_1d18042c-0972-4bc6-b3d5-7e315f9120fe
+ref table LocalDateTable_3b135b61-a9d7-4b41-be43-2d8aac352f55
+ref table LocalDateTable_36fb969e-081b-4ac3-8593-d1e09b276843
+ref table LocalDateTable_67b31b2f-0fcb-409b-839d-f86d26bb3b81
+ref table DimEmployee
+ref table LocalDateTable_b7f2dce1-ecd8-498f-8b10-f1e2c58e5b50
+ref table LocalDateTable_19528a59-e2fc-4ba6-af6f-e62dcfe58c26
+ref table LocalDateTable_5f4111c9-41b4-4131-b02f-5da985044785
+ref table LocalDateTable_b9d44025-8909-49cd-87c1-876309fb6979
+ref table LocalDateTable_3c08edd7-73a9-4227-92b2-4219c2835a42
+ref table LocalDateTable_4c68b497-f8b1-443b-9317-873c831c4a54
+ref table DimEntity
+ref table LocalDateTable_3cac7398-2589-4990-a8e2-43af417c9165
+ref table LocalDateTable_2446ffc3-2690-4bd5-8f8e-393afc403eab
+ref table LocalDateTable_a1d89316-a9f6-41a4-8f2e-b510f1aae7ce
+ref table LocalDateTable_64d28105-521a-476a-9e17-86bdd54d7233
+ref table DimGeography
+ref table LocalDateTable_25d3ac04-1e03-4be2-b30c-f94ca0f938ed
+ref table LocalDateTable_907f4277-3f61-4bc9-a8c8-0b0406b1aada
+ref table DimMachine
+ref table LocalDateTable_f72a1478-c0a9-4e5d-8e38-5014673f5995
+ref table LocalDateTable_089ea3e3-010b-4be0-98d9-4f713ea5277f
+ref table LocalDateTable_ac07a906-4612-4848-9154-194395d390c3
+ref table LocalDateTable_8751c6a9-2c03-4188-bbbd-ffd6c4a3edc7
+ref table LocalDateTable_430ac3e5-023a-4027-a641-47d55e96e103
+ref table DimOutage
+ref table LocalDateTable_31a41cbd-1aca-427e-aea3-111cd7e62ac6
+ref table LocalDateTable_c1267c45-fb90-4ac1-bdb5-3a3f8cd51598
+ref table DimProduct
+ref table LocalDateTable_6f6ed126-3cce-4072-8663-5805912984e6
+ref table LocalDateTable_df67470b-73f4-4114-9c91-1d7a46b4464d
+ref table LocalDateTable_4448acc9-aaeb-4198-8768-dbd94425d4a9
+ref table LocalDateTable_c8a96415-6463-462b-8e08-79b74dce2748
+ref table DimProductCategory
+ref table LocalDateTable_dc99c353-2871-4b9a-befe-0838e421e6f5
+ref table LocalDateTable_d0085bf9-b057-491e-8045-2c70fbae3a18
+ref table DimProductSubcategory
+ref table LocalDateTable_bafd82f8-8296-400a-84c8-f728b437a0c4
+ref table LocalDateTable_5d2d1448-f494-43ca-8f28-589481bd1761
+ref table DimPromotion
+ref table LocalDateTable_ae7bb8d6-25d6-4109-9ea5-908b69d7fe1a
+ref table LocalDateTable_414c2495-4e9a-4834-b9e1-1f77ed58dd40
+ref table LocalDateTable_292caaa4-fe10-4d39-ae9a-99b38c00bd1b
+ref table LocalDateTable_6318e8ce-67a5-44c0-8174-cd44fbbc41d0
+ref table DimSalesTerritory
+ref table LocalDateTable_5e5af3f4-9f1f-481d-9ec9-f0dd8013a77d
+ref table LocalDateTable_389ffee1-48d0-4038-8abc-682fd608c422
+ref table LocalDateTable_696f0b4a-0654-4a1e-8cbb-638f6403c589
+ref table LocalDateTable_7c8e3eee-3469-4020-a7ac-40755ef98102
+ref table DimScenario
+ref table LocalDateTable_b90e7ad0-9f77-4a0e-b717-ef6f8c899551
+ref table LocalDateTable_e0985be8-45b2-4b45-a684-9454e3322b94
+ref table DimStore
+ref table LocalDateTable_2e04f0ed-7dcf-4d5e-afe7-c95ebb0db60a
+ref table LocalDateTable_969df175-22de-46a8-beaf-d056e8aa3360
+ref table LocalDateTable_2698b49d-7deb-4ad9-80cb-7803da066599
+ref table LocalDateTable_bd589f25-ef50-462f-aaba-e7facd281e95
+ref table LocalDateTable_df5c6748-5df7-4ee7-8ee7-3a5b5d3afc5c
+ref table FactInventory
+ref table LocalDateTable_dceb2bee-2330-46cd-88f3-910dd938079c
+ref table LocalDateTable_3e13ac33-92c0-4cb6-bcef-9d099576ba5d
+ref table FactITMachine
+ref table LocalDateTable_92c6a0fd-a93a-4fc5-a4a7-0c47665cae87
+ref table LocalDateTable_083602f7-bda2-4791-bdf0-c0c793c5401f
+ref table FactExchangeRate
+ref table LocalDateTable_03e74b91-f543-466e-ae58-1056ead62b54
+ref table LocalDateTable_8795eecb-1bf6-495b-ad72-4aad5c578df5
+ref table FactITSLA
+ref table LocalDateTable_e441646b-aff4-40cf-b4a3-988ac38afc1b
+ref table LocalDateTable_413fd84f-b2a8-4d9e-b0a7-fb7351b4284e
+ref table LocalDateTable_b9381ae2-06da-4ec1-832c-f3e5d57ccda7
+ref table LocalDateTable_49047ed3-f26c-4799-ac60-0a030fe65468
+ref table FactOnlineSales
+ref table LocalDateTable_9cc1a588-2fe0-4e20-99d7-3ece977d7ef1
+ref table LocalDateTable_c6315c8a-276e-4ded-aa1b-8459438dfb1c
+ref table FactSales
+ref table LocalDateTable_f0985aa2-cff9-4c8f-83c5-301a607355c7
+ref table LocalDateTable_6fe25a93-03e4-40a9-834e-c456bff5818b
+ref table FactSalesQuota
+ref table LocalDateTable_6751b8e0-9352-423f-91a0-2913a8b726ef
+ref table LocalDateTable_662ad384-bdc8-4f1d-88a8-eedfebc23521
+ref table FactStrategyPlan
+ref table LocalDateTable_4ebac8fb-a972-4ce6-ba6b-ac35a966af1d
+ref table LocalDateTable_c5a0ac98-f519-4e1e-8fbc-7a92484efbeb
+ref table Date
+ref table 1-DAX_Measures
+ref table 'Budget Increase'
+ref table LocalDateTable_cdf63dda-9846-477a-9745-f4049ae7b78c
+ref table LocalDateTable_fafc7a11-83f9-423a-80b1-613a622b404d
+ref table LocalDateTable_85010076-ceca-4b7f-a333-992d7bacac12
+ref table LocalDateTable_8bc0548c-d936-4563-8e79-9b304703c94f
+ref table LocalDateTable_033c79ed-4d05-4dec-aa4a-1d27031b021e
+ref table LocalDateTable_2d69e3cb-88d2-490b-9e6e-bb0a27f1cb0a
+ref table LocalDateTable_5ee887ad-cf29-477f-8837-776c962ea41d
+ref table LocalDateTable_4f081ceb-1fca-493a-8df8-e04c27c70112
+ref table LocalDateTable_0ef058a3-3a3b-488c-ae96-ce9e0825b45b
+ref table 'Date (Fiscal Calendar)'
+ref table DimPlantProductBridge
+ref table DimPlantMaster
+ref table LocalDateTable_7dfea0cb-84cd-4f3f-8040-0d39f187a90e
+ref table LocalDateTable_1edf617f-fd06-430f-a871-5a1b03339f42
+
+ref role EMEA
+ref role 'test NAM'
+
+ref cultureInfo en-US
+

@@ -1,0 +1,91 @@
+table Calendar
+	lineageTag: 7fce91ed-25e7-4a29-8021-7de5a96e76b1
+
+	column Date
+		formatString: General Date
+		lineageTag: 46681c67-3022-4fc9-9bdc-762ae490743f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: a90a9df8-c426-4906-bd0c-57513468a909
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNo
+		isHidden
+		formatString: 0
+		lineageTag: cd7f2c2b-6859-4bb4-acbf-06b9b4b2fb6f
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [MonthNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		lineageTag: fd8af0fe-4189-420a-9889-291fbf7e355b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month (M)'
+		lineageTag: f44179be-acca-4201-b0e8-957f97ebd6db
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month (M)]
+		sortByColumn: MonthNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quarter
+		lineageTag: a88f650a-a15f-4b7b-812d-348353871905
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+		sortByColumn: QuarterNo
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterNo
+		isHidden
+		formatString: 0
+		lineageTag: f86c77b4-5f4f-461a-9b81-2ad4a68856ea
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QuarterNo]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Half Year'
+		lineageTag: ddd1d868-7337-48b1-bc88-07ae566ef060
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Half Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Calendar = calculated
+		mode: import
+		source = ```
+				ADDCOLUMNS (CALENDAR(MIN(Financial_Data[Date]),MAX(Financial_Data[Date])),
+					"Year", YEAR([Date]), 
+					"MonthNo", MONTH([Date]), 
+					"Month", FORMAT([Date],"mmm"),
+				    "Month (M)", LEFT(FORMAT([Date],"mmm"),1) & REPT(UNICHAR(8203),MONTH([Date])),
+					"Quarter", FORMAT([Date],"\QQ"),
+				    "QuarterNo", QUARTER([Date]), 
+				    "Half Year" ,IF ( MONTH ( [Date] ) <= 6, "H1", "H2" ))
+				```
+
+	annotation PBI_Id = c89f22049cfd487cac64dde7321feda4
+

@@ -1,0 +1,143 @@
+table DimPlantMaster
+	lineageTag: 9d3f1f5e-c5be-4361-966a-6d24c71684b7
+
+	column PlantID
+		dataType: string
+		lineageTag: 6a97e803-386e-4a3c-9fed-d470cb8a2ac8
+		summarizeBy: none
+		sourceColumn: PlantID
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlantCode
+		dataType: string
+		lineageTag: 52b97de9-04bd-4efc-a9bb-e1bfe6dc6381
+		summarizeBy: none
+		sourceColumn: PlantCode
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlantName
+		dataType: string
+		lineageTag: fa45650b-5269-43af-a837-127bf517e692
+		summarizeBy: none
+		sourceColumn: PlantName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlantType
+		dataType: string
+		lineageTag: ddd05da7-d77c-43db-bc2a-8420853c2512
+		summarizeBy: none
+		sourceColumn: PlantType
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityID
+		dataType: int64
+		formatString: 0
+		lineageTag: 2944697e-3d65-40fc-9abc-2f8f8f0786c2
+		summarizeBy: none
+		sourceColumn: EntityID
+
+		annotation SummarizationSetBy = Automatic
+
+	column EntityName
+		dataType: string
+		lineageTag: 65030c2d-55ab-47bf-b684-26c4dbfd08eb
+		summarizeBy: none
+		sourceColumn: EntityName
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 68526a60-52f2-4c5b-ad3a-a1b6fb1b2457
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: b9904ee2-333f-48a5-b16f-ef10200f7448
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: 325370a3-d75d-4a66-a04c-05e1e204b46d
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: effe2a9e-b0dd-401e-9fdc-9fde6a9b4d21
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthlyMaxCapacity
+		dataType: int64
+		formatString: #,0
+		lineageTag: a9fbc524-44f3-4763-a3d5-5abf240e8a11
+		summarizeBy: sum
+		sourceColumn: MonthlyMaxCapacity
+
+		annotation SummarizationSetBy = Automatic
+
+	column CapacityUoM
+		dataType: string
+		lineageTag: 5d01eba9-e757-4f24-9f72-0085046f70c6
+		summarizeBy: none
+		sourceColumn: CapacityUoM
+
+		annotation SummarizationSetBy = Automatic
+
+	column SupportedCategories
+		dataType: string
+		lineageTag: 0be6a116-3973-4b9c-beab-1594d7ebaeaa
+		summarizeBy: none
+		sourceColumn: SupportedCategories
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsActive
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d575a539-df87-4bdf-8445-5ce6d298225f
+		summarizeBy: none
+		sourceColumn: IsActive
+
+		annotation SummarizationSetBy = Automatic
+
+	column PlantStartDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: aeabe809-5e04-4995-9c6f-4a9f8a2f1470
+		summarizeBy: none
+		sourceColumn: PlantStartDate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	partition DimPlantMaster = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\ASHAMD\Downloads\PlantMaster.csv"),[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PlantID", type text}, {"PlantCode", type text}, {"PlantName", type text}, {"PlantType", type text}, {"EntityID", Int64.Type}, {"EntityName", type text}, {"Country", type text}, {"Region", type text}, {"State", type text}, {"City", type text}, {"MonthlyMaxCapacity", Int64.Type}, {"CapacityUoM", type text}, {"SupportedCategories", type text}, {"IsActive", type logical}, {"PlantStartDate", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

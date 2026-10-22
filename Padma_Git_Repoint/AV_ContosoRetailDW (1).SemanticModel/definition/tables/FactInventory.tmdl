@@ -1,0 +1,180 @@
+table FactInventory
+	lineageTag: 15871a0a-2f71-43f7-a446-76155614429e
+
+	column InventoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 240be6a9-127e-42e6-813b-a9907fd47dc7
+		summarizeBy: count
+		sourceColumn: InventoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a5afed4b-c08e-4915-b30e-40bf37d877b3
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ce76b522-96ec-4e58-89e5-4f0ad6f29355
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 13cc04f0-2ef7-4ec2-b58e-2fc4187e56e1
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ed17eafe-6353-4af2-9e71-9f597f7fe61c
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnHandQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: e361f8f1-a2f8-4a43-9e72-028ae96e1240
+		summarizeBy: sum
+		sourceColumn: OnHandQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column OnOrderQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 2882fd33-c4ab-461e-947e-d296c167aeb7
+		summarizeBy: sum
+		sourceColumn: OnOrderQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column SafetyStockQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 4728f154-3d97-417c-8a4e-adef768b65e4
+		summarizeBy: sum
+		sourceColumn: SafetyStockQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column UnitCost
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 3d5d02a6-ef72-48a4-8cb6-0d30f492fe8e
+		summarizeBy: sum
+		sourceColumn: UnitCost
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column DaysInStock
+		dataType: int64
+		formatString: 0
+		lineageTag: dbca9725-0e3d-4f12-af16-82e6bd9026fc
+		summarizeBy: sum
+		sourceColumn: DaysInStock
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinDayInStock
+		dataType: int64
+		formatString: 0
+		lineageTag: 62262b73-6d3b-4b12-81d1-969d39ed51ff
+		summarizeBy: sum
+		sourceColumn: MinDayInStock
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxDayInStock
+		dataType: int64
+		formatString: 0
+		lineageTag: a283cae3-7706-4cc6-a097-4da65fdbd431
+		summarizeBy: sum
+		sourceColumn: MaxDayInStock
+
+		annotation SummarizationSetBy = Automatic
+
+	column Aging
+		dataType: int64
+		formatString: 0
+		lineageTag: 383b9231-7977-44cd-b315-58098b65c850
+		summarizeBy: sum
+		sourceColumn: Aging
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3d7a9aca-72f4-444c-957a-ef6dfa7b5d79
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: dbc9d0d4-14c3-48ac-bcef-78f37c93e990
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 9ba85bc9-2e03-49d1-be37-436e113bf0d3
+			defaultHierarchy: LocalDateTable_dceb2bee-2330-46cd-88f3-910dd938079c.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 07d5a27d-ad8b-44e1-91c0-4c05a61bd1e9
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 9d352f58-8d49-4c43-acbb-f1fd1edf0ef8
+			defaultHierarchy: LocalDateTable_3e13ac33-92c0-4cb6-bcef-9d099576ba5d.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactInventory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_FactInventory = ContosoRetailDW{[Schema="dbo",Item="FactInventory"]}[Data]
+				in
+				    dbo_FactInventory
+
+	annotation PBI_ResultType = Table
+

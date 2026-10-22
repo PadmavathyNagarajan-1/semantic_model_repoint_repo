@@ -1,0 +1,9 @@
+role EMEA
+	modelPermission: read
+
+	tablePermission DimEntity = [Entity Continent] == "Contoso Asia" || [Entity Continent] == "Contoso Europe"
+
+	tablePermission DimGeography = [ContinentName] == "Asia" || [ContinentName] == "Europe"
+
+	annotation PBI_Id = da73bba3143347c09c2d4578d9b3122e
+

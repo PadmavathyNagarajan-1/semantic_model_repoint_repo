@@ -1,0 +1,100 @@
+table DimCurrency
+	lineageTag: 6a01c38f-de61-4052-8b53-bc6b701612bd
+
+	column CurrencyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 365b51e4-042e-42e6-ae68-15429f7d9eef
+		summarizeBy: none
+		sourceColumn: CurrencyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyLabel
+		dataType: string
+		isHidden
+		lineageTag: 2d80a807-75ac-440a-8e1a-b0397a5ce954
+		summarizeBy: none
+		sourceColumn: CurrencyLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyName
+		dataType: string
+		lineageTag: 8181b691-6a26-4261-9483-148638d0e6ce
+		summarizeBy: none
+		sourceColumn: CurrencyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrencyDescription
+		dataType: string
+		isHidden
+		lineageTag: 9e12cede-4c3d-411d-b55e-4ae9201e327b
+		summarizeBy: none
+		sourceColumn: CurrencyDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5015d97d-ed34-42b0-903b-3035a101a724
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: ac93e551-41c3-46fe-8813-bce025697289
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 9f2e8d39-5bfa-4fed-85cd-13856142066e
+			defaultHierarchy: LocalDateTable_fd3dc843-38fd-4c95-a080-53a2b3170a8e.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 7fd9785d-5168-4aed-896c-e23310461715
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 09e03a2c-4cc1-410a-8d85-906317f29a80
+			defaultHierarchy: LocalDateTable_255fa37c-620a-456a-8213-5b428f271c38.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimCurrency = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimCurrency = ContosoRetailDW{[Schema="dbo",Item="DimCurrency"]}[Data]
+				in
+				    dbo_DimCurrency
+
+	annotation PBI_ResultType = Table
+

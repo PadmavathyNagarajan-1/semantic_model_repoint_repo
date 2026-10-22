@@ -1,0 +1,34 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/Settings/1.0.0/schema.json",
+  "sourceSettings": [
+    {
+      "name": "SCD",
+      "recordGuid": "C153BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "settings": {
+        "config": {
+          "businessKey": "",
+          "identifierKeys": {
+            "activeFlag": "",
+            "effectiveDate": "",
+            "endDate": "",
+            "startDate": ""
+          }
+        },
+        "enabled": false,
+        "type": 2
+      },
+      "sourceId": "BD53BD7B-22B6-F111-A6A8-7C1E522C202C"
+    },
+    {
+      "name": "COMMENT_SETTINGS",
+      "recordGuid": "C253BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "settings": {
+        "displayComment": true,
+        "notification": true,
+        "rowLevelComments": false,
+        "toggleAddonColumns": false
+      },
+      "sourceId": "BD53BD7B-22B6-F111-A6A8-7C1E522C202C"
+    }
+  ]
+}

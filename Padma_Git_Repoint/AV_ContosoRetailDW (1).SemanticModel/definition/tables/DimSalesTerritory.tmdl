@@ -1,0 +1,198 @@
+table DimSalesTerritory
+	lineageTag: 33a9d910-3e48-49af-a85c-a161666c9c5d
+
+	column SalesTerritoryKey
+		dataType: int64
+		formatString: 0
+		lineageTag: e224fa34-8f74-4fb4-b6af-cfa612c8db34
+		summarizeBy: none
+		sourceColumn: SalesTerritoryKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographyKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 256bdf83-c065-452a-b8ea-929f1f8263a6
+		summarizeBy: count
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryLabel
+		dataType: string
+		isHidden
+		lineageTag: 6c57a702-fb28-44d5-8f95-9663e4956647
+		summarizeBy: none
+		sourceColumn: SalesTerritoryLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryName
+		dataType: string
+		lineageTag: 09424086-ab23-46d2-8f0e-898b1118eaac
+		summarizeBy: none
+		sourceColumn: SalesTerritoryName
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryRegion
+		dataType: string
+		lineageTag: 73c65667-2a1a-4749-bb22-181a8f55793b
+		summarizeBy: none
+		sourceColumn: SalesTerritoryRegion
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryCountry
+		dataType: string
+		lineageTag: b2fb7dc3-88f4-44e3-bc84-021f4aa45d33
+		summarizeBy: none
+		sourceColumn: SalesTerritoryCountry
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryGroup
+		dataType: string
+		lineageTag: 1af32059-fb25-408c-b92a-05c00376daa7
+		summarizeBy: none
+		sourceColumn: SalesTerritoryGroup
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryLevel
+		dataType: string
+		lineageTag: 38b5d12b-027c-4c2a-837d-47e32d13c4bd
+		summarizeBy: none
+		sourceColumn: SalesTerritoryLevel
+
+		annotation SummarizationSetBy = Automatic
+
+	column SalesTerritoryManager
+		dataType: int64
+		formatString: 0
+		lineageTag: dfb8168b-97f8-46e2-b2f1-625c5190a003
+		summarizeBy: sum
+		sourceColumn: SalesTerritoryManager
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 52ebd9d2-0599-4790-b297-2a9f69e6edc9
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: ccb3aec5-2594-4ecc-948a-882d6cd1eb62
+			defaultHierarchy: LocalDateTable_5e5af3f4-9f1f-481d-9ec9-f0dd8013a77d.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: d6a96fd2-6e5a-4723-b7c0-baf4179276f4
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: 93f60639-3ecc-4e48-8c62-1ea3943d9b1f
+			defaultHierarchy: LocalDateTable_389ffee1-48d0-4038-8abc-682fd608c422.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: ea6d3e2e-e4d3-4172-8a01-b628612f501d
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 1271c89c-cb8a-4b4c-a546-9b1172da6646
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 0dd7daf1-b13b-43f2-a017-90d4eecdcc4a
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 8a9ced26-7996-4a2e-9b85-c93f167038f9
+			defaultHierarchy: LocalDateTable_696f0b4a-0654-4a1e-8cbb-638f6403c589.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 37098e14-b574-4a40-90c5-bf309dfd18fc
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: d086845e-fa42-4fb1-9d20-c09d6f7b54b5
+			defaultHierarchy: LocalDateTable_7c8e3eee-3469-4020-a7ac-40755ef98102.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] SalesTerritoryGroup Hierarchy'
+		lineageTag: c7bf19ae-ae8c-41e4-80d9-ecd9cfe65114
+
+		level SalesTerritoryGroup
+			lineageTag: c6c8256d-161f-45a6-b458-275f4515b7e5
+			column: SalesTerritoryGroup
+
+		level SalesTerritoryCountry
+			lineageTag: db1f1e37-11c0-4749-b2e7-fffd2e9af64e
+			column: SalesTerritoryCountry
+
+		level SalesTerritoryRegion
+			lineageTag: ec181208-8253-41a1-93c0-044096ec978e
+			column: SalesTerritoryRegion
+
+		level SalesTerritoryName
+			lineageTag: c836dd7f-5639-499f-a7eb-dd149609b9fa
+			column: SalesTerritoryName
+
+		level SalesTerritoryManager
+			lineageTag: 5de7905d-225e-4bf7-b0c8-63c0cf6a0bb1
+			column: SalesTerritoryManager
+
+	partition DimSalesTerritory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimSalesTerritory = ContosoRetailDW{[Schema="dbo",Item="DimSalesTerritory"]}[Data]
+				in
+				    dbo_DimSalesTerritory
+
+	annotation PBI_ResultType = Table
+

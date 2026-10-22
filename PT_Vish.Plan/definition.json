@@ -1,0 +1,48 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Definition/1.0.0/schema.json",
+  "cube": {
+    "partitionRefIds": []
+  },
+  "sheets": [
+    {
+      "displayName": "TimeEntries_Vishnu",
+      "isHidden": false,
+      "recordGuid": "01a0c6a5-5b3a-73e0-91f1-e78db3ae367e",
+      "sheetType": "POWERTABLE",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a0c6a7-1606-724a-9323-daf2d710f57a",
+          "visualType": "POWERTABLE"
+        }
+      ]
+    },
+    {
+      "displayName": "Employee",
+      "isHidden": false,
+      "recordGuid": "01a0c6aa-332d-70cc-803b-72b7634b6772",
+      "sheetType": "POWERTABLE",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a0c6aa-a29a-77a8-b268-37cc2c6c711d",
+          "visualType": "POWERTABLE"
+        }
+      ]
+    },
+    {
+      "displayName": "Department",
+      "isHidden": false,
+      "recordGuid": "01a0c6aa-9f62-769c-85cd-ab84e8714522",
+      "sheetType": "POWERTABLE",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a0c6aa-a009-7558-bdf3-46b1c2789875",
+          "visualType": "POWERTABLE"
+        }
+      ]
+    }
+  ],
+  "workloadItemName": "PT_Vish"
+}

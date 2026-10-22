@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/Source/1.0.0/schema.json",
+  "source": {
+    "connectionId": "5ff62329-7009-4155-8c2f-635f7fde4044",
+    "connectionIdVariable": null,
+    "creationMode": 5,
+    "databaseVariable": null,
+    "dbHost": "uillkovn3klehe6zi7dyvnmkzi-msam3i7mevsejapijrrojqa4xu.database.fabric.microsoft.com",
+    "dbName": "PT_QA-d25179ed-611b-44c6-afdd-00e84c548e4f",
+    "fileImportType": null,
+    "meta": {
+      "connectionName": "FabricSql AdminUser01",
+      "databaseId": "d25179ed-611b-44c6-afdd-00e84c548e4f",
+      "dbDisplayName": "PT_QA",
+      "lastRowCountUpdatedAt": 1790039474,
+      "totalRows": 30,
+      "workspaceId": "a3cd8064-25ec-4464-81e8-4c62e4c01cbd",
+      "workspaceName": "planning-test"
+    },
+    "recordGuid": "C353BD7B-22B6-F111-A6A8-7C1E522C202C",
+    "schemaName": "dbo",
+    "sqlTargetArtifact": null,
+    "tableName": "employee",
+    "tableType": 1
+  }
+}
