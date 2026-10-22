@@ -26,12 +26,56 @@
     {
       "displayName": "Planning 1",
       "isHidden": false,
-      "recordGuid": "01a1638f-7f3e-71b9-aa7f-93fc24f8d7f9",
+      "recordGuid": "01a16383-0d08-729b-9e3b-55eea96cf8d1",
       "sheetType": "PLANNING",
       "workloadItemEntityVisuals": [
         {
           "isEmbedded": false,
-          "visualId": "01a1638f-907e-7280-85bb-34069f06501c",
+          "visualId": "01a16383-1abe-778b-98ed-a56033839fd5",
+          "visualType": "PLANNING"
+        }
+      ]
+    },
+    {
+      "displayName": "Intelligence 1",
+      "isHidden": false,
+      "recordGuid": "01a16383-90e4-75ad-beb3-ff150c837c8e",
+      "sheetType": "REPORTING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": true,
+          "visualId": "01a16383-1abe-778b-98ed-a56033839fd5",
+          "visualType": "PLANNING"
+        },
+        {
+          "isEmbedded": false,
+          "visualId": "01a16383-e2f4-717e-94bd-a6bb5a4b1431",
+          "visualType": "SUPER_FILTER"
+        }
+      ]
+    },
+    {
+      "displayName": "Intelligence 2",
+      "isHidden": false,
+      "recordGuid": "01a16384-35a9-71ec-898e-2ed9bfd44412",
+      "sheetType": "REPORTING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16384-565c-720e-aef2-6e48a8ab804b",
+          "visualType": "SUPER_FILTER"
+        }
+      ]
+    },
+    {
+      "displayName": "Planning 2",
+      "isHidden": false,
+      "recordGuid": "01a16384-969c-74ba-8c78-48768b3481ca",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16384-af46-70ec-8d87-f27355144ecf",
           "visualType": "PLANNING"
         }
       ]

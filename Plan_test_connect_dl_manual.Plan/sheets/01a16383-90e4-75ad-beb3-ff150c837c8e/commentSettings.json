@@ -2,15 +2,15 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Sheets/CommentSettings/1.0.0/schema.json",
   "allowComment": true,
   "commentIndicatorDisplay": {
-    "pixel": 10,
-    "position": "right",
-    "type": "arrow"
+    "color": "#117865",
+    "pixel": 16,
+    "type": "user"
   },
   "enableCommentsColumn": false,
   "enableStatusColumn": false,
   "keepCommentPanelOpen": false,
   "notification": true,
-  "recordGuid": "01a1638f-a3c7-779a-b855-0ef3dd45bdf4",
+  "recordGuid": "01a16383-9f9c-727e-9323-598731aebd21",
   "rollUpComments": false,
   "showStarredComments": false
 }

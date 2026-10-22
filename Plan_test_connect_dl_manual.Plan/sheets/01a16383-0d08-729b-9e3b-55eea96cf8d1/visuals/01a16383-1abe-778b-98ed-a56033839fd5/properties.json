@@ -2,18 +2,24 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/Properties/1.0.0/schema.json",
   "properties": {
     "advanceLookup": [],
+    "chartType": "COLUMN_VERTICAL",
     "dimension": {
-      "height": 0.49,
-      "width": 0.99
+      "height": 0.9950233333333333,
+      "width": 0.6132124999999999
     },
+    "groupMeasureAssignments": [],
+    "groupName": "",
     "layerProperties": {
       "layerProperties": {
         "groupIds": [],
         "isHidden": false,
-        "name": "Planning"
+        "name": "Planning 1"
       },
-      "order": 0
+      "order": 1
     },
+    "lockAspectRatio": false,
+    "mobileProperties": {},
+    "originEntityId": "1",
     "pivotAssignments": [
       {
         "bucketId": "rows",
@@ -24,16 +30,16 @@
         "dataType": "String",
         "distinctValueCount": 0,
         "formatString": "",
-        "group": "dimproduct[[H] Product Hierarchy]",
+        "group": "DimProduct[[H] Product Hierarchy]",
         "groupDataType": "Hierarchy",
         "hierarchyName": "[H] Product Hierarchy",
-        "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+        "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
         "isFlatHierarchy": false,
         "name": "ClassName",
         "order": 0,
-        "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+        "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
         "sourceType": "PowerBI",
-        "tableName": "dimproduct"
+        "tableName": "DimProduct"
       },
       {
         "bucketId": "rows",
@@ -44,16 +50,16 @@
         "dataType": "String",
         "distinctValueCount": 0,
         "formatString": "",
-        "group": "dimproduct[[H] Product Hierarchy]",
+        "group": "DimProduct[[H] Product Hierarchy]",
         "groupDataType": "Hierarchy",
         "hierarchyName": "[H] Product Hierarchy",
-        "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+        "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
         "isFlatHierarchy": false,
         "name": "BrandName",
         "order": 1,
-        "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+        "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
         "sourceType": "PowerBI",
-        "tableName": "dimproduct"
+        "tableName": "DimProduct"
       },
       {
         "bucketId": "rows",
@@ -64,16 +70,16 @@
         "dataType": "String",
         "distinctValueCount": 0,
         "formatString": "",
-        "group": "dimproduct[[H] Product Hierarchy]",
+        "group": "DimProduct[[H] Product Hierarchy]",
         "groupDataType": "Hierarchy",
         "hierarchyName": "[H] Product Hierarchy",
-        "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+        "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
         "isFlatHierarchy": false,
         "name": "ProductCategoryName",
         "order": 2,
-        "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+        "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
         "sourceType": "PowerBI",
-        "tableName": "dimproduct"
+        "tableName": "DimProduct"
       },
       {
         "bucketId": "rows",
@@ -84,16 +90,16 @@
         "dataType": "String",
         "distinctValueCount": 0,
         "formatString": "",
-        "group": "dimproduct[[H] Product Hierarchy]",
+        "group": "DimProduct[[H] Product Hierarchy]",
         "groupDataType": "Hierarchy",
         "hierarchyName": "[H] Product Hierarchy",
-        "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+        "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
         "isFlatHierarchy": false,
         "name": "ProductSubcategoryName",
         "order": 3,
-        "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+        "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
         "sourceType": "PowerBI",
-        "tableName": "dimproduct"
+        "tableName": "DimProduct"
       },
       {
         "bucketId": "rows",
@@ -104,16 +110,16 @@
         "dataType": "String",
         "distinctValueCount": 0,
         "formatString": "",
-        "group": "dimproduct[[H] Product Hierarchy]",
+        "group": "DimProduct[[H] Product Hierarchy]",
         "groupDataType": "Hierarchy",
         "hierarchyName": "[H] Product Hierarchy",
-        "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+        "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
         "isFlatHierarchy": false,
         "name": "ProductName",
         "order": 4,
-        "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+        "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
         "sourceType": "PowerBI",
-        "tableName": "dimproduct"
+        "tableName": "DimProduct"
       },
       {
         "aggregationType": "sum",
@@ -126,19 +132,60 @@
         "dataType": "Decimal",
         "distinctValueCount": 0,
         "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
-        "id": "factsales[SalesAmount]",
+        "id": "FactSales[SalesAmount]",
         "isFlatHierarchy": false,
+        "measureGuid": "11479574445228897472",
         "name": "Sum of SalesAmount",
         "order": 0,
-        "sourceId": "factsales[SalesAmount]",
+        "sourceId": "FactSales[SalesAmount]",
         "sourceType": "PowerBI",
-        "tableName": "factsales"
+        "tableName": "FactSales"
+      },
+      {
+        "bucketId": "ameasure",
+        "columnName": "Store Sales_Revenue",
+        "columnType": "Measure",
+        "contents": "",
+        "customName": "Store Sales_Revenue",
+        "dataRoleType": "Measure",
+        "dataType": "Decimal",
+        "distinctValueCount": 0,
+        "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+        "id": "1-DAX_Measures[Store Sales_Revenue]",
+        "isFlatHierarchy": false,
+        "measureGuid": "4793200814471773809",
+        "name": "Store Sales_Revenue",
+        "order": 1,
+        "sourceId": "1-DAX_Measures[Store Sales_Revenue]",
+        "sourceType": "PowerBI",
+        "tableName": "1-DAX_Measures"
+      },
+      {
+        "aggregationType": "first",
+        "bucketId": "ameasure",
+        "columnName": "Size",
+        "columnType": "Column",
+        "contents": "",
+        "customName": "First of Size",
+        "dataRoleType": "Measure",
+        "dataType": "String",
+        "distinctValueCount": 0,
+        "formatString": "",
+        "id": "DimProduct[Size]",
+        "isFlatHierarchy": false,
+        "name": "First of Size",
+        "order": 2,
+        "sourceId": "DimProduct[Size]",
+        "sourceType": "PowerBI",
+        "tableName": "DimProduct"
       }
     ],
     "position": {
-      "x": 0.005,
-      "y": 0.005
+      "x": 0.38677,
+      "y": 0.004972411111111111
     },
+    "shapeType": "RECTANGLE",
+    "sortingConfig": [],
     "splitByCategory": {
       "pivotValueAssignments": [],
       "splitByCategoryAssignments": [],
@@ -162,10 +209,10 @@
           "singleSelect": false,
           "sort": [
             {
-              "columnId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+              "columnId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
               "columnName": "ClassName",
               "direction": "ASC",
-              "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]"
+              "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]"
             }
           ],
           "toolBarTrigger": false,
@@ -182,7 +229,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671718742_9ir00q0x0",
+        "id": "filter_1792670901733_r61m89psb",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": false,
@@ -196,16 +243,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
             "isFlatHierarchy": false,
             "name": "ClassName",
             "order": 0,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
@@ -226,10 +273,10 @@
           "singleSelect": false,
           "sort": [
             {
-              "columnId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+              "columnId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
               "columnName": "BrandName",
               "direction": "ASC",
-              "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]"
+              "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]"
             }
           ],
           "toolBarTrigger": false,
@@ -246,7 +293,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671718742_94hmo0508",
+        "id": "filter_1792670901733_ypfklleiz",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": false,
@@ -260,16 +307,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
             "isFlatHierarchy": false,
             "name": "BrandName",
             "order": 1,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
@@ -290,10 +337,10 @@
           "singleSelect": false,
           "sort": [
             {
-              "columnId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+              "columnId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
               "columnName": "ProductCategoryName",
               "direction": "ASC",
-              "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]"
+              "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]"
             }
           ],
           "toolBarTrigger": false,
@@ -310,7 +357,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671718742_fd2a9t233",
+        "id": "filter_1792670901733_aywv98sl8",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": false,
@@ -324,16 +371,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
             "isFlatHierarchy": false,
             "name": "ProductCategoryName",
             "order": 2,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
@@ -354,10 +401,10 @@
           "singleSelect": false,
           "sort": [
             {
-              "columnId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+              "columnId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
               "columnName": "ProductSubcategoryName",
               "direction": "ASC",
-              "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]"
+              "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]"
             }
           ],
           "toolBarTrigger": false,
@@ -374,7 +421,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671718742_ox235c5kp",
+        "id": "filter_1792670901733_4dokd48lc",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": false,
@@ -388,16 +435,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
             "isFlatHierarchy": false,
             "name": "ProductSubcategoryName",
             "order": 3,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
@@ -418,10 +465,10 @@
           "singleSelect": false,
           "sort": [
             {
-              "columnId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+              "columnId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
               "columnName": "ProductName",
               "direction": "ASC",
-              "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]"
+              "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]"
             }
           ],
           "toolBarTrigger": false,
@@ -438,7 +485,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671718742_f61cy5p2u",
+        "id": "filter_1792670901733_skymd7fdj",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": false,
@@ -452,16 +499,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
             "isFlatHierarchy": false,
             "name": "ProductName",
             "order": 4,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
@@ -491,10 +538,10 @@
           "slider": false,
           "sort": [
             {
-              "columnId": "factsales[SalesAmount]",
+              "columnId": "FactSales[SalesAmount]",
               "columnName": "SalesAmount",
               "direction": "ASC",
-              "id": "factsales[SalesAmount]"
+              "id": "FactSales[SalesAmount]"
             }
           ],
           "toolBarTrigger": false,
@@ -511,7 +558,7 @@
         },
         "filter": [],
         "filterLevel": "visual",
-        "id": "filter_1792671723549_q0me1kqck",
+        "id": "filter_1792670906681_fmaywx48s",
         "isDaxMeasure": false,
         "isDefault": true,
         "isDefaultMeasure": true,
@@ -525,16 +572,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
             "isFlatHierarchy": false,
             "name": "ClassName",
             "order": 0,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ClassName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           },
           {
             "bucketId": "rows",
@@ -545,16 +592,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
             "isFlatHierarchy": false,
             "name": "BrandName",
             "order": 1,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[BrandName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           },
           {
             "bucketId": "rows",
@@ -565,16 +612,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
             "isFlatHierarchy": false,
             "name": "ProductCategoryName",
             "order": 2,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductCategoryName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           },
           {
             "bucketId": "rows",
@@ -585,16 +632,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
             "isFlatHierarchy": false,
             "name": "ProductSubcategoryName",
             "order": 3,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductSubcategoryName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           },
           {
             "bucketId": "rows",
@@ -605,16 +652,16 @@
             "dataType": "String",
             "distinctValueCount": 0,
             "formatString": "",
-            "group": "dimproduct[[H] Product Hierarchy]",
+            "group": "DimProduct[[H] Product Hierarchy]",
             "groupDataType": "Hierarchy",
             "hierarchyName": "[H] Product Hierarchy",
-            "id": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
             "isFlatHierarchy": false,
             "name": "ProductName",
             "order": 4,
-            "sourceId": "[dimproduct[[H] Product Hierarchy]]~||~dimproduct[ProductName]",
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
             "sourceType": "PowerBI",
-            "tableName": "dimproduct"
+            "tableName": "DimProduct"
           },
           {
             "aggregationType": "sum",
@@ -627,18 +674,355 @@
             "dataType": "Decimal",
             "distinctValueCount": 0,
             "formatString": "\\$#,0.###############;(\\$#,0.###############);\\$#,0.###############",
-            "id": "factsales[SalesAmount]",
+            "id": "FactSales[SalesAmount]",
             "isFlatHierarchy": false,
             "name": "Sum of SalesAmount",
             "order": 0,
-            "sourceId": "factsales[SalesAmount]",
+            "sourceId": "FactSales[SalesAmount]",
             "sourceType": "PowerBI",
-            "tableName": "factsales"
+            "tableName": "FactSales"
+          }
+        ],
+        "position": "RIGHT"
+      },
+      {
+        "bucketId": "ameasure",
+        "configuration": {
+          "alphaNumericValues": {
+            "equalValue": null,
+            "maxValue": null,
+            "minValue": null
+          },
+          "enableNumericToFacet": false,
+          "filterMode": "advanced",
+          "filterOperator": "between",
+          "hide": false,
+          "isExpanded": false,
+          "locked": false,
+          "measureSearch": true,
+          "name": "Store Sales_Revenue",
+          "paneWidth": 200,
+          "regex": "",
+          "scale": "none",
+          "selectAll": true,
+          "sheetDataItemAggregationType": "sum",
+          "singleSelect": false,
+          "slider": false,
+          "sort": [
+            {
+              "columnId": "1-DAX_Measures[Store Sales_Revenue]",
+              "columnName": "Store Sales_Revenue",
+              "direction": "ASC",
+              "id": "1-DAX_Measures[Store Sales_Revenue]"
+            }
+          ],
+          "toolBarTrigger": false,
+          "topN": {
+            "displayOthers": true,
+            "otherLabel": "Others",
+            "rankMeasure": "",
+            "rankMeasureLabel": "",
+            "rankMode": "TOP",
+            "rankType": "value",
+            "rankValue": 5
+          },
+          "visualType": "NUMERIC"
+        },
+        "filter": [],
+        "filterLevel": "visual",
+        "id": "filter_1792670914857_yhek8n3k0",
+        "isDaxMeasure": true,
+        "isDefault": true,
+        "isDefaultMeasure": true,
+        "pivotAssignments": [
+          {
+            "bucketId": "rows",
+            "columnName": "ClassName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
+            "isFlatHierarchy": false,
+            "name": "ClassName",
+            "order": 0,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "BrandName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
+            "isFlatHierarchy": false,
+            "name": "BrandName",
+            "order": 1,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductCategoryName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
+            "isFlatHierarchy": false,
+            "name": "ProductCategoryName",
+            "order": 2,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductSubcategoryName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
+            "isFlatHierarchy": false,
+            "name": "ProductSubcategoryName",
+            "order": 3,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
+            "isFlatHierarchy": false,
+            "name": "ProductName",
+            "order": 4,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "ameasure",
+            "columnName": "Store Sales_Revenue",
+            "columnType": "Measure",
+            "contents": "",
+            "customName": "Store Sales_Revenue",
+            "dataRoleType": "Measure",
+            "dataType": "Decimal",
+            "distinctValueCount": 0,
+            "formatString": "\\$#,0;(\\$#,0);\\$#,0",
+            "id": "1-DAX_Measures[Store Sales_Revenue]",
+            "isFlatHierarchy": false,
+            "name": "Store Sales_Revenue",
+            "order": 1,
+            "sourceId": "1-DAX_Measures[Store Sales_Revenue]",
+            "sourceType": "PowerBI",
+            "tableName": "1-DAX_Measures"
+          }
+        ],
+        "position": "RIGHT"
+      },
+      {
+        "bucketId": "ameasure",
+        "configuration": {
+          "filterMode": "advanced",
+          "filterOperator": "contains",
+          "hide": false,
+          "isExpanded": false,
+          "locked": false,
+          "measureSearch": true,
+          "name": "First of Size",
+          "paneWidth": 200,
+          "selectAll": true,
+          "sheetDataItemAggregationType": "sum",
+          "singleSelect": false,
+          "sort": [
+            {
+              "aggregationType": "first",
+              "columnId": "DimProduct[Size]",
+              "columnName": "Size",
+              "direction": "ASC",
+              "id": "DimProduct[Size]"
+            }
+          ],
+          "toolBarTrigger": false,
+          "topN": {
+            "displayOthers": true,
+            "otherLabel": "Others",
+            "rankMeasure": "",
+            "rankMeasureLabel": "",
+            "rankMode": "TOP",
+            "rankType": "value",
+            "rankValue": 5
+          },
+          "visualType": "FACET"
+        },
+        "filter": [],
+        "filterLevel": "visual",
+        "id": "filter_1792670921245_piojemyux",
+        "isDaxMeasure": false,
+        "isDefault": true,
+        "isDefaultMeasure": true,
+        "pivotAssignments": [
+          {
+            "bucketId": "rows",
+            "columnName": "ClassName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
+            "isFlatHierarchy": false,
+            "name": "ClassName",
+            "order": 0,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "BrandName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
+            "isFlatHierarchy": false,
+            "name": "BrandName",
+            "order": 1,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductCategoryName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
+            "isFlatHierarchy": false,
+            "name": "ProductCategoryName",
+            "order": 2,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductSubcategoryName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
+            "isFlatHierarchy": false,
+            "name": "ProductSubcategoryName",
+            "order": 3,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "bucketId": "rows",
+            "columnName": "ProductName",
+            "columnType": "Hierarchy Level",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "group": "DimProduct[[H] Product Hierarchy]",
+            "groupDataType": "Hierarchy",
+            "hierarchyName": "[H] Product Hierarchy",
+            "id": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
+            "isFlatHierarchy": false,
+            "name": "ProductName",
+            "order": 4,
+            "sourceId": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
+          },
+          {
+            "aggregationType": "first",
+            "bucketId": "ameasure",
+            "columnName": "Size",
+            "columnType": "Column",
+            "contents": "",
+            "customName": "First of Size",
+            "dataRoleType": "Measure",
+            "dataType": "String",
+            "distinctValueCount": 0,
+            "formatString": "",
+            "id": "DimProduct[Size]",
+            "isFlatHierarchy": false,
+            "name": "First of Size",
+            "order": 2,
+            "sourceId": "DimProduct[Size]",
+            "sourceType": "PowerBI",
+            "tableName": "DimProduct"
           }
         ],
         "position": "RIGHT"
       }
     ],
+    "transformMeasure": "none",
+    "visualInteractions": {},
     "visualState": {
       "annotationBox": {
         "border": {
@@ -826,6 +1210,26 @@
         "tableWidth": 80
       },
       "locale": "en-US",
+      "manage_measures": [
+        {
+          "id": "11479574445228897472",
+          "label": "Sum of SalesAmount",
+          "order": 0,
+          "visible": true
+        },
+        {
+          "id": "4793200814471773809",
+          "label": "Store Sales_Revenue",
+          "order": 1,
+          "visible": true
+        },
+        {
+          "id": "2367555960138520216",
+          "label": "First of Size",
+          "order": 2,
+          "visible": true
+        }
+      ],
       "numberFormatting": {
         "billions": "b",
         "billionsFullText": "in Billions",
@@ -886,7 +1290,38 @@
         "show_category_suffix": false,
         "show_others": true
       },
-      "rowDimensions": [],
+      "rowDimensions": [
+        {
+          "externalKey": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ClassName]",
+          "id": "3007369589869258407",
+          "isNative": true,
+          "label": "ClassName"
+        },
+        {
+          "externalKey": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[BrandName]",
+          "id": "9415279697650795643",
+          "isNative": true,
+          "label": "BrandName"
+        },
+        {
+          "externalKey": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductCategoryName]",
+          "id": "1327320752449392856",
+          "isNative": true,
+          "label": "ProductCategoryName"
+        },
+        {
+          "externalKey": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductSubcategoryName]",
+          "id": "4139092083215132129",
+          "isNative": true,
+          "label": "ProductSubcategoryName"
+        },
+        {
+          "externalKey": "[DimProduct[[H] Product Hierarchy]]~||~DimProduct[ProductName]",
+          "id": "14851675150136891938",
+          "isNative": true,
+          "label": "ProductName"
+        }
+      ],
       "row_expand_state_config": {
         "expand_till_descendant": {},
         "grid_state": {
@@ -931,6 +1366,21 @@
         "tableThemeType": false,
         "themeType": "trafficlights",
         "valueColor": ""
+      },
+      "toolbar": {
+        "currentTab": "",
+        "enableHoverToolbar": true,
+        "hideDuplicateReportWarning": false,
+        "isPinned": false,
+        "readViewPin": true,
+        "setCanvasResize": false,
+        "showFloatingToolbar": true,
+        "showForecastTab": false,
+        "showMinimalTabEditMode": true,
+        "showMinimalView": true,
+        "showOnHover": false,
+        "showTabContent": true,
+        "toolbarTheme": "light"
       },
       "totalDisplayConfig": {
         "grandTotalHeight": 10,

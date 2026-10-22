@@ -6,21 +6,21 @@
       "columnMeta": {
         "data_type": "Number",
         "description": null,
-        "id": "8869989049280624700",
-        "label": "Sum of SalesAmount",
+        "id": "5310448145392131544",
+        "label": "Sum of MonthlyMaxCapacity",
         "measure_type": {
           "Native": {
             "measure_role": "ACMeasure"
           }
         },
-        "name": "Sum of SalesAmount"
+        "name": "Sum of MonthlyMaxCapacity"
       },
       "dataInputType": 6,
       "description": null,
-      "measureGuid": "8869989049280624700",
-      "name": "Sum of SalesAmount",
+      "measureGuid": "5310448145392131544",
+      "name": "Sum of MonthlyMaxCapacity",
       "status": 10,
-      "visualId": "01a1638f-907e-7280-85bb-34069f06501c"
+      "visualId": "01a16384-af46-70ec-8d87-f27355144ecf"
     }
   ]
 }
