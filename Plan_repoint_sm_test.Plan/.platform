@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Plan",
+    "displayName": "Plan_repoint_sm_test"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "88cfd03f-55c4-9f4f-4710-d0023e11f521"
+  }
+}

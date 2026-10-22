@@ -1,0 +1,68 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "11479574445228897472",
+        "label": "Sum of SalesAmount",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of SalesAmount"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "11479574445228897472",
+      "name": "Sum of SalesAmount",
+      "status": 10,
+      "visualId": "01a16383-1abe-778b-98ed-a56033839fd5"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "4793200814471773809",
+        "label": "Store Sales_Revenue",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Store Sales_Revenue"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "4793200814471773809",
+      "name": "Store Sales_Revenue",
+      "status": 10,
+      "visualId": "01a16383-1abe-778b-98ed-a56033839fd5"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Text",
+        "description": null,
+        "id": "2367555960138520216",
+        "label": "First of Size",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "First of Size"
+      },
+      "dataInputType": 1,
+      "description": null,
+      "measureGuid": "2367555960138520216",
+      "name": "First of Size",
+      "status": 10,
+      "visualId": "01a16383-1abe-778b-98ed-a56033839fd5"
+    }
+  ]
+}

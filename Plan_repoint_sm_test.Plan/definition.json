@@ -1,0 +1,85 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Definition/1.0.0/schema.json",
+  "cube": {
+    "partitionRefIds": []
+  },
+  "semanticModelReference": {
+    "artifactId": 2725426,
+    "connectionId": "fe43ff61-f8bd-448c-b809-e27528098916",
+    "datasetRelations": [
+      {
+        "dependentArtifactId": 2725426,
+        "settings": "Association"
+      }
+    ],
+    "directLakeMode": false,
+    "directQueryMode": false,
+    "recordGuid": "01a16382-df44-70bb-bf64-1a1262de4d83",
+    "semanticModelId": "852d8d09-4b13-4519-ba09-4ec31c5847d7",
+    "semanticModelName": "AV_ContosoRetailDW (1)",
+    "semanticModelWorkspaceId": "a3cd8064-25ec-4464-81e8-4c62e4c01cbd",
+    "semanticModelWorkspaceName": "planning-test",
+    "sourceType": "WORKLOAD",
+    "url": "https://app.powerbi.com/groups/a3cd8064-25ec-4464-81e8-4c62e4c01cbd/datasets/852d8d09-4b13-4519-ba09-4ec31c5847d7"
+  },
+  "sheets": [
+    {
+      "displayName": "Planning 1",
+      "isHidden": false,
+      "recordGuid": "01a16383-0d08-729b-9e3b-55eea96cf8d1",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16383-1abe-778b-98ed-a56033839fd5",
+          "visualType": "PLANNING"
+        }
+      ]
+    },
+    {
+      "displayName": "Intelligence 1",
+      "isHidden": false,
+      "recordGuid": "01a16383-90e4-75ad-beb3-ff150c837c8e",
+      "sheetType": "REPORTING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": true,
+          "visualId": "01a16383-1abe-778b-98ed-a56033839fd5",
+          "visualType": "PLANNING"
+        },
+        {
+          "isEmbedded": false,
+          "visualId": "01a16383-e2f4-717e-94bd-a6bb5a4b1431",
+          "visualType": "SUPER_FILTER"
+        }
+      ]
+    },
+    {
+      "displayName": "Intelligence 2",
+      "isHidden": false,
+      "recordGuid": "01a16384-35a9-71ec-898e-2ed9bfd44412",
+      "sheetType": "REPORTING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16384-565c-720e-aef2-6e48a8ab804b",
+          "visualType": "SUPER_FILTER"
+        }
+      ]
+    },
+    {
+      "displayName": "Planning 2",
+      "isHidden": false,
+      "recordGuid": "01a16384-969c-74ba-8c78-48768b3481ca",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16384-af46-70ec-8d87-f27355144ecf",
+          "visualType": "PLANNING"
+        }
+      ]
+    }
+  ],
+  "workloadItemName": "Plan_repoint_sm_test"
+}
