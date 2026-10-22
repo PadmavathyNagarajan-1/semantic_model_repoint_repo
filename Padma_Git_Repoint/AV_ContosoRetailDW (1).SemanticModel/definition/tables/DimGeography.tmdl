@@ -1,0 +1,197 @@
+table DimGeography
+	lineageTag: 428539c6-3f55-4787-ae4f-58d7ee5ef3d9
+
+	column GeographyKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a04416b8-a39d-4939-8728-8b432511361e
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column GeographyType
+		dataType: string
+		lineageTag: 96b8bb8e-5457-4fc2-9f85-02e20a990722
+		summarizeBy: none
+		sourceColumn: GeographyType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ContinentName
+		dataType: string
+		isHidden
+		lineageTag: c88880ef-2761-461e-b625-ca0533570209
+		summarizeBy: none
+		sourceColumn: ContinentName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CityName
+		dataType: string
+		isHidden
+		lineageTag: b96c5b75-f573-48e9-b4df-5114db999768
+		summarizeBy: none
+		sourceColumn: CityName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column StateProvinceName
+		dataType: string
+		isHidden
+		lineageTag: 6971b2a1-0c94-4761-8d98-a464c9401873
+		summarizeBy: none
+		sourceColumn: StateProvinceName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column RegionCountryName
+		dataType: string
+		isHidden
+		lineageTag: f6438951-e26b-4d5c-9463-c3172aa38237
+		summarizeBy: none
+		sourceColumn: RegionCountryName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Geometry
+		dataType: string
+		lineageTag: c9a991c1-4ecd-485b-877f-7323ac8b71f7
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: Geometry
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 2c73eaac-e64d-4d82-88fc-b31a243eb2fb
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: a0e78d01-996e-42db-814b-01be7f030c20
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 8d1b5f27-7fa6-4427-b838-bebde5bf6839
+			defaultHierarchy: LocalDateTable_25d3ac04-1e03-4be2-b30c-f94ca0f938ed.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: e91b297e-9459-43d1-b2f9-867d4337ff93
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: d1692a23-40b3-4e82-99e5-66929f27fef9
+			defaultHierarchy: LocalDateTable_907f4277-3f61-4bc9-a8c8-0b0406b1aada.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Longitude = ```
+			
+			IF(
+			    [GeographyType] = "City",
+			    VAR PointString = [Geometry]
+			    VAR StartPos = FIND("(", PointString, 1, LEN(PointString)) + 1
+			    VAR EndPos = FIND(" ", PointString, StartPos, LEN(PointString))
+			    RETURN
+			    VALUE(MID(PointString, StartPos, EndPos - StartPos)),
+			    BLANK()
+			)
+			
+			```
+		formatString: 0.00000000
+		lineageTag: 9eb9ae2b-9803-4ccb-af58-b957e4524910
+		dataCategory: Longitude
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column Latitude = ```
+			
+			IF(
+			    [GeographyType] = "City",
+			    VAR PointString = [Geometry]
+			    VAR StartPos = FIND("(", PointString, 1, LEN(PointString)) + 1
+			    VAR EndPos = FIND(" ", PointString, StartPos, LEN(PointString))
+			    VAR LongitudeLength = EndPos - StartPos
+			    VAR LatitudeStart = EndPos + 1
+			    VAR LatitudeEnd = FIND(")", PointString, LatitudeStart, LEN(PointString))
+			    VAR LatitudeText = MID(PointString, LatitudeStart, LatitudeEnd - LatitudeStart)
+			    RETURN
+			    VALUE(TRIM(LatitudeText)),
+			    BLANK()
+			)
+			
+			```
+		formatString: 0.00000000
+		lineageTag: d33cac0a-70bb-4e57-9d35-94d21a1309ae
+		dataCategory: Latitude
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] Geography Hierarchy'
+		lineageTag: 9615d305-6a46-4cf6-916d-232582a1ca49
+
+		level ContinentName
+			lineageTag: e3e55b10-7aed-4975-bac5-c843dd09d937
+			column: ContinentName
+
+		level RegionCountryName
+			lineageTag: b662d9c7-2a1a-4635-a7f3-1870711fe4ce
+			column: RegionCountryName
+
+		level StateProvinceName
+			lineageTag: f7364b1d-2447-4063-92a8-495a4d74b6d3
+			column: StateProvinceName
+
+		level CityName
+			lineageTag: db80936b-4208-4b3d-acb7-99e6fdd42009
+			column: CityName
+
+	partition DimGeography = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimGeography = ContosoRetailDW{[Schema="dbo",Item="DimGeography"]}[Data]
+				in
+				    dbo_DimGeography
+
+	annotation PBI_ResultType = Table
+

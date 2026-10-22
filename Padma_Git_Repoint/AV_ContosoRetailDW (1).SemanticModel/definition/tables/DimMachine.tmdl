@@ -1,0 +1,228 @@
+table DimMachine
+	lineageTag: 2de9f72f-8fb0-4bfe-a919-270c0a6a64a0
+
+	column MachineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 8b744b1c-90d8-489c-9d7a-0099a00bd627
+		summarizeBy: none
+		sourceColumn: MachineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineLabel
+		dataType: string
+		lineageTag: 25ae6fc7-6a62-4892-a238-69d1ca866a64
+		summarizeBy: none
+		sourceColumn: MachineLabel
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 39b8f891-973f-4519-a740-316fcaa84063
+		summarizeBy: count
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineType
+		dataType: string
+		lineageTag: 2b7aa9b1-e014-4fb5-94a8-018cdb7aba78
+		summarizeBy: none
+		sourceColumn: MachineType
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineName
+		dataType: string
+		lineageTag: 24a36670-fac0-47e3-9f48-e491f7f0f9b2
+		summarizeBy: none
+		sourceColumn: MachineName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineDescription
+		dataType: string
+		lineageTag: 7030f35e-0493-44f4-ba00-f08bf38626f4
+		summarizeBy: none
+		sourceColumn: MachineDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column VendorName
+		dataType: string
+		lineageTag: eb2d088f-482f-4aaa-8539-3afa0a61f0a7
+		summarizeBy: none
+		sourceColumn: VendorName
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineOS
+		dataType: string
+		lineageTag: 4d6d6fec-ecc4-488e-b8b3-f60e4c6e5c42
+		summarizeBy: none
+		sourceColumn: MachineOS
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineSource
+		dataType: string
+		lineageTag: bc7a30a7-7930-4aff-9347-23ccee4c911a
+		summarizeBy: none
+		sourceColumn: MachineSource
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineHardware
+		dataType: string
+		lineageTag: 73f5284f-80bc-4339-bc07-769f6166a31d
+		summarizeBy: none
+		sourceColumn: MachineHardware
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineSoftware
+		dataType: string
+		lineageTag: be4fc4a9-aa74-491a-84b0-41022b858c56
+		summarizeBy: none
+		sourceColumn: MachineSoftware
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 46ffb076-b955-49b6-857f-f10a9cc7c9f7
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column ServiceStartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 8f42d23b-78fb-4a9c-8108-7a761d730b8c
+		summarizeBy: none
+		sourceColumn: ServiceStartDate
+
+		variation Variation
+			isDefault
+			relationship: 9bf2306b-b7db-4e57-b257-c7fe46ab151c
+			defaultHierarchy: LocalDateTable_f72a1478-c0a9-4e5d-8e38-5014673f5995.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DecommissionDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 4d50d715-25d1-45f4-b4c8-c332182cc940
+		summarizeBy: none
+		sourceColumn: DecommissionDate
+
+		variation Variation
+			isDefault
+			relationship: aee841c9-3d42-42a1-9493-04c47ea9dfb5
+			defaultHierarchy: LocalDateTable_089ea3e3-010b-4be0-98d9-4f713ea5277f.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column LastModifiedDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 9a9ce079-b621-4e7e-915c-551566f8601e
+		summarizeBy: none
+		sourceColumn: LastModifiedDate
+
+		variation Variation
+			isDefault
+			relationship: 7a5799ed-282d-49be-a24a-500742d3d7cb
+			defaultHierarchy: LocalDateTable_ac07a906-4612-4848-9154-194395d390c3.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: bea3d149-5fe2-411a-83b0-22f01dd15f14
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: b5462340-24e3-472a-8a19-dd197c74393d
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 0fc0a442-9278-4b06-86ee-0747e526983b
+			defaultHierarchy: LocalDateTable_8751c6a9-2c03-4188-bbbd-ffd6c4a3edc7.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 9f6533dc-dcd8-40d2-b83a-f906b2f64cfd
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 73eec68c-6fd4-4c9e-9c75-a927ff661feb
+			defaultHierarchy: LocalDateTable_430ac3e5-023a-4027-a641-47d55e96e103.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineLabelKey = ```
+			LEFT(DimMachine[MachineLabel], 5)
+			
+			```
+		isHidden
+		lineageTag: 21cfb621-4338-4a01-b050-ce3cea2e116d
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] VendorName Hierarchy'
+		lineageTag: 8ca244a4-58c8-4b39-bb09-5556fd2376e7
+
+		level VendorName
+			lineageTag: b4085eb9-cc3d-48f6-aa1f-0d1d8f11acaa
+			column: VendorName
+
+		level MachineSource
+			lineageTag: a908f455-8f79-4326-becc-ac8495f09a18
+			column: MachineSource
+
+		level MachineName
+			lineageTag: 2e52bf4c-80b6-40a1-a8bd-21b9d0899557
+			column: MachineName
+
+	partition DimMachine = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimMachine = ContosoRetailDW{[Schema="dbo",Item="DimMachine"]}[Data]
+				in
+				    dbo_DimMachine
+
+	annotation PBI_ResultType = Table
+

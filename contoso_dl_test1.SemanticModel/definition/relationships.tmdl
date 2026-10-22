@@ -1,0 +1,4 @@
+relationship 77024052-a1b4-dff1-5c56-39ed647c3867
+	fromColumn: factsales.ProductKey
+	toColumn: dimproduct.ProductKey
+

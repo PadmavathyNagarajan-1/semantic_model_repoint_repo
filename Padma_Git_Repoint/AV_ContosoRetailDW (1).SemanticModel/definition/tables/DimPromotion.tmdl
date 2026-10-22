@@ -1,0 +1,172 @@
+table DimPromotion
+	lineageTag: f1b61c64-504c-40b0-a9f9-0718e4cac919
+
+	column PromotionKey
+		dataType: int64
+		formatString: 0
+		lineageTag: eb0d602d-87c4-4e5d-a145-e324b4cded2d
+		summarizeBy: none
+		sourceColumn: PromotionKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionLabel
+		dataType: string
+		isHidden
+		lineageTag: 23482089-dc0b-4eed-894c-10e13fd63362
+		summarizeBy: none
+		sourceColumn: PromotionLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionName
+		dataType: string
+		lineageTag: dd5e6e47-2c3b-49a3-baf1-7cce9c951c1e
+		summarizeBy: none
+		sourceColumn: PromotionName
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionDescription
+		dataType: string
+		lineageTag: e342dc1b-845c-493e-ba8f-eee0072375cc
+		summarizeBy: none
+		sourceColumn: PromotionDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column DiscountPercent
+		dataType: double
+		lineageTag: ff6be267-a1a5-4c74-9945-3343e2438ac8
+		summarizeBy: sum
+		sourceColumn: DiscountPercent
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PromotionType
+		dataType: string
+		lineageTag: ee3e9385-8204-49fe-ada5-081e98633c9c
+		summarizeBy: none
+		sourceColumn: PromotionType
+
+		annotation SummarizationSetBy = Automatic
+
+	column PromotionCategory
+		dataType: string
+		lineageTag: 66c3514c-62d0-45df-87ce-76fa54671e82
+		summarizeBy: none
+		sourceColumn: PromotionCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column StartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 974de27a-ade7-4109-a095-2c319ae904df
+		summarizeBy: none
+		sourceColumn: StartDate
+
+		variation Variation
+			isDefault
+			relationship: f363b060-9e4e-44da-9a43-c213ddda5792
+			defaultHierarchy: LocalDateTable_ae7bb8d6-25d6-4109-9ea5-908b69d7fe1a.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column EndDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: a8d673d8-2a76-48c8-80e6-354cca86c63c
+		summarizeBy: none
+		sourceColumn: EndDate
+
+		variation Variation
+			isDefault
+			relationship: 3d06d300-b6e2-4c16-b4ed-2ce4e1fa81b9
+			defaultHierarchy: LocalDateTable_414c2495-4e9a-4834-b9e1-1f77ed58dd40.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column MinQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: aa9b9615-f0e2-45e3-a4b4-e072cfd61737
+		summarizeBy: sum
+		sourceColumn: MinQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column MaxQuantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 5a131827-8405-4d3b-98b6-933a6bba0223
+		summarizeBy: sum
+		sourceColumn: MaxQuantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f103056e-2cd0-4964-ba8a-9353dc79e56b
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 93dd5f23-ed97-430f-a76a-744c7e3aa6fa
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 15f53596-fd17-46d2-90f3-60184fddf307
+			defaultHierarchy: LocalDateTable_292caaa4-fe10-4d39-ae9a-99b38c00bd1b.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 8b8a71fb-c5a9-462c-a6e1-a90237e56f77
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: c6e30164-c3e6-4b15-b015-fc40ffb7856b
+			defaultHierarchy: LocalDateTable_6318e8ce-67a5-44c0-8174-cd44fbbc41d0.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPromotion = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimPromotion = ContosoRetailDW{[Schema="dbo",Item="DimPromotion"]}[Data]
+				in
+				    dbo_DimPromotion
+
+	annotation PBI_ResultType = Table
+

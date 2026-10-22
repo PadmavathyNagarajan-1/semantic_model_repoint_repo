@@ -1,0 +1,195 @@
+table 'Date (Fiscal Calendar)'
+	lineageTag: b59f0501-bc8d-47c4-a516-f37ccda26635
+
+	column Date
+		formatString: General Date
+		lineageTag: 95af31dd-a520-4bb7-bbdc-fbc984e65c33
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		variation Variation
+			isDefault
+			relationship: afad8597-1d62-4252-90b2-a8997df32b88
+			defaultHierarchy: LocalDateTable_7dfea0cb-84cd-4f3f-8040-0d39f187a90e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'End of Week'
+		formatString: General Date
+		lineageTag: 0ed6d553-da66-4063-97b3-b79ad1b70c9a
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [End of Week]
+
+		variation Variation
+			isDefault
+			relationship: 0e26e1a4-7a73-4f3e-8b60-fd3489d97d22
+			defaultHierarchy: LocalDateTable_1edf617f-fd06-430f-a871-5a1b03339f42.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year'
+		formatString: 0
+		lineageTag: c6df4ad7-efef-47df-b22c-106af47c8660
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Fiscal Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter'
+		lineageTag: c5fb0dde-3836-4ad4-a495-e21c8349a80d
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month'
+		lineageTag: a3866cde-9cff-4bb3-b2ba-1615dea7692c
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Month]
+		sortByColumn: 'YearMonth Sort'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'YearMonth Sort'
+		formatString: 0
+		lineageTag: 855f00b0-cfee-45c9-872d-ac3139066678
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [YearMonth Sort]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Number'
+		formatString: 0
+		lineageTag: 4901904f-d52c-42b0-a1aa-dbc1064fabe2
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Fiscal Month Number]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Month Short'
+		lineageTag: 1a2d64c0-1431-4783-b274-a02a47f0515b
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Month Short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Quarter Short'
+		lineageTag: f7ce2463-c625-486f-9d20-37a999e72300
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Quarter Short]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Fiscal Year with Prefix'
+		lineageTag: d7fabfad-a169-402b-837d-7aacae018e90
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Fiscal Year with Prefix]
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterV2
+		lineageTag: 17ee536d-3121-44b1-971c-d135a0b6a7ec
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [QuarterV2]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Date (Fiscal Calendar)' = calculated
+		mode: import
+		source = ```
+				
+				//************** Script developed by RADACAD - edition: July 2021 
+				//************** set the variables below for your custom date table setting 
+				var _fromYear=2022 
+				var _toYear=2028
+				var _startOfFiscalYear=4 
+				//************** 
+				var _today=TODAY()
+				return
+				ADDCOLUMNS(
+				    CALENDAR(
+				        DATE(_fromYear,1,1),
+				        DATE(_toYear,12,31)
+				    ),
+				    
+				    "End of Week",[Date]+7-WEEKDAY([Date]),
+				
+				    "Fiscal Year", 
+				        IF(MONTH([Date]) >= _startOfFiscalYear, YEAR([Date]) + 1, YEAR([Date])),
+				
+				    "Fiscal Quarter", 
+				        RIGHT(IF(MONTH([Date]) >= _startOfFiscalYear, YEAR([Date]) + 1, YEAR([Date])),2) & 
+				        "-Q" &
+				        SWITCH(
+				            TRUE(),
+				            MONTH([Date]) >= 4 && MONTH([Date]) <= 6, 1,
+				            MONTH([Date]) >= 7 && MONTH([Date]) <= 9, 2,
+				            MONTH([Date]) >= 10 && MONTH([Date]) <= 12, 3,
+				            MONTH([Date]) >= 1 && MONTH([Date]) <= 3, 4
+				        ),
+				
+				    "Fiscal Quarter Short", 
+				        "Qtr " &
+				        SWITCH(
+				            TRUE(),
+				            MONTH([Date]) >= 4 && MONTH([Date]) <= 6, 1,
+				            MONTH([Date]) >= 7 && MONTH([Date]) <= 9, 2,
+				            MONTH([Date]) >= 10 && MONTH([Date]) <= 12, 3,
+				            MONTH([Date]) >= 1 && MONTH([Date]) <= 3, 4
+				        ),
+				
+				    "Fiscal Month", RIGHT(YEAR([Date]),2) & "-" & FORMAT([Date], "MMM"),
+				
+				    "Fiscal Month Short", FORMAT([Date], "MMM"),
+				
+				    "Fiscal Month Number", 
+				        SWITCH(
+				            MONTH([Date]),
+				            4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 
+				            10, 7, 11, 8, 12, 9, 1, 10, 2, 11, 3, 12
+				        ),
+				
+				    "YearMonth Sort", 
+				        IF(MONTH([Date]) >= _startOfFiscalYear, YEAR([Date]) + 1, YEAR([Date])) * 100 + 
+				        SWITCH(
+				            MONTH([Date]),
+				            4, 1, 5, 2, 6, 3, 7, 4, 8, 5, 9, 6, 
+				            10, 7, 11, 8, 12, 9, 1, 10, 2, 11, 3, 12
+				        ),
+				
+				    //-----------------------------------------
+				    // NEW COLUMNS
+				    //-----------------------------------------
+				
+				    // Fiscal Year with Prefix → FY2025
+				    "Fiscal Year with Prefix",
+				        "FY" & 
+				        IF(MONTH([Date]) >= _startOfFiscalYear, YEAR([Date]) + 1, YEAR([Date])),
+				
+				    // QuarterV2 → Q1, Q2, Q3, Q4 (Fiscal)
+				    "QuarterV2",
+				        "Q" &
+				        SWITCH(
+				            TRUE(),
+				            MONTH([Date]) >= 4 && MONTH([Date]) <= 6, 1,
+				            MONTH([Date]) >= 7 && MONTH([Date]) <= 9, 2,
+				            MONTH([Date]) >= 10 && MONTH([Date]) <= 12, 3,
+				            MONTH([Date]) >= 1 && MONTH([Date]) <= 3, 4
+				        )
+				)
+				
+				```
+
+	annotation PBI_Id = 36e54074fb5d446b8ae4ab7980b79630
+

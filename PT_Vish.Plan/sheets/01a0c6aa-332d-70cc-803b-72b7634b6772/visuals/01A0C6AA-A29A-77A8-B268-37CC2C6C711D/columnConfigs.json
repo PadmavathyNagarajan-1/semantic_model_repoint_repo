@@ -1,0 +1,382 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/ColumnConfigs/1.0.0/schema.json",
+  "columnConfigs": [
+    {
+      "allowEdit": 1,
+      "columnGuid": "employee_id",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": true,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": true,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "employee_id",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Employee ID",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "C553BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "first_name",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "first_name",
+      "columnType": 1,
+      "description": "",
+      "displayName": "First Name",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "C653BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "last_name",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "last_name",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Last Name",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "C753BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "job_title",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": null,
+        "defaultValueType": "NONE",
+        "fcVisualIdColumnName": null,
+        "fcVisualLabelColumnName": null,
+        "fcVisualName": null,
+        "isFilterBasedOnAnotherValue": false,
+        "isPrimaryKey": false,
+        "optionLinking": {},
+        "options": [],
+        "resetToDefaultOnRowModify": false,
+        "selectionMethod": "DISTINCT_VALUES",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "job_title",
+      "columnType": 2,
+      "description": "",
+      "displayName": "Job Title",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "C853BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "department_id",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 4,
+          "type": "int",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": null,
+        "defaultValueType": "NONE",
+        "fcVisualIdColumnName": null,
+        "fcVisualLabelColumnName": null,
+        "fcVisualName": null,
+        "isFilterBasedOnAnotherValue": false,
+        "isPrimaryKey": false,
+        "optionLinking": {
+          "lookupConfig": [
+            {
+              "id": "department_id",
+              "label": "name",
+              "linkingColumn": "department_id",
+              "order": 0,
+              "schema": "dbo",
+              "table": "department"
+            }
+          ]
+        },
+        "options": [],
+        "resetToDefaultOnRowModify": false,
+        "selectionMethod": "LOAD_FROM_DATABASE",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "department_id",
+      "columnType": 2,
+      "description": "",
+      "displayName": "Department",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "C953BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "start_date",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 3,
+          "type": "date",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "format": "DEFAULT_LOCALE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "resetToDefaultOnRowModify": false,
+        "updateValueOnRowModify": false
+      },
+      "columnName": "start_date",
+      "columnType": 4,
+      "description": "",
+      "displayName": "Start Date",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "CA53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "end_date",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 3,
+          "type": "date",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "format": "DEFAULT_LOCALE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "resetToDefaultOnRowModify": false,
+        "updateValueOnRowModify": false
+      },
+      "columnName": "end_date",
+      "columnType": 4,
+      "description": "",
+      "displayName": "End Date",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "CB53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "incentive",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": null,
+        "defaultValueType": "NONE",
+        "fcVisualIdColumnName": null,
+        "fcVisualLabelColumnName": null,
+        "fcVisualName": null,
+        "isFilterBasedOnAnotherValue": false,
+        "isPrimaryKey": false,
+        "optionLinking": {},
+        "options": [],
+        "resetToDefaultOnRowModify": false,
+        "selectionMethod": "DISTINCT_VALUES",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "incentive",
+      "columnType": 2,
+      "description": "",
+      "displayName": "Incentive",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "CC53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "target_bonus",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 9,
+          "type": "decimal",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "noOfDecimals": "2",
+        "prefix": "",
+        "resetToDefaultOnRowModify": false,
+        "suffix": "%",
+        "thousandSeparator": "",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "target_bonus",
+      "columnType": 13,
+      "description": "",
+      "displayName": "Target Bonus",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "CD53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "salary",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 4,
+          "type": "int",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "prefix": "",
+        "resetToDefaultOnRowModify": false,
+        "suffix": "",
+        "thousandSeparator": ",",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "salary",
+      "columnType": 6,
+      "description": "",
+      "displayName": "Salary",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "CE53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "active_employment",
+      "columnMeta": {
+        "checkboxFormatType": "Checkbox",
+        "checkedValue": "1",
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 4,
+          "type": "int",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "resetToDefaultOnRowModify": false,
+        "unCheckedValue": "0",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "active_employment",
+      "columnType": 11,
+      "description": "",
+      "displayName": "Active Employment",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "CF53BD7B-22B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    }
+  ]
+}

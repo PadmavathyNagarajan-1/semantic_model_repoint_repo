@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "contoso_dl_test"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "beef0468-c59b-aa72-4d5c-18ee386bd964"
+  }
+}

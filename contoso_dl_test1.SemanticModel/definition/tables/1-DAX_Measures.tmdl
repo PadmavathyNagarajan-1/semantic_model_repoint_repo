@@ -1,0 +1,25 @@
+table 1-DAX_Measures
+	lineageTag: 65b1cf2c-51fb-4a88-beaf-95b837c5f231
+
+	measure 'Store Sales_Revenue' = SUMX(FactSales, FactSales[SalesQuantity] * FactSales[UnitPrice])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Store Sales
+		lineageTag: 100242a1-09e7-4c8b-854a-246381a20add
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column Value
+		formatString: 0
+		lineageTag: 81f70248-8793-49ff-97bf-b094c1bbc53f
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 1-DAX_Measures = calculated
+		mode: import
+		source = {1}
+
+	annotation PBI_Id = a91ab0c3e3e04459a3b7db228ed1125e
+

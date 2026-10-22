@@ -1,0 +1,1628 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/Properties/1.0.0/schema.json",
+  "properties": {
+    "properties": {
+      "advanceLookup": [],
+      "chartType": "COLUMN_VERTICAL",
+      "dimension": {
+        "height": 0.4,
+        "width": 0.3
+      },
+      "groupMeasureAssignments": [],
+      "groupName": "",
+      "layerProperties": {
+        "order": 0
+      },
+      "lockAspectRatio": false,
+      "mobileProperties": {},
+      "originEntityId": "2",
+      "pivotAssignments": [],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "preVisualId": "2",
+      "shapeType": "RECTANGLE",
+      "sortingConfig": [],
+      "splitByCategory": {
+        "pivotValueAssignments": [],
+        "splitByCategoryAssignments": [],
+        "splitByCategoryItems": [],
+        "splitByDelimiter": "-"
+      },
+      "superFilterAssignments": [
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "ID",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "ID",
+                "columnName": "ID",
+                "direction": "ASC",
+                "id": "ID"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "ID",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "ID",
+              "columnType": "Column",
+              "dataType": "Int64",
+              "id": "ID",
+              "name": "ID",
+              "order": 0,
+              "sourceId": "ID",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Emoji",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Emoji",
+                "columnName": "Emoji",
+                "direction": "ASC",
+                "id": "Emoji"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Emoji",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Emoji",
+              "columnType": "Column",
+              "dataType": "NVarchar",
+              "id": "Emoji",
+              "name": "Emoji",
+              "order": 0,
+              "sourceId": "Emoji",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Arab",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Arab",
+                "columnName": "Arab",
+                "direction": "ASC",
+                "id": "Arab"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Arab",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Arab",
+              "columnType": "Column",
+              "dataType": "NVarchar",
+              "id": "Arab",
+              "name": "Arab",
+              "order": 0,
+              "sourceId": "Arab",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Jappan",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Jappan",
+                "columnName": "Jappan",
+                "direction": "ASC",
+                "id": "Jappan"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Jappan",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Jappan",
+              "columnType": "Column",
+              "dataType": "NVarchar",
+              "id": "Jappan",
+              "name": "Jappan",
+              "order": 0,
+              "sourceId": "Jappan",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Tamil",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Tamil",
+                "columnName": "Tamil",
+                "direction": "ASC",
+                "id": "Tamil"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Tamil",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Tamil",
+              "columnType": "Column",
+              "dataType": "NVarchar",
+              "id": "Tamil",
+              "name": "Tamil",
+              "order": 0,
+              "sourceId": "Tamil",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Empty Column",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Empty Column",
+                "columnName": "Empty Column",
+                "direction": "ASC",
+                "id": "Empty Column"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Empty Column",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Empty Column",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Empty Column",
+              "name": "Empty Column",
+              "order": 0,
+              "sourceId": "Empty Column",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "dateFormat": "DEFAULT_LOCALE",
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "fiscalStartMonth": 0,
+            "hide": false,
+            "isExpanded": false,
+            "lastAppliedSelectedPreset": [],
+            "locked": false,
+            "name": "Start_Date",
+            "relativeDate": {
+              "period": "",
+              "type": "",
+              "value": 0
+            },
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "selectedPreset": [],
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Start_Date",
+                "columnName": "Start_Date",
+                "direction": "ASC",
+                "id": "Start_Date"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "DATE"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Start_Date",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Start_Date",
+              "columnType": "Column",
+              "dataType": "DateTime",
+              "id": "Start_Date",
+              "name": "Start_Date",
+              "order": 0,
+              "sourceId": "Start_Date",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "dateFormat": "DEFAULT_LOCALE",
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "fiscalStartMonth": 0,
+            "hide": false,
+            "isExpanded": false,
+            "lastAppliedSelectedPreset": [],
+            "locked": false,
+            "name": "End_Date",
+            "relativeDate": {
+              "period": "",
+              "type": "",
+              "value": 0
+            },
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "selectedPreset": [],
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "End_Date",
+                "columnName": "End_Date",
+                "direction": "ASC",
+                "id": "End_Date"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "DATE"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "End_Date",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "End_Date",
+              "columnType": "Column",
+              "dataType": "DateTime",
+              "id": "End_Date",
+              "name": "End_Date",
+              "order": 0,
+              "sourceId": "End_Date",
+              "sourceType": "powerTables",
+              "tableName": "Sheet2"
+            }
+          ],
+          "position": "RIGHT"
+        }
+      ],
+      "transformMeasure": "none",
+      "visualInteractions": {},
+      "visualState": {
+        "assignmentColumnMap": {
+          "2": {
+            "Arab": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Emoji": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Empty Column": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "End_Date": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "ID": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Jappan": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Start_Date": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Tamil": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            }
+          }
+        },
+        "columnMeta": {
+          "Arab": {
+            "width": 100
+          },
+          "Emoji": {
+            "width": 100
+          },
+          "Empty Column": {
+            "width": 100
+          },
+          "End_Date": {
+            "width": 100
+          },
+          "ID": {
+            "width": 100
+          },
+          "Jappan": {
+            "width": 100
+          },
+          "Start_Date": {
+            "width": 100
+          },
+          "Tamil": {
+            "width": 100
+          }
+        },
+        "embeddedSuperFilter": {
+          "assignmentColumnMap": {},
+          "incomingFilterAssignments": [],
+          "powerbiSemanticModelDeps": {
+            "datasetId": "",
+            "datasetName": "",
+            "workspaceName": ""
+          },
+          "superFilterAssignments": []
+        },
+        "locale": "en-US",
+        "manageMeasures": [
+          {
+            "id": "ID",
+            "label": "ID",
+            "measureType": "data",
+            "name": "ID",
+            "order": 0,
+            "visible": true
+          },
+          {
+            "id": "Emoji",
+            "label": "Emoji",
+            "measureType": "data",
+            "name": "Emoji",
+            "order": 1,
+            "visible": true
+          },
+          {
+            "id": "Arab",
+            "label": "Arab",
+            "measureType": "data",
+            "name": "Arab",
+            "order": 2,
+            "visible": true
+          },
+          {
+            "id": "Jappan",
+            "label": "Jappan",
+            "measureType": "data",
+            "name": "Jappan",
+            "order": 3,
+            "visible": true
+          },
+          {
+            "id": "Tamil",
+            "label": "Tamil",
+            "measureType": "data",
+            "name": "Tamil",
+            "order": 4,
+            "visible": true
+          },
+          {
+            "id": "Empty Column",
+            "label": "Empty Column",
+            "measureType": "data",
+            "name": "Empty Column",
+            "order": 5,
+            "visible": true
+          },
+          {
+            "id": "Start_Date",
+            "label": "Start_Date",
+            "measureType": "data",
+            "name": "Start_Date",
+            "order": 6,
+            "visible": true
+          },
+          {
+            "id": "End_Date",
+            "label": "End_Date",
+            "measureType": "data",
+            "name": "End_Date",
+            "order": 7,
+            "visible": true
+          }
+        ],
+        "mdmLayout": {
+          "activeLayout": "table",
+          "childHeaderTableControlConfiguration": {},
+          "configuration": null,
+          "ganttViewColVisibility": {},
+          "layoutVisibility": {},
+          "parentApprovalMeta": {},
+          "tableModeColVisibility": {}
+        },
+        "superFilter": {
+          "Arab": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Arab",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "nvarchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Arab",
+              "columnType": 1,
+              "displayName": "Arab",
+              "id": "17",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Arab",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Arab",
+                  "columnName": "Arab",
+                  "direction": "ASC",
+                  "id": "Arab"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "Emoji": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Emoji",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "nvarchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Emoji",
+              "columnType": 1,
+              "displayName": "Emoji",
+              "id": "16",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Emoji",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Emoji",
+                  "columnName": "Emoji",
+                  "direction": "ASC",
+                  "id": "Emoji"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "Empty Column": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Empty Column",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                }
+              },
+              "columnName": "Empty Column",
+              "columnType": 11,
+              "displayName": "Empty Column",
+              "id": "20",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Empty Column",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Empty Column",
+                  "columnName": "Empty Column",
+                  "direction": "ASC",
+                  "id": "Empty Column"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "End_Date": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "End_Date",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "date"
+                }
+              },
+              "columnName": "End_Date",
+              "columnType": 4,
+              "displayName": "End_Date",
+              "id": "22",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "End_Date",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "End_Date",
+                  "columnName": "End_Date",
+                  "direction": "ASC",
+                  "id": "End_Date"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "ID": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "ID",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": false,
+                  "isPrimaryKey": true,
+                  "type": "int"
+                }
+              },
+              "columnName": "ID",
+              "columnType": 6,
+              "displayName": "ID",
+              "id": "15",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "ID",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "ID",
+                  "columnName": "ID",
+                  "direction": "ASC",
+                  "id": "ID"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "Jappan": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Jappan",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "nvarchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Jappan",
+              "columnType": 1,
+              "displayName": "Jappan",
+              "id": "18",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Jappan",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Jappan",
+                  "columnName": "Jappan",
+                  "direction": "ASC",
+                  "id": "Jappan"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "Start_Date": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Start_Date",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "date"
+                }
+              },
+              "columnName": "Start_Date",
+              "columnType": 4,
+              "displayName": "Start_Date",
+              "id": "21",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "Start_Date",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Start_Date",
+                  "columnName": "Start_Date",
+                  "direction": "ASC",
+                  "id": "Start_Date"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          },
+          "Tamil": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Tamil",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "nvarchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Tamil",
+              "columnType": 1,
+              "displayName": "Tamil",
+              "id": "19",
+              "sourceId": 2,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Tamil",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Tamil",
+                  "columnName": "Tamil",
+                  "direction": "ASC",
+                  "id": "Tamil"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet2",
+            "topNMeasureOptions": [
+              {
+                "id": "ID",
+                "label": "ID"
+              }
+            ]
+          }
+        },
+        "superFilterAssignments": [
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "ID",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "ID",
+                  "columnName": "ID",
+                  "direction": "ASC",
+                  "id": "ID"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "ID",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "ID",
+                "columnType": "Column",
+                "dataType": "Int64",
+                "id": "ID",
+                "name": "ID",
+                "order": 0,
+                "sourceId": "ID",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Emoji",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Emoji",
+                  "columnName": "Emoji",
+                  "direction": "ASC",
+                  "id": "Emoji"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Emoji",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Emoji",
+                "columnType": "Column",
+                "dataType": "NVarchar",
+                "id": "Emoji",
+                "name": "Emoji",
+                "order": 0,
+                "sourceId": "Emoji",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Arab",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Arab",
+                  "columnName": "Arab",
+                  "direction": "ASC",
+                  "id": "Arab"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Arab",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Arab",
+                "columnType": "Column",
+                "dataType": "NVarchar",
+                "id": "Arab",
+                "name": "Arab",
+                "order": 0,
+                "sourceId": "Arab",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Jappan",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Jappan",
+                  "columnName": "Jappan",
+                  "direction": "ASC",
+                  "id": "Jappan"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Jappan",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Jappan",
+                "columnType": "Column",
+                "dataType": "NVarchar",
+                "id": "Jappan",
+                "name": "Jappan",
+                "order": 0,
+                "sourceId": "Jappan",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Tamil",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Tamil",
+                  "columnName": "Tamil",
+                  "direction": "ASC",
+                  "id": "Tamil"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Tamil",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Tamil",
+                "columnType": "Column",
+                "dataType": "NVarchar",
+                "id": "Tamil",
+                "name": "Tamil",
+                "order": 0,
+                "sourceId": "Tamil",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Empty Column",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Empty Column",
+                  "columnName": "Empty Column",
+                  "direction": "ASC",
+                  "id": "Empty Column"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Empty Column",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Empty Column",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Empty Column",
+                "name": "Empty Column",
+                "order": 0,
+                "sourceId": "Empty Column",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "Start_Date",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Start_Date",
+                  "columnName": "Start_Date",
+                  "direction": "ASC",
+                  "id": "Start_Date"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Start_Date",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Start_Date",
+                "columnType": "Column",
+                "dataType": "DateTime",
+                "id": "Start_Date",
+                "name": "Start_Date",
+                "order": 0,
+                "sourceId": "Start_Date",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "End_Date",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "End_Date",
+                  "columnName": "End_Date",
+                  "direction": "ASC",
+                  "id": "End_Date"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "End_Date",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "End_Date",
+                "columnType": "Column",
+                "dataType": "DateTime",
+                "id": "End_Date",
+                "name": "End_Date",
+                "order": 0,
+                "sourceId": "End_Date",
+                "sourceType": "powerTables",
+                "tableName": "Sheet2"
+              }
+            ],
+            "position": "RIGHT"
+          }
+        ]
+      },
+      "visualStyles": {
+        "background": {
+          "backgroundColor": "#fff",
+          "isEnabled": true
+        },
+        "border": {
+          "color": "#ddd",
+          "isEnabled": false,
+          "side": "all",
+          "width": 0
+        },
+        "cornerRadius": {
+          "isCustomCornerRadius": false,
+          "isEnabled": true,
+          "radiusBottomLeft": 0,
+          "radiusBottomRight": 0,
+          "radiusTopLeft": 0,
+          "radiusTopRight": 0
+        },
+        "isTooltipEnabled": true,
+        "padding": {
+          "bottomPadding": 5,
+          "isCustomPaddingSize": false,
+          "isEnabled": true,
+          "leftPadding": 5,
+          "rightPadding": 5,
+          "topPadding": 5
+        },
+        "rotation": {
+          "isEnabled": false,
+          "transform": 0
+        },
+        "shadow": {
+          "angle": 0,
+          "blur": 0,
+          "color": "#000000",
+          "distance": 10,
+          "isEnabled": false,
+          "opacity": 100,
+          "placement": "outer",
+          "side": "center",
+          "width": 0
+        },
+        "showHelperTooltips": true,
+        "showSelectedSeriesInTooltip": false,
+        "tooltipPageId": "auto",
+        "tooltipStyle": {
+          "backgroundColor": "#FFFFFF",
+          "bold": false,
+          "fontFamily": "Segoe UI",
+          "fontSize": 12,
+          "italic": false,
+          "labelColor": "#252423",
+          "underline": false,
+          "valueColor": "#252423"
+        },
+        "tooltipType": "default",
+        "varianceInTooltip": true,
+        "varianceTooltipType": "both"
+      },
+      "visualType": 30
+    },
+    "schema": "0.0.1"
+  }
+}

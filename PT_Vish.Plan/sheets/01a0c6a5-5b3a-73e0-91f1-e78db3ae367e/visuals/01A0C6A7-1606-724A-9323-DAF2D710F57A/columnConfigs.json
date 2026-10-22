@@ -1,0 +1,329 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/ColumnConfigs/1.0.0/schema.json",
+  "columnConfigs": [
+    {
+      "allowEdit": 0,
+      "columnGuid": "EmployeeID",
+      "columnMeta": {
+        "allowNegative": true,
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": true,
+          "isNullable": false,
+          "isPrimaryKey": true,
+          "isUnique": false,
+          "maxLength": 4,
+          "type": "int",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": true,
+        "largeNumberAbbrevation": "",
+        "max": "",
+        "min": "",
+        "negativeValueFormat": "-0",
+        "prefix": "",
+        "resetToDefaultOnRowModify": false,
+        "suffix": "",
+        "thousandSeparator": "",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "EmployeeID",
+      "columnType": 6,
+      "description": "",
+      "displayName": "EmployeeID",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "66DD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "EmployeeName",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "EmployeeName",
+      "columnType": 1,
+      "description": "",
+      "displayName": "EmployeeName",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "67DD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Department",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Department",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Department",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "68DD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Project",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Project",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Project",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "69DD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Task",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Task",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Task",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6ADD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Date",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 3,
+          "type": "date",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "format": "DEFAULT_LOCALE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "resetToDefaultOnRowModify": false,
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Date",
+      "columnType": 4,
+      "description": "",
+      "displayName": "Date",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6BDD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "HoursWorked",
+      "columnMeta": {
+        "allowNegative": true,
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 8,
+          "type": "float",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "largeNumberAbbrevation": "",
+        "max": "",
+        "min": "",
+        "negativeValueFormat": "-0",
+        "noOfDecimals": 1,
+        "prefix": "",
+        "resetToDefaultOnRowModify": false,
+        "suffix": "",
+        "thousandSeparator": "",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "HoursWorked",
+      "columnType": 13,
+      "description": "",
+      "displayName": "HoursWorked",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6CDD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Location",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Location",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Location",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6DDD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Manager",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Manager",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Manager",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6EDD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Billable",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Billable",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Billable",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "6FDD67F1-21B6-F111-A6A8-7C1E522C202C",
+      "visualColumnType": 1
+    }
+  ]
+}

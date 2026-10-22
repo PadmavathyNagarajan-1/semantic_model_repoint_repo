@@ -1,0 +1,121 @@
+table DimProductSubcategory
+	isHidden
+	lineageTag: 1d092745-3e16-4f58-8c7d-ea07a2ff9a4f
+
+	column ProductSubcategoryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 987a428c-111e-4e5d-a0e9-e53d644e6678
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryLabel
+		dataType: string
+		isHidden
+		lineageTag: 4f065a58-9aaa-4c83-84fc-a142a1725c8b
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryName
+		dataType: string
+		isHidden
+		lineageTag: 735764fb-bea4-4871-b83a-a4c504841aa8
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductSubcategoryDescription
+		dataType: string
+		isHidden
+		lineageTag: e1a2bae6-bc3e-4a48-ac9b-ff5d995a155f
+		summarizeBy: none
+		sourceColumn: ProductSubcategoryDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductCategoryKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 678a48d7-6145-4412-b5d9-a492e78a5150
+		summarizeBy: none
+		sourceColumn: ProductCategoryKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 42677a1f-d647-44ea-8a39-02e0c423684b
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: c815c847-fe96-4663-94ff-9bc2d16ac864
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 89463bf8-5eb8-44e5-b36a-c3cf7f7f9976
+			defaultHierarchy: LocalDateTable_bafd82f8-8296-400a-84c8-f728b437a0c4.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 0f8cc423-c104-43ac-a5b5-7dded6f8c138
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 8eff817b-5cab-495e-97d6-15a533c70b02
+			defaultHierarchy: LocalDateTable_5d2d1448-f494-43ca-8f28-589481bd1761.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimProductSubcategory = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimProductSubcategory = ContosoRetailDW{[Schema="dbo",Item="DimProductSubcategory"]}[Data]
+				in
+				    dbo_DimProductSubcategory
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

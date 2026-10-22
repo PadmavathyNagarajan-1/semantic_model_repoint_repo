@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "447563215351405168",
+        "label": "Sum of Revenue_Actual",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of Revenue_Actual"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "447563215351405168",
+      "name": "Sum of Revenue_Actual",
+      "status": 10,
+      "visualId": "01a0aed4-5965-754a-bbf6-421ba53785b3"
+    }
+  ]
+}

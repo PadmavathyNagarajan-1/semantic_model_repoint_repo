@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "3861944696709172434",
+        "label": "Sum of Actual",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of Actual"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "3861944696709172434",
+      "name": "Sum of Actual",
+      "status": 10,
+      "visualId": "01a0aedb-b37f-772f-8518-2b2fa9686056"
+    }
+  ]
+}

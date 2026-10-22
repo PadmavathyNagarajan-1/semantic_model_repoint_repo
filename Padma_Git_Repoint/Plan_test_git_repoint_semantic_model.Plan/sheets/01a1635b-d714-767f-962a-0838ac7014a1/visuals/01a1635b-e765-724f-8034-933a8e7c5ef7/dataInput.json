@@ -1,0 +1,216 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "11479574445228897472",
+        "label": "Sum of SalesAmount",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of SalesAmount"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "11479574445228897472",
+      "name": "Sum of SalesAmount",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "4793200814471773809",
+        "label": "Store Sales_Revenue",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Store Sales_Revenue"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "4793200814471773809",
+      "name": "Store Sales_Revenue",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 20,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": "",
+        "id": "15248100779358000538",
+        "label": "New Measure",
+        "measure_type": {
+          "Formula": {
+            "formula": "M_4793200814471773809+M_11479574445228897472"
+          }
+        }
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "15248100779358000538",
+      "name": "New Measure",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Text",
+        "description": "",
+        "id": "2956478973183387217",
+        "label": "Text",
+        "measure_type": {
+          "DataInput": {
+            "allow_input": "ReadAndEdit",
+            "bound_to_filter_context": true,
+            "column_type": {
+              "ShortText": {
+                "allow_entry_on_totals_or_subtotals": true,
+                "default_value": null,
+                "field_validation": "AnyValue",
+                "maximum_length": null,
+                "minimum_length": null,
+                "prevent_null": false
+              }
+            },
+            "disable_write_access": false,
+            "id": "",
+            "on_change_formula": "",
+            "title": "Text"
+          }
+        }
+      },
+      "dataInputType": 1,
+      "description": null,
+      "measureGuid": "2956478973183387217",
+      "name": "Text",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": "",
+        "id": "13605148900127641096",
+        "label": "Number",
+        "measure_type": {
+          "DataInput": {
+            "allow_input": "ReadAndEdit",
+            "bound_to_filter_context": true,
+            "column_type": {
+              "Number": {
+                "default_value": null,
+                "distribute_parent_value_to_children": true,
+                "max_value": null,
+                "min_value": null
+              }
+            },
+            "disable_write_access": false,
+            "id": "",
+            "on_change_formula": "",
+            "title": "Number"
+          }
+        }
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "13605148900127641096",
+      "name": "Number",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 20,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": "",
+        "id": "18437821776568123772",
+        "label": "New Measure-copy1",
+        "measure_type": {
+          "Formula": {
+            "formula": "M_4793200814471773809+M_11479574445228897472"
+          }
+        }
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "18437821776568123772",
+      "name": "New Measure-copy1",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 20,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": "",
+        "id": "18012279731672091151",
+        "label": "New Measure-copy2",
+        "measure_type": {
+          "Formula": {
+            "formula": "M_4793200814471773809+M_11479574445228897472"
+          }
+        }
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "18012279731672091151",
+      "name": "New Measure-copy2",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 20,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": "",
+        "id": "17248299605741449772",
+        "label": "New Measure-copy3",
+        "measure_type": {
+          "Formula": {
+            "formula": "M_17248299605741449772"
+          }
+        }
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "17248299605741449772",
+      "name": "New Measure-copy3",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    },
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Text",
+        "description": null,
+        "id": "2367555960138520216",
+        "label": "First of Size",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "First of Size"
+      },
+      "dataInputType": 1,
+      "description": null,
+      "measureGuid": "2367555960138520216",
+      "name": "First of Size",
+      "status": 10,
+      "visualId": "01a1635b-e765-724f-8034-933a8e7c5ef7"
+    }
+  ]
+}

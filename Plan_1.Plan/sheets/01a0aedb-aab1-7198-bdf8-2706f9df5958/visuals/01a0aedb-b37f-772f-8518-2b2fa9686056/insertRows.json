@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/InsertRows/1.0.0/schema.json",
+  "rows": [
+    {
+      "derivedFromRowId": null,
+      "dimensionId": "2463189626347903050",
+      "id": "16017913890930171270",
+      "name": "All",
+      "rowMeta": {
+        "bind_for_cross_filter": null,
+        "column_aggregation": "Sum",
+        "cross_filter_config": null,
+        "description": null,
+        "disabled": false,
+        "id": "16017913890930171270",
+        "include_in_total": true,
+        "level": 0,
+        "parent_id": "8169143652509480441",
+        "previous_row_id": "8169143652509480441",
+        "row_type": {
+          "AggregationRow": {
+            "aggregate_distribution_rows": [],
+            "aggregation_distribution_type": "Factor",
+            "aggregation_type": "Sum"
+          }
+        },
+        "scaling_factor": null,
+        "title": "All"
+      },
+      "rowPath": null,
+      "status": 10,
+      "visualId": "01a0aedb-b37f-772f-8518-2b2fa9686056",
+      "visualRowConfigId": null
+    }
+  ]
+}

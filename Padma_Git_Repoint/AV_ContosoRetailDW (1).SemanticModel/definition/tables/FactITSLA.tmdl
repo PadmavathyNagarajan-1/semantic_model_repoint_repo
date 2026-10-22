@@ -1,0 +1,143 @@
+table FactITSLA
+	lineageTag: b0fd560a-b7e2-4060-8694-00d641b228df
+
+	column ITSLAkey
+		dataType: int64
+		formatString: 0
+		lineageTag: 5042191a-8eca-4e6b-8072-aac4fdc47e9f
+		summarizeBy: sum
+		sourceColumn: ITSLAkey
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateKey
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: a1f11135-b6f1-4c85-8c44-042c3115751c
+		summarizeBy: none
+		sourceColumn: DateKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column StoreKey
+		dataType: int64
+		formatString: 0
+		lineageTag: bc7a8fe5-873b-45f1-aa0c-f0f55435c337
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: ed360b3e-f2da-45c6-adb0-dde86d49a33b
+		summarizeBy: none
+		sourceColumn: MachineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 68234e9c-aa43-414d-b99f-86e0fd7bbb71
+		summarizeBy: none
+		sourceColumn: OutageKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageStartTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 170c5980-841e-4789-889f-175ed64fd285
+		summarizeBy: none
+		sourceColumn: OutageStartTime
+
+		variation Variation
+			isDefault
+			relationship: 5cb8e5d3-913e-4d4d-8d51-9da763bbac2a
+			defaultHierarchy: LocalDateTable_e441646b-aff4-40cf-b4a3-988ac38afc1b.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageEndTime
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f814250f-cc83-4622-9724-100bbb3ed9cc
+		summarizeBy: none
+		sourceColumn: OutageEndTime
+
+		variation Variation
+			isDefault
+			relationship: eba48819-ed86-4159-93d6-a7d89004c9ad
+			defaultHierarchy: LocalDateTable_413fd84f-b2a8-4d9e-b0a7-fb7351b4284e.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column DownTime
+		dataType: int64
+		formatString: 0
+		lineageTag: 05626d8b-ffaa-4dc1-b95a-f71ca6df9e90
+		summarizeBy: sum
+		sourceColumn: DownTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 8977c7f7-62be-4a30-a006-9a76a8b11502
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 5dccfd12-c7bf-4afd-823d-5c53d0f67077
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 652343d8-c9bb-4ad1-8a2e-7358096755b5
+			defaultHierarchy: LocalDateTable_b9381ae2-06da-4ec1-832c-f3e5d57ccda7.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: d71c290b-84bc-425e-8f9a-be97c8807c78
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: c0731aca-7a57-4f40-89ea-fa8e9236b2d4
+			defaultHierarchy: LocalDateTable_49047ed3-f26c-4799-ac60-0a030fe65468.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactITSLA = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_FactITSLA = ContosoRetailDW{[Schema="dbo",Item="FactITSLA"]}[Data]
+				in
+				    dbo_FactITSLA
+
+	annotation PBI_ResultType = Table
+

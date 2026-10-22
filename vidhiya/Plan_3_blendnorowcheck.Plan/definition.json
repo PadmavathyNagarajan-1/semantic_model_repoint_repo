@@ -1,0 +1,54 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Definition/1.0.0/schema.json",
+  "cube": {
+    "partitionRefIds": []
+  },
+  "semanticModelReference": {
+    "artifactId": 2710137,
+    "connectionId": "fe43ff61-f8bd-448c-b809-e27528098916",
+    "datasetRelations": [
+      {
+        "dependentArtifactId": 2710137,
+        "settings": "Association"
+      }
+    ],
+    "directLakeMode": false,
+    "directQueryMode": false,
+    "recordGuid": "01a13e49-d006-7198-b834-6f0134bf5f53",
+    "semanticModelId": "c32e0f98-704d-4a56-a55c-8539137ed44b",
+    "semanticModelName": "AmazingMart Report (2)",
+    "semanticModelWorkspaceId": "a3ce10b5-fde0-493e-be29-59434e3f69ec",
+    "semanticModelWorkspaceName": "Sweta_DONOTCHANGE",
+    "sourceType": "WORKLOAD",
+    "url": "https://app.powerbi.com/groups/a3ce10b5-fde0-493e-be29-59434e3f69ec/datasets/c32e0f98-704d-4a56-a55c-8539137ed44b"
+  },
+  "sheets": [
+    {
+      "displayName": "Planning 1",
+      "isHidden": false,
+      "recordGuid": "01a13e4a-7de9-716f-80ef-2548ef940f55",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a13e4a-875e-76e1-b6f4-987282cc5804",
+          "visualType": "PLANNING"
+        }
+      ]
+    },
+    {
+      "displayName": "Planning 2",
+      "isHidden": false,
+      "recordGuid": "01a13e4c-fd85-7602-ac35-98982980f8d5",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a13e4d-06a5-766e-b349-3698e242ec91",
+          "visualType": "PLANNING"
+        }
+      ]
+    }
+  ],
+  "workloadItemName": "Plan_3_blendnorowcheck"
+}

@@ -1,0 +1,43 @@
+table DimPlantProductBridge
+	isHidden
+	lineageTag: 71ee8561-2496-4467-b153-a07531c602c7
+
+	column PlantID
+		dataType: string
+		isHidden
+		lineageTag: 14e416ff-8ef9-43f2-a531-d542b83a4318
+		summarizeBy: none
+		sourceColumn: PlantID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ProductKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 5c51bbff-9d16-4144-bd30-44a1f1b7bba3
+		summarizeBy: none
+		sourceColumn: ProductKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition DimPlantProductBridge = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\ASHAMD\Downloads\PlantProductBridge.csv"),[Delimiter=",", Columns=2, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"PlantID", type text}, {"ProductKey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	changedProperty = Name
+
+	changedProperty = IsHidden
+
+	annotation PBI_ResultType = Table
+

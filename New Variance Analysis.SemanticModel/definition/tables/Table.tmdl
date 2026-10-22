@@ -1,0 +1,22 @@
+table Table
+	lineageTag: 5bab4e35-1f1c-499e-ae42-149bb7ca181c
+
+	column Column
+		formatString: 0
+		lineageTag: f7c3d641-a4bd-4365-9570-776f65c06580
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Column]
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Table = calculated
+		mode: import
+		source = Row("Column", BLANK())
+
+	annotation PBI_Id = dfca18a076c04f87aea875f600fabdca
+
+	annotation 436ba87b-9c83-4389-a31b-ebd06a36be98 = {"Expression":null}
+
+	annotation 277cc1b9-af89-4597-8e15-cacc25c0886b = To use special characters in a calculated table name, enclose the entire name in brackets ( [] ) and add a ] to any closing brackets in the name.
+

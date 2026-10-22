@@ -1,0 +1,26 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/DataInput/1.0.0/schema.json",
+  "columns": [
+    {
+      "boundToFilterContext": 10,
+      "columnMeta": {
+        "data_type": "Number",
+        "description": null,
+        "id": "5310448145392131544",
+        "label": "Sum of MonthlyMaxCapacity",
+        "measure_type": {
+          "Native": {
+            "measure_role": "ACMeasure"
+          }
+        },
+        "name": "Sum of MonthlyMaxCapacity"
+      },
+      "dataInputType": 6,
+      "description": null,
+      "measureGuid": "5310448145392131544",
+      "name": "Sum of MonthlyMaxCapacity",
+      "status": 10,
+      "visualId": "01a1636a-7bce-711e-ad7b-fca0a7d31866"
+    }
+  ]
+}

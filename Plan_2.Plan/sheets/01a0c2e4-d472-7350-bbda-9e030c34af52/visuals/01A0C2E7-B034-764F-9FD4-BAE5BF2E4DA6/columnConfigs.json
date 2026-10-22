@@ -1,0 +1,263 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/ColumnConfigs/1.0.0/schema.json",
+  "columnConfigs": [
+    {
+      "allowEdit": 1,
+      "columnGuid": "ID",
+      "columnMeta": {
+        "allowNegative": true,
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": false,
+          "isPrimaryKey": true,
+          "isUnique": false,
+          "maxLength": 4,
+          "type": "int",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": true,
+        "largeNumberAbbrevation": "",
+        "max": "",
+        "min": "",
+        "negativeValueFormat": "-0",
+        "prefix": "",
+        "resetToDefaultOnRowModify": false,
+        "suffix": "",
+        "thousandSeparator": "",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "ID",
+      "columnType": 6,
+      "description": "",
+      "displayName": "ID",
+      "hideColumn": 0,
+      "mandatory": 1,
+      "recordGuid": "8A1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Emoji",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "nvarchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Emoji",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Emoji",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "8B1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Arab",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "nvarchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Arab",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Arab",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "8C1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Jappan",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "nvarchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Jappan",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Jappan",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "8D1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Tamil",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "nvarchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "maximumAllowedLength": "",
+        "resetToDefaultOnRowModify": false,
+        "textFieldColumnType": "Any Value",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Tamil",
+      "columnType": 1,
+      "description": "",
+      "displayName": "Tamil",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "8E1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Empty Column",
+      "columnMeta": {
+        "checkboxDefaultType": "unChecked",
+        "checkboxFormatType": "Checkbox",
+        "checkedValue": "TRUE",
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 255,
+          "type": "varchar",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "isPrimaryKey": false,
+        "resetToDefaultOnRowModify": false,
+        "unCheckedValue": "FALSE",
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Empty Column",
+      "columnType": 11,
+      "description": "",
+      "displayName": "Empty Column",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "8F1D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "Start_Date",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 3,
+          "type": "date",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "format": "DEFAULT_LOCALE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "resetToDefaultOnRowModify": false,
+        "updateValueOnRowModify": false
+      },
+      "columnName": "Start_Date",
+      "columnType": 4,
+      "description": "",
+      "displayName": "Start_Date",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "901D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    },
+    {
+      "allowEdit": 1,
+      "columnGuid": "End_Date",
+      "columnMeta": {
+        "dbMeta": {
+          "isCompositeUnique": false,
+          "isIdentity": false,
+          "isNullable": true,
+          "isPrimaryKey": false,
+          "isUnique": false,
+          "maxLength": 3,
+          "type": "date",
+          "uniqueConstraintName": null
+        },
+        "defaultValue": "",
+        "defaultValueType": "NONE",
+        "format": "DEFAULT_LOCALE",
+        "isPrimaryKey": false,
+        "max": "",
+        "min": "",
+        "resetToDefaultOnRowModify": false,
+        "updateValueOnRowModify": false
+      },
+      "columnName": "End_Date",
+      "columnType": 4,
+      "description": "",
+      "displayName": "End_Date",
+      "hideColumn": 0,
+      "mandatory": 0,
+      "recordGuid": "911D378D-8FB5-F111-A6A9-6045BD49A389",
+      "visualColumnType": 1
+    }
+  ]
+}

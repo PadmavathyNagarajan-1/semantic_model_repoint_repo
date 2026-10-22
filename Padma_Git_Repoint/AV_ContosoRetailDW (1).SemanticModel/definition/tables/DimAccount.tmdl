@@ -1,0 +1,350 @@
+table DimAccount
+	lineageTag: a1165556-986a-44e9-b116-4f40acae1f64
+
+	column AccountKey
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ccd53b6-9556-41fd-83d8-2e8d97d0fbda
+		summarizeBy: none
+		sourceColumn: AccountKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ParentAccountKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 3b3cebd5-d8e1-4575-8e12-7a713a9678a2
+		summarizeBy: count
+		sourceColumn: ParentAccountKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountLabel
+		dataType: string
+		isHidden
+		lineageTag: bb92e24e-dc21-4da6-85cf-338140996dd8
+		summarizeBy: none
+		sourceColumn: AccountLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountName
+		dataType: string
+		isHidden
+		lineageTag: a8e77402-b116-49f7-b35a-b7ec9d895c26
+		summarizeBy: none
+		sourceColumn: AccountName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountDescription
+		dataType: string
+		isHidden
+		lineageTag: 8b8995f1-c99c-4501-9812-6753c5ebfde7
+		summarizeBy: none
+		sourceColumn: AccountDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column AccountType
+		dataType: string
+		isHidden
+		lineageTag: 3bc21c22-8c10-4d71-b0c5-440428ad1a64
+		summarizeBy: none
+		sourceColumn: AccountType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Operator
+		dataType: string
+		isHidden
+		lineageTag: 06f854a8-8213-4030-b0b0-3c272a5649c9
+		summarizeBy: none
+		sourceColumn: Operator
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomMembers
+		dataType: string
+		isHidden
+		lineageTag: 19b0c202-879a-40ad-b6eb-9a73edc432f7
+		summarizeBy: none
+		sourceColumn: CustomMembers
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ValueType
+		dataType: string
+		isHidden
+		lineageTag: 0a8420c4-fa77-4863-928e-719d26f19680
+		summarizeBy: none
+		sourceColumn: ValueType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column CustomMemberOptions
+		dataType: string
+		isHidden
+		lineageTag: 21320354-8da4-4afe-8a4f-f053ce5fc382
+		summarizeBy: none
+		sourceColumn: CustomMemberOptions
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 6f3961e7-7a56-4a48-b2e6-65aacfbe492f
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: cef8e64f-afcc-43b5-84b8-af6b07e01f47
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 7e07e776-f986-4873-92c3-4ecc24793620
+			defaultHierarchy: LocalDateTable_dc6b1c6a-0d3d-463a-8eae-71557f8de8ec.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: d79a7a53-a2c0-4cfc-a9b4-d15d26bfbf30
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 62965050-974d-4cad-883b-bba338f214be
+			defaultHierarchy: LocalDateTable_63d730f3-8c59-4c55-8cc2-54e787cc0b43.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Path = PATH(DimAccount[AccountKey],DimAccount[ParentAccountKey])
+		isHidden
+		lineageTag: f09fbda5-3f79-47fa-8306-1570e6222e3d
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Path Length' = PATHLENGTH(DimAccount[Path])
+		isHidden
+		formatString: 0
+		lineageTag: c0954751-c734-4632-a01b-1b89e7831e20
+		summarizeBy: sum
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 1 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 1 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 00db5236-f9cf-4c79-8c6f-b4c0c12fb8ac
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 2 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 2 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: ded6154e-263d-4f12-ba5e-7de765327a4a
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 3 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 3 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 81317d57-7da7-4d33-8273-dd8800c4027d
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 4 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 4 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 2cefe94b-0674-4341-b19f-ad94c1f0dfcd
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 5 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 5 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: e3296783-3cd0-44fb-985b-778d9898be80
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 6 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 6 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 86f12461-8a5a-4ff9-aa29-c903b397bc06
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Level 7 Description' = ```
+			
+			
+			VAR PathItemAsInteger = PATHITEM(DimAccount[Path], 7 , 1) -- Use 1 as the third parameter to get an integer
+			RETURN LOOKUPVALUE(
+			    DimAccount[AccountDescription],
+			   DimAccount[AccountKey], 
+			    PathItemAsInteger
+			)
+			```
+		isHidden
+		lineageTag: 6d48f287-7017-4dbe-8e62-a7c41e2b5de3
+		summarizeBy: none
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] Accounts Hierarchy'
+		lineageTag: 2a6a711c-9fe1-4e3f-8f5c-83623cd7af57
+
+		level 'Level 1 Description'
+			lineageTag: 3a8150cb-b550-445f-9739-87029a0166f2
+			column: 'Level 1 Description'
+
+		level 'Level 2 Description'
+			lineageTag: e6fc8537-24e2-496d-962f-68b364e05dcb
+			column: 'Level 2 Description'
+
+		level 'Level 3 Description'
+			lineageTag: 30d8cf2b-cdff-4e23-8f4e-cb8a05a35fbf
+			column: 'Level 3 Description'
+
+		level 'Level 4 Description'
+			lineageTag: 636bbfa9-6d27-45ee-b905-b221c840b1af
+			column: 'Level 4 Description'
+
+		level 'Level 5 Description'
+			lineageTag: 5a7ddfdd-884d-484c-931a-6caa6156889a
+			column: 'Level 5 Description'
+
+		level 'Level 6 Description'
+			lineageTag: b6d8c669-9e96-4778-bef5-ef09f42ad269
+			column: 'Level 6 Description'
+
+		level 'Level 7 Description'
+			lineageTag: 2bdd866d-e2f6-4c15-b267-038294ca2342
+			column: 'Level 7 Description'
+
+	partition DimAccount = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimAccount = ContosoRetailDW{[Schema="dbo",Item="DimAccount"]}[Data]
+				in
+				    dbo_DimAccount
+
+	annotation PBI_ResultType = Table
+
+	annotation PBI_NavigationStepName = Navigation
+

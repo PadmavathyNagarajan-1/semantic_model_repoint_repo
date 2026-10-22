@@ -1,0 +1,4 @@
+relationship 0a231e69-6935-03c6-c753-0ecc9a61f9ff
+	fromColumn: Financial_Data.Date
+	toColumn: Calendar.Date
+

@@ -1,0 +1,159 @@
+table DimOutage
+	lineageTag: 4b6b4890-6383-43c9-b5e8-fc1e82caf509
+
+	column OutageKey
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: a4fd76be-673a-44a2-9fe5-7730523f2b41
+		summarizeBy: none
+		sourceColumn: OutageKey
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageLabel
+		dataType: string
+		isHidden
+		lineageTag: c26ad1c4-1045-4972-9b96-3f8a7591d084
+		summarizeBy: none
+		sourceColumn: OutageLabel
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageName
+		dataType: string
+		isHidden
+		lineageTag: aabb3ec6-b945-405a-9cad-5ee6f7dca866
+		summarizeBy: none
+		sourceColumn: OutageName
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageDescription
+		dataType: string
+		isHidden
+		lineageTag: 72343fc5-4571-4ac9-b464-3183524503d6
+		summarizeBy: none
+		sourceColumn: OutageDescription
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageType
+		dataType: string
+		isHidden
+		lineageTag: 72c7a669-ee2d-4c68-ba68-c599b6e7a0b3
+		summarizeBy: none
+		sourceColumn: OutageType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageTypeDescription
+		dataType: string
+		lineageTag: dd9236f6-a9c6-448e-92f2-71c0f986d78c
+		summarizeBy: none
+		sourceColumn: OutageTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageSubType
+		dataType: string
+		isHidden
+		lineageTag: f2fc1aaa-76e2-4159-b72f-7d208b245129
+		summarizeBy: none
+		sourceColumn: OutageSubType
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column OutageSubTypeDescription
+		dataType: string
+		lineageTag: 7de7b221-2062-419a-bb63-42bd8553b8f5
+		summarizeBy: none
+		sourceColumn: OutageSubTypeDescription
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: f61f881f-8048-41db-b11c-9e6990118bcd
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 5811dc5f-ddf8-4bcc-a7d7-c1af6578506d
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: 004d2f00-e2ae-4640-8f2b-47b433695658
+			defaultHierarchy: LocalDateTable_31a41cbd-1aca-427e-aea3-111cd7e62ac6.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 0304f45d-46dd-4384-b342-6fb87ec2ba25
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 214a573c-b3ca-4e36-8e03-94fc2ccff025
+			defaultHierarchy: LocalDateTable_c1267c45-fb90-4ac1-bdb5-3a3f8cd51598.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	hierarchy '[H] Outage Hierarchy'
+		lineageTag: 7f708a47-b117-4f99-be6c-9c420230ec89
+
+		level OutageType
+			lineageTag: 9855f9f3-d10b-4ac1-85d1-26094135b9ec
+			column: OutageType
+
+		level OutageSubType
+			lineageTag: 143d8db8-7c6a-4c87-9718-1da6488d0477
+			column: OutageSubType
+
+		level OutageName
+			lineageTag: 5f3ef51e-e27c-4deb-ae0a-9c878f254bec
+			column: OutageName
+
+	partition DimOutage = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_DimOutage = ContosoRetailDW{[Schema="dbo",Item="DimOutage"]}[Data]
+				in
+				    dbo_DimOutage
+
+	annotation PBI_ResultType = Table
+

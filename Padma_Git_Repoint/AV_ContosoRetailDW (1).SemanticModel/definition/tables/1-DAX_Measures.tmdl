@@ -1,0 +1,310 @@
+table 1-DAX_Measures
+	lineageTag: 6cb45493-a7a2-4c6e-8987-e5ecd17142e8
+
+	measure 'Strategy Plan Amount' = CALCULATE(SUM(FactStrategyPlan[Amount]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Strategy
+		lineageTag: 6dbdc351-7448-425a-8476-3668f3ca7840
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Quota Quantity' = CALCULATE(SUM(FactSalesQuota[SalesQuantityQuota]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Quota
+		lineageTag: 3120535a-551a-4d93-88cc-c8375f2cb02d
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Quota Amount' = CALCULATE(SUM(FactSalesQuota[SalesAmountQuota]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Quota
+		lineageTag: 4f8c42ec-ae1d-44c9-9e15-36bfbc243060
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Sales Quota Gross Margin' = CALCULATE(SUM(FactSalesQuota[GrossMarginQuota]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Sales Quota
+		lineageTag: 14282157-ea82-4292-b5f2-dce3b1f3c868
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales_Revenue' = SUMX(FactSales, FactSales[SalesQuantity] * FactSales[UnitPrice])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Store Sales
+		lineageTag: 100242a1-09e7-4c8b-854a-246381a20add
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales_Quantity' = CALCULATE(SUM(FactSales[SalesQuantity]))
+		formatString: #,0
+		displayFolder: Store Sales
+		lineageTag: 1b5cdf58-0889-498c-a1a1-f0908fbc8564
+
+	measure 'Store Sales Unit Price' = [Store Sales_Revenue] / [Store Sales_Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Store Sales
+		lineageTag: 0f47ce8a-4efe-43f2-a509-2f84e991e491
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales COGS' = ```
+			SUMX (FactSales,  FactSales[SalesQuantity] * FactSales[UnitCost])
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Store Sales
+		lineageTag: 4759a445-0dd5-4161-aad1-acc0a143a3f2
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales Unit Cost' = [Store Sales COGS] / [Store Sales_Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Store Sales
+		lineageTag: f487378e-41ea-49e4-beb5-1f69c6ab4688
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Sales COGS' = ```
+			SUMX (FactOnlineSales, FactOnlineSales[SalesQuantity] * FactOnlineSales[UnitCost])
+			
+			```
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Online Sales
+		lineageTag: abc2ca93-107a-4642-99b1-106baecc56b7
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Sales_Quantity' = CALCULATE(SUM(FactOnlineSales[SalesQuantity]))
+		formatString: #,0
+		displayFolder: Online Sales
+		lineageTag: 55d5521b-0306-41cc-9b40-8d83ad23e064
+
+	measure 'Online Sales_Revenue' = SUMX(FactOnlineSales, FactOnlineSales[SalesQuantity] * FactOnlineSales[UnitPrice])
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Online Sales
+		lineageTag: 3551bca3-5067-4de0-bcd7-689ca5ff77af
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Unit Cost' = [Online Sales COGS] / [Online Sales_Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Online Sales
+		lineageTag: 61a8961e-b592-4b22-8f08-84aaa993a128
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Unit Price' = [Online Sales_Revenue] / [Online Sales_Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Online Sales
+		lineageTag: fe229633-673a-495e-8ae1-6da0c3cd3ab7
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'IT SLA Downtime' = CALCULATE(sum(FactITSLA[DownTime]))
+		formatString: #,0
+		displayFolder: IT Machine and SLA
+		lineageTag: 00e12c19-d398-405f-9f34-4a889a2891fb
+
+	measure 'IT Machine Downtime' = CALCULATE(sum(FactITMachine[CostAmount]))
+		formatString: #,0
+		displayFolder: IT Machine and SLA
+		lineageTag: 0f9b24dd-c243-4168-83d6-efd548d099f7
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure 'Sales Quota Unit Price' = [Sales Quota Amount]/[Sales Quota Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Sales Quota
+		lineageTag: 2db3f5de-9202-4f16-9564-cb13a3e79141
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Inventory On Hand Quantity' = CALCULATE(SUM(FactInventory[OnHandQuantity]))
+		formatString: #,0
+		displayFolder: Inventory
+		lineageTag: 026a29df-ee28-49ae-bc49-54f5b38ca1a6
+
+	measure 'Inventory On Order Quantity' = CALCULATE(SUM(FactInventory[OnOrderQuantity]))
+		formatString: #,0
+		displayFolder: Inventory
+		lineageTag: 4bdce642-5578-493c-a9ab-5df282d20ec2
+
+	measure 'Inventory Safety Stock Quantity' = CALCULATE(SUM(FactInventory[SafetyStockQuantity]))
+		formatString: #,0
+		displayFolder: Inventory
+		lineageTag: ea583310-8280-4b3c-8828-4e027b8e009b
+
+	measure 'Online Sales Return Amount' = CALCULATE(SUM(FactOnlineSales[ReturnAmount]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Online Sales
+		lineageTag: 62fd97fe-265a-4b00-b802-0246f8c4f253
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Sales Return Price' = [Online Sales Return Amount]/[Online Sales Return Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Online Sales
+		lineageTag: 0942e5a4-92b2-4e41-a06d-e3f2f66ef8fa
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Sales Return Quantity' = CALCULATE(SUM(FactOnlineSales[ReturnQuantity]))
+		formatString: #,0
+		displayFolder: Online Sales
+		lineageTag: 4fcc1429-e3c0-4906-ad6b-4b527f7290df
+
+	measure 'Online Sales Discount Amount' = CALCULATE(SUM(FactOnlineSales[DiscountAmount]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Online Sales
+		lineageTag: b37fad0d-2906-4b8d-9503-a1d00c8405eb
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Online Sales Discount Quantity' = CALCULATE(SUM(FactOnlineSales[DiscountQuantity]))
+		formatString: #,0
+		displayFolder: Online Sales
+		lineageTag: b84223ae-4d63-433c-b350-015214027972
+
+	measure 'Online Sales Discount Price' = [Online Sales Discount Amount]/[Online Sales Discount Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Online Sales
+		lineageTag: 756aba8f-fc20-4871-a31b-8a5a38469ba2
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales Return Amount' = CALCULATE(SUM(FactSales[ReturnAmount]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Store Sales
+		lineageTag: a53f6996-63dd-434e-ad09-1cd25de56d13
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales Return Quantity' = CALCULATE(SUM(FactSales[ReturnQuantity]))
+		formatString: #,0
+		displayFolder: Store Sales
+		lineageTag: 7964ff22-c701-42be-b137-491b1f181c59
+
+	measure 'Store Sales Return Price' = [Store Sales Return Amount]/[Store Sales Return Quantity]
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		displayFolder: Store Sales
+		lineageTag: 66f97652-047c-4f90-9371-e95dafa65593
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Store Sales Discount Quantity' = CALCULATE(SUM(FactSales[DiscountQuantity]))
+		formatString: #,0
+		displayFolder: Store Sales
+		lineageTag: 2e2ff5b5-5e59-4196-b0b6-5388bcf91aca
+
+	measure 'Store Sales Discount Amount' = CALCULATE(SUM(FactSales[DiscountAmount]))
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Store Sales
+		lineageTag: 2c0b1961-ac82-43ed-a345-21b3be6dff11
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Revenue' = [Store Sales_Revenue] + [Online Sales_Revenue]
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Total Sales & COGS
+		lineageTag: ace3ca61-f8ec-492d-b948-0fc7e3fd0a3a
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Unit Price (Store + Online)' = [Total Revenue] / [Total Quantity]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Total Sales & COGS
+		lineageTag: 139d41c3-be98-4969-8301-87347d662254
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total COGS' = [Store Sales COGS] + [Online Sales COGS]
+		formatString: \$#,0;(\$#,0);\$#,0
+		displayFolder: Total Sales & COGS
+		lineageTag: 428dca42-9854-4fb2-9493-341f084f8139
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Total Quantity' = [Store Sales_Quantity] + [Online Sales_Quantity]
+		formatString: #,0
+		displayFolder: Total Sales & COGS
+		lineageTag: 82f201cf-3771-4611-b33e-e3b31a67c47a
+
+	measure 'Unit Cost (Store + Online)' = [Total COGS] / [Total Quantity]
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Total Sales & COGS
+		lineageTag: c8b2b096-eb75-46f2-b631-4fb94044bdff
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Flag measure' = ```
+			MAX(DimEntity[FlagPicturesSVG])
+			
+			```
+		displayFolder: Flags
+		lineageTag: b486aaa2-6169-483f-bbfb-e282c57c7642
+
+	measure 'Total Budget' = ```
+			(RANDBETWEEN(70, 90) / 100) * [Total Revenue]
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Total Sales & COGS
+		lineageTag: c2b995d7-196f-4f68-8eb2-029024dbd49d
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure AC = ```
+			
+			
+			VAR CurrentMonth = MONTH(TODAY()) 
+			VAR CurrentYear = YEAR(TODAY()) 
+			RETURN
+			IF(
+			    MAX('Date'[Year]) < CurrentYear || 
+			    (MAX('Date'[Year]) = CurrentYear && MAX('Date'[Month]) <= CurrentMonth),
+			    [Total Revenue]
+			)
+			
+			
+			```
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		displayFolder: Total Sales & COGS
+		lineageTag: f3b6f3a5-5ab8-4bd8-982c-12dc91aa6ff6
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Monthly Plant Capacity' = ```
+			
+			CALCULATE(
+			    SUM(DimPlantMaster[MonthlyMaxCapacity]),
+			    REMOVEFILTERS('Date')   -- or ALL('DateMaster')
+			)
+			
+			```
+		formatString: #,0
+		displayFolder: Total Sales & COGS
+		lineageTag: a2035a3f-91aa-4eaa-afc0-17c2a264cd40
+
+	column Column1
+		dataType: string
+		isHidden
+		lineageTag: cb25b75f-4727-4790-9afe-194c71fe72e9
+		summarizeBy: none
+		sourceColumn: Column1
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 1-DAX_Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

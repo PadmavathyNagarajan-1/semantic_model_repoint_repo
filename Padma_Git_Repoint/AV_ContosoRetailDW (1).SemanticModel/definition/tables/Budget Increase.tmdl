@@ -1,0 +1,26 @@
+table 'Budget Increase'
+	lineageTag: 90b0701f-4027-4d3a-b730-d2359071ec64
+
+	measure 'Budget Increase Value' = SELECTEDVALUE('Budget Increase'[Forecasted Revenue (% Increase from Budget)], 0)
+		formatString: 0
+		lineageTag: 87848c4b-3ee7-49a0-98db-f9efc0f13357
+
+	column 'Forecasted Revenue (% Increase from Budget)'
+		formatString: 0
+		lineageTag: b883ddf0-fb9e-49f3-8425-fa4f52a06752
+		summarizeBy: none
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Budget Increase' = calculated
+		mode: import
+		source = GENERATESERIES(0, 100, 5)
+
+	annotation PBI_Id = 440ff090e80c46ad8a6468626803fab1
+

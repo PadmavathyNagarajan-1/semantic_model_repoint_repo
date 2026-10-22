@@ -1,0 +1,3074 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/PowerTable/Properties/1.0.0/schema.json",
+  "properties": {
+    "properties": {
+      "advanceLookup": [],
+      "chartType": "COLUMN_VERTICAL",
+      "dimension": {
+        "height": 0.4,
+        "width": 0.3
+      },
+      "groupMeasureAssignments": [],
+      "groupName": "",
+      "layerProperties": {
+        "order": 0
+      },
+      "lockAspectRatio": false,
+      "mobileProperties": {},
+      "originEntityId": "1",
+      "pivotAssignments": [],
+      "position": {
+        "x": 0,
+        "y": 0
+      },
+      "preVisualId": "1",
+      "shapeType": "RECTANGLE",
+      "sortingConfig": [],
+      "splitByCategory": {
+        "pivotValueAssignments": [],
+        "splitByCategoryAssignments": [],
+        "splitByCategoryItems": [],
+        "splitByDelimiter": "-"
+      },
+      "superFilterAssignments": [
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "productId",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "productId",
+                "columnName": "productId",
+                "direction": "ASC",
+                "id": "productId"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "productId",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "productId",
+              "columnType": "Column",
+              "dataType": "Int64",
+              "id": "productId",
+              "name": "productId",
+              "order": 0,
+              "sourceId": "productId",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "ProductName",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "ProductName",
+                "columnName": "ProductName",
+                "direction": "ASC",
+                "id": "ProductName"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "ProductName",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "ProductName",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "ProductName",
+              "name": "ProductName",
+              "order": 0,
+              "sourceId": "ProductName",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Category",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Category",
+                "columnName": "Category",
+                "direction": "ASC",
+                "id": "Category"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Category",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Category",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Category",
+              "name": "Category",
+              "order": 0,
+              "sourceId": "Category",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Price",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "Price",
+                "columnName": "Price",
+                "direction": "ASC",
+                "id": "Price"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Price",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Price",
+              "columnType": "Column",
+              "dataType": "Decimal",
+              "id": "Price",
+              "name": "Price",
+              "order": 0,
+              "sourceId": "Price",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "StockQuantity",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "StockQuantity",
+                "columnName": "StockQuantity",
+                "direction": "ASC",
+                "id": "StockQuantity"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "StockQuantity",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "StockQuantity",
+              "columnType": "Column",
+              "dataType": "Int64",
+              "id": "StockQuantity",
+              "name": "StockQuantity",
+              "order": 0,
+              "sourceId": "StockQuantity",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Manufacturer",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Manufacturer",
+                "columnName": "Manufacturer",
+                "direction": "ASC",
+                "id": "Manufacturer"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Manufacturer",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Manufacturer",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Manufacturer",
+              "name": "Manufacturer",
+              "order": 0,
+              "sourceId": "Manufacturer",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Supplier",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Supplier",
+                "columnName": "Supplier",
+                "direction": "ASC",
+                "id": "Supplier"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Supplier",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Supplier",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Supplier",
+              "name": "Supplier",
+              "order": 0,
+              "sourceId": "Supplier",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Rating",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "Rating",
+                "columnName": "Rating",
+                "direction": "ASC",
+                "id": "Rating"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Rating",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Rating",
+              "columnType": "Column",
+              "dataType": "Decimal",
+              "id": "Rating",
+              "name": "Rating",
+              "order": 0,
+              "sourceId": "Rating",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Discount",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "Discount",
+                "columnName": "Discount",
+                "direction": "ASC",
+                "id": "Discount"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Discount",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Discount",
+              "columnType": "Column",
+              "dataType": "Decimal",
+              "id": "Discount",
+              "name": "Discount",
+              "order": 0,
+              "sourceId": "Discount",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "dateFormat": "DEFAULT_LOCALE",
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "fiscalStartMonth": 0,
+            "hide": false,
+            "isExpanded": false,
+            "lastAppliedSelectedPreset": [],
+            "locked": false,
+            "name": "ReleaseDate",
+            "relativeDate": {
+              "period": "",
+              "type": "",
+              "value": 0
+            },
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "selectedPreset": [],
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "ReleaseDate",
+                "columnName": "ReleaseDate",
+                "direction": "ASC",
+                "id": "ReleaseDate"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "DATE"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "ReleaseDate",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "ReleaseDate",
+              "columnType": "Column",
+              "dataType": "DateTime",
+              "id": "ReleaseDate",
+              "name": "ReleaseDate",
+              "order": 0,
+              "sourceId": "ReleaseDate",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Color",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Color",
+                "columnName": "Color",
+                "direction": "ASC",
+                "id": "Color"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Color",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Color",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Color",
+              "name": "Color",
+              "order": 0,
+              "sourceId": "Color",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Dimensions",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "Dimensions",
+                "columnName": "Dimensions",
+                "direction": "ASC",
+                "id": "Dimensions"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Dimensions",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Dimensions",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "Dimensions",
+              "name": "Dimensions",
+              "order": 0,
+              "sourceId": "Dimensions",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "alphaNumericValues": {
+              "equalValue": null,
+              "maxValue": null,
+              "minValue": null
+            },
+            "enableNumericToFacet": false,
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "Weight",
+            "regex": "",
+            "scale": "none",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "slider": false,
+            "sort": [
+              {
+                "columnId": "Weight",
+                "columnName": "Weight",
+                "direction": "ASC",
+                "id": "Weight"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "NUMERIC"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "Weight",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "Weight",
+              "columnType": "Column",
+              "dataType": "Decimal",
+              "id": "Weight",
+              "name": "Weight",
+              "order": 0,
+              "sourceId": "Weight",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        },
+        {
+          "configuration": {
+            "filterMode": "basic",
+            "filterOperator": "is",
+            "hide": false,
+            "isExpanded": false,
+            "locked": false,
+            "name": "IsAvailable",
+            "selectAll": true,
+            "selectAllState": "UNSELECTED",
+            "singleSelect": false,
+            "sort": [
+              {
+                "columnId": "IsAvailable",
+                "columnName": "IsAvailable",
+                "direction": "ASC",
+                "id": "IsAvailable"
+              }
+            ],
+            "topN": {
+              "displayOthers": true,
+              "isRankEmptyItems": false,
+              "otherLabel": "Others",
+              "rankMeasure": "",
+              "rankMode": "TOP",
+              "rankType": "value",
+              "rankValue": 5
+            },
+            "visualType": "FACET"
+          },
+          "filter": [],
+          "filterLevel": "visual",
+          "id": "IsAvailable",
+          "isDeleted": false,
+          "pivotAssignments": [
+            {
+              "bucketId": "",
+              "columnName": "IsAvailable",
+              "columnType": "Column",
+              "dataType": "String",
+              "id": "IsAvailable",
+              "name": "IsAvailable",
+              "order": 0,
+              "sourceId": "IsAvailable",
+              "sourceType": "powerTables",
+              "tableName": "Sheet1"
+            }
+          ],
+          "position": "RIGHT"
+        }
+      ],
+      "transformMeasure": "none",
+      "visualInteractions": {},
+      "visualState": {
+        "assignmentColumnMap": {
+          "1": {
+            "Category": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Color": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Dimensions": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Discount": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "IsAvailable": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Manufacturer": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Price": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "ProductName": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Rating": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "ReleaseDate": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "StockQuantity": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Supplier": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "Weight": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            },
+            "productId": {
+              "columnId": "",
+              "label": "",
+              "parentPath": [],
+              "source": "",
+              "sourceId": ""
+            }
+          }
+        },
+        "columnMeta": {
+          "Category": {
+            "width": 100
+          },
+          "Color": {
+            "width": 100
+          },
+          "Dimensions": {
+            "width": 100
+          },
+          "Discount": {
+            "width": 100
+          },
+          "IsAvailable": {
+            "width": 100
+          },
+          "Manufacturer": {
+            "width": 100
+          },
+          "Price": {
+            "width": 100
+          },
+          "ProductName": {
+            "width": 100
+          },
+          "Rating": {
+            "width": 100
+          },
+          "ReleaseDate": {
+            "width": 100
+          },
+          "StockQuantity": {
+            "width": 100
+          },
+          "Supplier": {
+            "width": 100
+          },
+          "Weight": {
+            "width": 100
+          },
+          "productId": {
+            "width": 100
+          }
+        },
+        "embeddedSuperFilter": {
+          "assignmentColumnMap": {},
+          "incomingFilterAssignments": [],
+          "powerbiSemanticModelDeps": {
+            "datasetId": "",
+            "datasetName": "",
+            "workspaceName": ""
+          },
+          "superFilterAssignments": []
+        },
+        "locale": "en-US",
+        "manageMeasures": [
+          {
+            "id": "productId",
+            "label": "productId",
+            "measureType": "data",
+            "name": "productId",
+            "order": 0,
+            "visible": true
+          },
+          {
+            "id": "ProductName",
+            "label": "ProductName",
+            "measureType": "data",
+            "name": "ProductName",
+            "order": 1,
+            "visible": true
+          },
+          {
+            "id": "Category",
+            "label": "Category",
+            "measureType": "data",
+            "name": "Category",
+            "order": 2,
+            "visible": true
+          },
+          {
+            "id": "Price",
+            "label": "Price",
+            "measureType": "data",
+            "name": "Price",
+            "order": 3,
+            "visible": true
+          },
+          {
+            "id": "StockQuantity",
+            "label": "StockQuantity",
+            "measureType": "data",
+            "name": "StockQuantity",
+            "order": 4,
+            "visible": true
+          },
+          {
+            "id": "Manufacturer",
+            "label": "Manufacturer",
+            "measureType": "data",
+            "name": "Manufacturer",
+            "order": 5,
+            "visible": true
+          },
+          {
+            "id": "Supplier",
+            "label": "Supplier",
+            "measureType": "data",
+            "name": "Supplier",
+            "order": 6,
+            "visible": true
+          },
+          {
+            "id": "Rating",
+            "label": "Rating",
+            "measureType": "data",
+            "name": "Rating",
+            "order": 7,
+            "visible": true
+          },
+          {
+            "id": "Discount",
+            "label": "Discount",
+            "measureType": "data",
+            "name": "Discount",
+            "order": 8,
+            "visible": true
+          },
+          {
+            "id": "ReleaseDate",
+            "label": "ReleaseDate",
+            "measureType": "data",
+            "name": "ReleaseDate",
+            "order": 9,
+            "visible": true
+          },
+          {
+            "id": "Color",
+            "label": "Color",
+            "measureType": "data",
+            "name": "Color",
+            "order": 10,
+            "visible": true
+          },
+          {
+            "id": "Dimensions",
+            "label": "Dimensions",
+            "measureType": "data",
+            "name": "Dimensions",
+            "order": 11,
+            "visible": true
+          },
+          {
+            "id": "Weight",
+            "label": "Weight",
+            "measureType": "data",
+            "name": "Weight",
+            "order": 12,
+            "visible": true
+          },
+          {
+            "id": "IsAvailable",
+            "label": "IsAvailable",
+            "measureType": "data",
+            "name": "IsAvailable",
+            "order": 13,
+            "visible": true
+          }
+        ],
+        "mdmLayout": {
+          "activeLayout": "table",
+          "childHeaderTableControlConfiguration": {},
+          "configuration": null,
+          "ganttViewColVisibility": {},
+          "layoutVisibility": {},
+          "parentApprovalMeta": {},
+          "tableModeColVisibility": {}
+        },
+        "superFilter": {
+          "Category": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Category",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Category",
+              "columnType": 1,
+              "displayName": "Category",
+              "id": "3",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Category",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Category",
+                  "columnName": "Category",
+                  "direction": "ASC",
+                  "id": "Category"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Color": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Color",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Color",
+              "columnType": 1,
+              "displayName": "Color",
+              "id": "11",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Color",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Color",
+                  "columnName": "Color",
+                  "direction": "ASC",
+                  "id": "Color"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Dimensions": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Dimensions",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Dimensions",
+              "columnType": 1,
+              "displayName": "Dimensions",
+              "id": "12",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Dimensions",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Dimensions",
+                  "columnName": "Dimensions",
+                  "direction": "ASC",
+                  "id": "Dimensions"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Discount": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Discount",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "float"
+                }
+              },
+              "columnName": "Discount",
+              "columnType": 13,
+              "displayName": "Discount",
+              "id": "9",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Discount",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Discount",
+                  "columnName": "Discount",
+                  "direction": "ASC",
+                  "id": "Discount"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "IsAvailable": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "IsAvailable",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                }
+              },
+              "columnName": "IsAvailable",
+              "columnType": 11,
+              "displayName": "IsAvailable",
+              "id": "14",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "IsAvailable",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "IsAvailable",
+                  "columnName": "IsAvailable",
+                  "direction": "ASC",
+                  "id": "IsAvailable"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Manufacturer": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Manufacturer",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Manufacturer",
+              "columnType": 1,
+              "displayName": "Manufacturer",
+              "id": "6",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Manufacturer",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Manufacturer",
+                  "columnName": "Manufacturer",
+                  "direction": "ASC",
+                  "id": "Manufacturer"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Price": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Price",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "float"
+                }
+              },
+              "columnName": "Price",
+              "columnType": 13,
+              "displayName": "Price",
+              "id": "4",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Price",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Price",
+                  "columnName": "Price",
+                  "direction": "ASC",
+                  "id": "Price"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "ProductName": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "ProductName",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "ProductName",
+              "columnType": 1,
+              "displayName": "ProductName",
+              "id": "2",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "ProductName",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "ProductName",
+                  "columnName": "ProductName",
+                  "direction": "ASC",
+                  "id": "ProductName"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Rating": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Rating",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "float"
+                }
+              },
+              "columnName": "Rating",
+              "columnType": 13,
+              "displayName": "Rating",
+              "id": "8",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Rating",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Rating",
+                  "columnName": "Rating",
+                  "direction": "ASC",
+                  "id": "Rating"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "ReleaseDate": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "ReleaseDate",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "date"
+                }
+              },
+              "columnName": "ReleaseDate",
+              "columnType": 4,
+              "displayName": "ReleaseDate",
+              "id": "10",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "ReleaseDate",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "ReleaseDate",
+                  "columnName": "ReleaseDate",
+                  "direction": "ASC",
+                  "id": "ReleaseDate"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "StockQuantity": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "StockQuantity",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "int"
+                }
+              },
+              "columnName": "StockQuantity",
+              "columnType": 6,
+              "displayName": "StockQuantity",
+              "id": "5",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "StockQuantity",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "StockQuantity",
+                  "columnName": "StockQuantity",
+                  "direction": "ASC",
+                  "id": "StockQuantity"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Supplier": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Supplier",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "varchar"
+                },
+                "textFieldColumnType": "Any Value"
+              },
+              "columnName": "Supplier",
+              "columnType": 1,
+              "displayName": "Supplier",
+              "id": "7",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Supplier",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Supplier",
+                  "columnName": "Supplier",
+                  "direction": "ASC",
+                  "id": "Supplier"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "Weight": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "Weight",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": true,
+                  "isPrimaryKey": false,
+                  "type": "float"
+                }
+              },
+              "columnName": "Weight",
+              "columnType": 13,
+              "displayName": "Weight",
+              "id": "13",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Weight",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Weight",
+                  "columnName": "Weight",
+                  "direction": "ASC",
+                  "id": "Weight"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          },
+          "productId": {
+            "appData": [],
+            "columnMeta": {
+              "columnGuid": "productId",
+              "columnMeta": {
+                "dbMeta": {
+                  "isIdentity": false,
+                  "isNullable": false,
+                  "isPrimaryKey": true,
+                  "type": "int"
+                }
+              },
+              "columnName": "productId",
+              "columnType": 6,
+              "displayName": "productId",
+              "id": "1",
+              "sourceId": 1,
+              "visualColumnType": 1
+            },
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "productId",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "productId",
+                  "columnName": "productId",
+                  "direction": "ASC",
+                  "id": "productId"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "isLoading": true,
+            "tableName": "Sheet1",
+            "topNMeasureOptions": [
+              {
+                "id": "productId",
+                "label": "productId"
+              },
+              {
+                "id": "Price",
+                "label": "Price"
+              },
+              {
+                "id": "StockQuantity",
+                "label": "StockQuantity"
+              },
+              {
+                "id": "Rating",
+                "label": "Rating"
+              },
+              {
+                "id": "Discount",
+                "label": "Discount"
+              },
+              {
+                "id": "Weight",
+                "label": "Weight"
+              }
+            ]
+          }
+        },
+        "superFilterAssignments": [
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "productId",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "productId",
+                  "columnName": "productId",
+                  "direction": "ASC",
+                  "id": "productId"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "productId",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "productId",
+                "columnType": "Column",
+                "dataType": "Int64",
+                "id": "productId",
+                "name": "productId",
+                "order": 0,
+                "sourceId": "productId",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "ProductName",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "ProductName",
+                  "columnName": "ProductName",
+                  "direction": "ASC",
+                  "id": "ProductName"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "ProductName",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "ProductName",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "ProductName",
+                "name": "ProductName",
+                "order": 0,
+                "sourceId": "ProductName",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Category",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Category",
+                  "columnName": "Category",
+                  "direction": "ASC",
+                  "id": "Category"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Category",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Category",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Category",
+                "name": "Category",
+                "order": 0,
+                "sourceId": "Category",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Price",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Price",
+                  "columnName": "Price",
+                  "direction": "ASC",
+                  "id": "Price"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Price",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Price",
+                "columnType": "Column",
+                "dataType": "Decimal",
+                "id": "Price",
+                "name": "Price",
+                "order": 0,
+                "sourceId": "Price",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "StockQuantity",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "StockQuantity",
+                  "columnName": "StockQuantity",
+                  "direction": "ASC",
+                  "id": "StockQuantity"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "StockQuantity",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "StockQuantity",
+                "columnType": "Column",
+                "dataType": "Int64",
+                "id": "StockQuantity",
+                "name": "StockQuantity",
+                "order": 0,
+                "sourceId": "StockQuantity",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Manufacturer",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Manufacturer",
+                  "columnName": "Manufacturer",
+                  "direction": "ASC",
+                  "id": "Manufacturer"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Manufacturer",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Manufacturer",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Manufacturer",
+                "name": "Manufacturer",
+                "order": 0,
+                "sourceId": "Manufacturer",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Supplier",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Supplier",
+                  "columnName": "Supplier",
+                  "direction": "ASC",
+                  "id": "Supplier"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Supplier",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Supplier",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Supplier",
+                "name": "Supplier",
+                "order": 0,
+                "sourceId": "Supplier",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Rating",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Rating",
+                  "columnName": "Rating",
+                  "direction": "ASC",
+                  "id": "Rating"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Rating",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Rating",
+                "columnType": "Column",
+                "dataType": "Decimal",
+                "id": "Rating",
+                "name": "Rating",
+                "order": 0,
+                "sourceId": "Rating",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Discount",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Discount",
+                  "columnName": "Discount",
+                  "direction": "ASC",
+                  "id": "Discount"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Discount",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Discount",
+                "columnType": "Column",
+                "dataType": "Decimal",
+                "id": "Discount",
+                "name": "Discount",
+                "order": 0,
+                "sourceId": "Discount",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "dateFormat": "DEFAULT_LOCALE",
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "fiscalStartMonth": 0,
+              "hide": false,
+              "isExpanded": false,
+              "lastAppliedSelectedPreset": [],
+              "locked": false,
+              "name": "ReleaseDate",
+              "relativeDate": {
+                "period": "",
+                "type": "",
+                "value": 0
+              },
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "selectedPreset": [],
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "ReleaseDate",
+                  "columnName": "ReleaseDate",
+                  "direction": "ASC",
+                  "id": "ReleaseDate"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "DATE"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "ReleaseDate",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "ReleaseDate",
+                "columnType": "Column",
+                "dataType": "DateTime",
+                "id": "ReleaseDate",
+                "name": "ReleaseDate",
+                "order": 0,
+                "sourceId": "ReleaseDate",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Color",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Color",
+                  "columnName": "Color",
+                  "direction": "ASC",
+                  "id": "Color"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Color",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Color",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Color",
+                "name": "Color",
+                "order": 0,
+                "sourceId": "Color",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Dimensions",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "Dimensions",
+                  "columnName": "Dimensions",
+                  "direction": "ASC",
+                  "id": "Dimensions"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Dimensions",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Dimensions",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "Dimensions",
+                "name": "Dimensions",
+                "order": 0,
+                "sourceId": "Dimensions",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "alphaNumericValues": {
+                "equalValue": null,
+                "maxValue": null,
+                "minValue": null
+              },
+              "enableNumericToFacet": false,
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "Weight",
+              "regex": "",
+              "scale": "none",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "slider": false,
+              "sort": [
+                {
+                  "columnId": "Weight",
+                  "columnName": "Weight",
+                  "direction": "ASC",
+                  "id": "Weight"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "NUMERIC"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "Weight",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "Weight",
+                "columnType": "Column",
+                "dataType": "Decimal",
+                "id": "Weight",
+                "name": "Weight",
+                "order": 0,
+                "sourceId": "Weight",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          },
+          {
+            "configuration": {
+              "filterMode": "basic",
+              "filterOperator": "is",
+              "hide": false,
+              "isExpanded": false,
+              "locked": false,
+              "name": "IsAvailable",
+              "selectAll": true,
+              "selectAllState": "UNSELECTED",
+              "singleSelect": false,
+              "sort": [
+                {
+                  "columnId": "IsAvailable",
+                  "columnName": "IsAvailable",
+                  "direction": "ASC",
+                  "id": "IsAvailable"
+                }
+              ],
+              "topN": {
+                "displayOthers": true,
+                "isRankEmptyItems": false,
+                "otherLabel": "Others",
+                "rankMeasure": "",
+                "rankMode": "TOP",
+                "rankType": "value",
+                "rankValue": 5
+              },
+              "visualType": "FACET"
+            },
+            "filter": [],
+            "filterLevel": "visual",
+            "id": "IsAvailable",
+            "isDeleted": false,
+            "pivotAssignments": [
+              {
+                "bucketId": "",
+                "columnName": "IsAvailable",
+                "columnType": "Column",
+                "dataType": "String",
+                "id": "IsAvailable",
+                "name": "IsAvailable",
+                "order": 0,
+                "sourceId": "IsAvailable",
+                "sourceType": "powerTables",
+                "tableName": "Sheet1"
+              }
+            ],
+            "position": "RIGHT"
+          }
+        ]
+      },
+      "visualStyles": {
+        "background": {
+          "backgroundColor": "#fff",
+          "isEnabled": true
+        },
+        "border": {
+          "color": "#ddd",
+          "isEnabled": false,
+          "side": "all",
+          "width": 0
+        },
+        "cornerRadius": {
+          "isCustomCornerRadius": false,
+          "isEnabled": true,
+          "radiusBottomLeft": 0,
+          "radiusBottomRight": 0,
+          "radiusTopLeft": 0,
+          "radiusTopRight": 0
+        },
+        "isTooltipEnabled": true,
+        "padding": {
+          "bottomPadding": 5,
+          "isCustomPaddingSize": false,
+          "isEnabled": true,
+          "leftPadding": 5,
+          "rightPadding": 5,
+          "topPadding": 5
+        },
+        "rotation": {
+          "isEnabled": false,
+          "transform": 0
+        },
+        "shadow": {
+          "angle": 0,
+          "blur": 0,
+          "color": "#000000",
+          "distance": 10,
+          "isEnabled": false,
+          "opacity": 100,
+          "placement": "outer",
+          "side": "center",
+          "width": 0
+        },
+        "showHelperTooltips": true,
+        "showSelectedSeriesInTooltip": false,
+        "tooltipPageId": "auto",
+        "tooltipStyle": {
+          "backgroundColor": "#FFFFFF",
+          "bold": false,
+          "fontFamily": "Segoe UI",
+          "fontSize": 12,
+          "italic": false,
+          "labelColor": "#252423",
+          "underline": false,
+          "valueColor": "#252423"
+        },
+        "tooltipType": "default",
+        "varianceInTooltip": true,
+        "varianceTooltipType": "both"
+      },
+      "visualType": 30
+    },
+    "schema": "0.0.1"
+  }
+}

@@ -1,0 +1,107 @@
+table FactITMachine
+	lineageTag: 1ee3774a-571b-4b3d-8f61-76adb0f5ddfa
+
+	column ITMachinekey
+		dataType: int64
+		formatString: 0
+		lineageTag: 6c9c7636-3255-4f8a-bca7-02cbd17193ae
+		summarizeBy: sum
+		sourceColumn: ITMachinekey
+
+		annotation SummarizationSetBy = Automatic
+
+	column MachineKey
+		dataType: int64
+		formatString: 0
+		lineageTag: bbe82881-14f1-46f8-8979-d652b29beb22
+		summarizeBy: none
+		sourceColumn: MachineKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Datekey
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 54317a56-da3e-4ade-8182-2364b10d1065
+		summarizeBy: none
+		sourceColumn: Datekey
+
+		annotation SummarizationSetBy = Automatic
+
+	column CostAmount
+		dataType: decimal
+		formatString: \$#,0.###############;(\$#,0.###############);\$#,0.###############
+		lineageTag: 71b7f934-80ad-4ef5-b3df-094deedc3653
+		summarizeBy: sum
+		sourceColumn: CostAmount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	column CostType
+		dataType: string
+		lineageTag: 825e5485-e526-4466-b8e7-70b5736df85e
+		summarizeBy: none
+		sourceColumn: CostType
+
+		annotation SummarizationSetBy = Automatic
+
+	column ETLLoadID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: 86c3159a-9471-41f3-a4e4-61cac7bd5305
+		summarizeBy: count
+		sourceColumn: ETLLoadID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column LoadDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 86a09e47-7c6e-4ed9-b33b-8dfa9796d4c8
+		summarizeBy: none
+		sourceColumn: LoadDate
+
+		variation Variation
+			isDefault
+			relationship: f0d9437b-d118-4519-a849-655ab38452b1
+			defaultHierarchy: LocalDateTable_92c6a0fd-a93a-4fc5-a4a7-0c47665cae87.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column UpdateDate
+		dataType: dateTime
+		isHidden
+		formatString: General Date
+		lineageTag: 0007d325-909d-4814-affe-ea417057c239
+		summarizeBy: none
+		sourceColumn: UpdateDate
+
+		variation Variation
+			isDefault
+			relationship: 3de581c5-d836-4766-8b6b-cd0802d0849a
+			defaultHierarchy: LocalDateTable_083602f7-bda2-4791-bdf0-c0c793c5401f.'Date Hierarchy'
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition FactITMachine = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Databases("localhost\SQLEXPRESS"),
+				    ContosoRetailDW = Source{[Name="ContosoRetailDW"]}[Data],
+				    dbo_FactITMachine = ContosoRetailDW{[Schema="dbo",Item="FactITMachine"]}[Data]
+				in
+				    dbo_FactITMachine
+
+	annotation PBI_ResultType = Table
+

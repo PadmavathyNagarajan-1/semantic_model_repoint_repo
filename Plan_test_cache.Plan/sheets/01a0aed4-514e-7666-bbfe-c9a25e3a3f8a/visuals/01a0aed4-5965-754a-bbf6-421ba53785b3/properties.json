@@ -1,0 +1,568 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/plan/definition/Planning/Properties/1.0.0/schema.json",
+  "properties": {
+    "advanceLookup": [],
+    "dimension": {
+      "height": 0.49,
+      "width": 0.99
+    },
+    "layerProperties": {
+      "layerProperties": {
+        "groupIds": [],
+        "isHidden": false,
+        "name": "Planning"
+      },
+      "order": 0
+    },
+    "pivotAssignments": [
+      {
+        "bucketId": "rows",
+        "columnName": "Customer Segment",
+        "columnType": "Column",
+        "contents": "",
+        "dataRoleType": "Grouping",
+        "dataType": "String",
+        "distinctValueCount": 4,
+        "formatString": "",
+        "id": "Financial_Data[Customer Segment]",
+        "isFlatHierarchy": false,
+        "name": "Customer Segment",
+        "order": 0,
+        "sourceId": "Financial_Data[Customer Segment]",
+        "sourceType": "PowerBI",
+        "tableName": "Financial_Data"
+      },
+      {
+        "aggregationType": "sum",
+        "bucketId": "ameasure",
+        "columnName": "Revenue_Actual",
+        "columnType": "Column",
+        "contents": "",
+        "customName": "Sum of Revenue_Actual",
+        "dataRoleType": "Measure",
+        "dataType": "Double",
+        "distinctValueCount": 22288,
+        "formatString": "",
+        "id": "Financial_Data[Revenue_Actual]",
+        "isFlatHierarchy": false,
+        "measureGuid": "447563215351405168",
+        "name": "Sum of Revenue_Actual",
+        "order": 0,
+        "sourceId": "Financial_Data[Revenue_Actual]",
+        "sourceType": "PowerBI",
+        "tableName": "Financial_Data"
+      }
+    ],
+    "position": {
+      "x": 0.005,
+      "y": 0.005
+    },
+    "splitByCategory": {
+      "pivotValueAssignments": [],
+      "splitByCategoryAssignments": [],
+      "splitByCategoryItems": [],
+      "splitByDelimiter": "-"
+    },
+    "superFilterAssignments": [
+      {
+        "bucketId": "rows",
+        "configuration": {
+          "filterMode": "basic",
+          "filterOperator": "is",
+          "hide": false,
+          "isExpanded": false,
+          "locked": false,
+          "measureSearch": true,
+          "name": "Customer Segment",
+          "paneWidth": 200,
+          "selectAll": true,
+          "sheetDataItemAggregationType": "sum",
+          "singleSelect": false,
+          "sort": [
+            {
+              "columnId": "Financial_Data[Customer Segment]",
+              "columnName": "Customer Segment",
+              "direction": "ASC",
+              "id": "Financial_Data[Customer Segment]"
+            }
+          ],
+          "toolBarTrigger": false,
+          "topN": {
+            "displayOthers": true,
+            "otherLabel": "Others",
+            "rankMeasure": "",
+            "rankMeasureLabel": "",
+            "rankMode": "TOP",
+            "rankType": "value",
+            "rankValue": 5
+          },
+          "visualType": "FACET"
+        },
+        "filter": [],
+        "filterLevel": "visual",
+        "id": "filter_1789639550524_a1ushjdmr",
+        "isDaxMeasure": false,
+        "isDefault": true,
+        "isDefaultMeasure": false,
+        "pivotAssignments": [
+          {
+            "bucketId": "rows",
+            "columnName": "Customer Segment",
+            "columnType": "Column",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 4,
+            "formatString": "",
+            "id": "Financial_Data[Customer Segment]",
+            "isFlatHierarchy": false,
+            "name": "Customer Segment",
+            "order": 0,
+            "sourceId": "Financial_Data[Customer Segment]",
+            "sourceType": "PowerBI",
+            "tableName": "Financial_Data"
+          }
+        ],
+        "position": "RIGHT"
+      },
+      {
+        "bucketId": "ameasure",
+        "configuration": {
+          "alphaNumericValues": {
+            "equalValue": null,
+            "maxValue": null,
+            "minValue": null
+          },
+          "enableNumericToFacet": false,
+          "filterMode": "advanced",
+          "filterOperator": "between",
+          "hide": false,
+          "isExpanded": false,
+          "locked": false,
+          "measureSearch": true,
+          "name": "Sum of Revenue_Actual",
+          "paneWidth": 200,
+          "regex": "",
+          "scale": "none",
+          "selectAll": true,
+          "sheetDataItemAggregationType": "sum",
+          "singleSelect": false,
+          "slider": false,
+          "sort": [
+            {
+              "columnId": "Financial_Data[Revenue_Actual]",
+              "columnName": "Revenue_Actual",
+              "direction": "ASC",
+              "id": "Financial_Data[Revenue_Actual]"
+            }
+          ],
+          "toolBarTrigger": false,
+          "topN": {
+            "displayOthers": true,
+            "otherLabel": "Others",
+            "rankMeasure": "",
+            "rankMeasureLabel": "",
+            "rankMode": "TOP",
+            "rankType": "value",
+            "rankValue": 5
+          },
+          "visualType": "NUMERIC"
+        },
+        "filter": [],
+        "filterLevel": "visual",
+        "id": "filter_1789639555978_9ksif8aef",
+        "isDaxMeasure": false,
+        "isDefault": true,
+        "isDefaultMeasure": true,
+        "pivotAssignments": [
+          {
+            "bucketId": "rows",
+            "columnName": "Customer Segment",
+            "columnType": "Column",
+            "contents": "",
+            "dataRoleType": "Grouping",
+            "dataType": "String",
+            "distinctValueCount": 4,
+            "formatString": "",
+            "id": "Financial_Data[Customer Segment]",
+            "isFlatHierarchy": false,
+            "name": "Customer Segment",
+            "order": 0,
+            "sourceId": "Financial_Data[Customer Segment]",
+            "sourceType": "PowerBI",
+            "tableName": "Financial_Data"
+          },
+          {
+            "aggregationType": "sum",
+            "bucketId": "ameasure",
+            "columnName": "Revenue_Actual",
+            "columnType": "Column",
+            "contents": "",
+            "customName": "Sum of Revenue_Actual",
+            "dataRoleType": "Measure",
+            "dataType": "Double",
+            "distinctValueCount": 22288,
+            "formatString": "",
+            "id": "Financial_Data[Revenue_Actual]",
+            "isFlatHierarchy": false,
+            "name": "Sum of Revenue_Actual",
+            "order": 0,
+            "sourceId": "Financial_Data[Revenue_Actual]",
+            "sourceType": "PowerBI",
+            "tableName": "Financial_Data"
+          }
+        ],
+        "position": "RIGHT"
+      }
+    ],
+    "visualState": {
+      "chartCustomTitle": {
+        "customTitle": {
+          "containerMeta": {
+            "height": 45,
+            "width": 969
+          },
+          "containerPosition": "top",
+          "elements": [
+            {
+              "align": "left",
+              "background": null,
+              "border": [],
+              "borderColor": "",
+              "borderRadius": "0px",
+              "borderWidth": "1px",
+              "containerBackground": null,
+              "content": "<span class='mention' data-value='{\"id\":\"[fields]\",\"fieldKey\":\"title\",\"key\":\"fields\"}'>[fields]</span><p><span style=\"font-size: 12px;\"><span class='mention' data-value='{\"id\":\"[scaling]\",\"fieldKey\":\"title\",\"key\":\"scaling\"}'>[scaling]</span></span></p>",
+              "dimension": {
+                "height": "30",
+                "width": "150"
+              },
+              "id": "left-col",
+              "layout": {
+                "h": 3,
+                "i": "left-col",
+                "static": false,
+                "w": 32,
+                "x": 0,
+                "y": 0
+              },
+              "marginBottom": "0px",
+              "marginLeft": "0px",
+              "marginRight": "0px",
+              "marginTop": "0px",
+              "position": {
+                "left": 0,
+                "top": 0
+              },
+              "shadowColor": "",
+              "shadowPosition": "",
+              "type": "DEFAULT_TITLE",
+              "verticalAlign": "MIDDLE"
+            }
+          ],
+          "layout": "left-col",
+          "layoutType": "CUSTOM"
+        },
+        "measureTitle": "",
+        "primaryTitle": "",
+        "secondaryTitle": ""
+      },
+      "columnDimensions": [],
+      "filterContextProperties": {
+        "filterContextDimensions": [],
+        "filterContextHash": null,
+        "filterContextHashMap": {},
+        "filterContextJson": {}
+      },
+      "globalStyles": {
+        "chartScale": "universal",
+        "columnHierarchyFontStyle": "normal",
+        "columnHierarchyFontWeight": "normal",
+        "fontFamily": "Segoe UI",
+        "fontSize": "13",
+        "fontStyle": "normal",
+        "fontWeight": "normal",
+        "headerFontColor": "#333333",
+        "headerFontSize": "14px",
+        "headerFormat": false,
+        "headerHeight": 30,
+        "headerLabelOrient": "initial",
+        "hierarchyFontStyle": "normal",
+        "hierarchyfontWeight": "bold",
+        "isHeightUpdatedManually": false,
+        "kpiFontSize": 45,
+        "migrationVersion": 1,
+        "rowHeight": 26,
+        "showRowLabelEditor": false,
+        "subTotalFontWeight": "semiBold",
+        "textColor": "#333333",
+        "variableColor": "#0078D4",
+        "varianceBarFont": 12
+      },
+      "gridStyles": {
+        "bottomSpace": 0,
+        "categoryLabelColor": "#DDDDDD",
+        "chartSpacing": true,
+        "columnSpacing": "off",
+        "columnSpacingValue": 5,
+        "compactSplitLine": true,
+        "compactSplitLineColor": "#A6A6A6",
+        "direction": "ltr",
+        "enableCategoryLabelColor": false,
+        "gridBackground": "#FFFFFF",
+        "gridBorderLineColor": "#A6A6A6",
+        "gridBorderLinePosition": null,
+        "gridBorderLineStyle": "solid",
+        "gridBorderLineWidth": 0,
+        "headerGridLines": true,
+        "horizontalMinorGridColor": "#E6E6E6",
+        "horizontalMinorGridLines": "solid",
+        "indentSpacing": 10,
+        "isLevelIndent": false,
+        "leftSpace": 0,
+        "lineStyleColor": "#666666",
+        "lineStyleFormat": "solid",
+        "majorGridColor": "#A6A6A6",
+        "majorGridLines": "off",
+        "migrationVersion": 1,
+        "rightSpace": 0,
+        "showColumnExpandCollapse": false,
+        "showExpandCollapse": true,
+        "showVAHighlight": true,
+        "titleAndChartSpace": 4,
+        "topSpace": 0,
+        "verticalMinorGridColor": "#E6E6E6",
+        "verticalMinorGridLines": "solid"
+      },
+      "locale": "en-US",
+      "manage_measures": [
+        {
+          "id": "447563215351405168",
+          "label": "Sum of Revenue_Actual",
+          "order": 0,
+          "visible": true
+        }
+      ],
+      "numberFormatting": {
+        "billions": "b",
+        "billionsFullText": "in Billions",
+        "billionsMediumText": "in b",
+        "customNullText": "",
+        "customZeroText": "",
+        "customizeScalingLabel": false,
+        "decimalSeperator": ".",
+        "dlCustomScalingFactor": "none",
+        "dlFlexibleScalingFactor": "auto",
+        "dlIBCSNoOfDecimal": 0,
+        "enableDataLabelFormatting": true,
+        "enablePrefixAsUnit": true,
+        "enabled": true,
+        "formatType": "default",
+        "ibcsformat": true,
+        "migrationVersion": 1,
+        "millions": "m",
+        "millionsFullText": "in Millions",
+        "millionsMediumText": "in m",
+        "negativeValueColor": "#FF000A",
+        "negativeValueFormat": "-x",
+        "neutralValueColor": "#B3B3B3",
+        "noOfDecimal": 2,
+        "noOfDecimalPercent": 2,
+        "positiveValueColor": "#82BA00",
+        "positiveValueFormat": "x",
+        "prefix": "",
+        "scalingFactor": "autoFixed",
+        "scalingTextType": "Full",
+        "semanticFormatting": false,
+        "showDataLabel": true,
+        "showNegativeSign": false,
+        "showNullAs": "blank",
+        "showPercentageSymbol": false,
+        "showScalingUnit": false,
+        "showTooltipAsUnit": false,
+        "showTooltipDecimal": false,
+        "showZeroAs": "zero",
+        "suffix": "",
+        "thousandSeperator": ",",
+        "thousands": "k",
+        "thousandsFullText": "in Thousands",
+        "thousandsMediumText": "in k",
+        "tooltipDecimal": "1",
+        "trillion": "t",
+        "trillionFullText": "in Trillions",
+        "trillionMediumText": "in t"
+      },
+      "ranking_config": {
+        "exemptions": {},
+        "others_title": "Others",
+        "rank_rules": [],
+        "show_category_suffix": false,
+        "show_others": true
+      },
+      "rowDimensions": [
+        {
+          "externalKey": "Financial_Data[Customer Segment]",
+          "id": "7916569077065497793",
+          "isNative": true,
+          "label": "Customer Segment"
+        }
+      ],
+      "showHeaderFooter": true,
+      "themeColors": {
+        "chartTheme": "trafficlights",
+        "enableRowHover": "rowAlternate",
+        "enableVarianceColor": false,
+        "invertVarianceColor": false,
+        "lineStyleRecentColor": "",
+        "measureOnlyHighlight": false,
+        "migrationVersion": 1,
+        "negativeColor": "#FF000A",
+        "positiveColor": "#82BA00",
+        "previousThemeType": "trafficlights",
+        "rowEvenColor": "#FFFFFF",
+        "rowHoverColor": "#fafafa",
+        "rowHoverTextColor": "#212121",
+        "rowOddColor": "#F5F5F5",
+        "tableThemeType": false,
+        "themeType": "trafficlights",
+        "valueColor": ""
+      },
+      "toolbar": {
+        "currentTab": "",
+        "enableHoverToolbar": false,
+        "hideDuplicateReportWarning": false,
+        "isPinned": true,
+        "readViewPin": true,
+        "setCanvasResize": false,
+        "showFloatingToolbar": true,
+        "showForecastTab": false,
+        "showMinimalTabEditMode": true,
+        "showMinimalView": true,
+        "showOnHover": false,
+        "showTabContent": true,
+        "toolbarTheme": "light"
+      },
+      "visualStyles": {
+        "background": {
+          "backgroundColor": "#FFFFFF",
+          "isEnabled": false
+        },
+        "border": {
+          "color": "#DDDDDD",
+          "isEnabled": false,
+          "side": "all",
+          "width": 1
+        },
+        "cornerRadius": {
+          "isCustomCornerRadius": false,
+          "isEnabled": true,
+          "radiusBottomLeft": 0,
+          "radiusBottomRight": 0,
+          "radiusTopLeft": 0,
+          "radiusTopRight": 0
+        },
+        "isTooltipEnabled": true,
+        "padding": {
+          "bottomPadding": 5,
+          "isCustomPaddingSize": false,
+          "isEnabled": true,
+          "leftPadding": 5,
+          "rightPadding": 5,
+          "topPadding": 5
+        },
+        "rotation": {
+          "isEnabled": false,
+          "transform": 0
+        },
+        "shadow": {
+          "angle": 135,
+          "blur": 8,
+          "color": "#0000003f",
+          "distance": 10,
+          "isEnabled": false,
+          "opacity": 100,
+          "placement": "outer",
+          "side": "bottom",
+          "width": 0
+        },
+        "showHelperTooltips": true,
+        "showSelectedSeriesInTooltip": false,
+        "tooltipPageId": "auto",
+        "tooltipStyle": {
+          "backgroundColor": "#FFFFFF",
+          "bold": false,
+          "fontFamily": "Segoe UI",
+          "fontSize": 12,
+          "italic": false,
+          "labelColor": "#252423",
+          "underline": false,
+          "valueColor": "#252423"
+        },
+        "tooltipType": "default",
+        "varianceInTooltip": true,
+        "varianceTooltipType": "both"
+      }
+    },
+    "visualStyles": {
+      "background": {
+        "backgroundColor": "#FFFFFF",
+        "isEnabled": false
+      },
+      "border": {
+        "color": "#DDDDDD",
+        "isEnabled": false,
+        "side": "all",
+        "width": 1
+      },
+      "cornerRadius": {
+        "isCustomCornerRadius": false,
+        "isEnabled": true,
+        "radiusBottomLeft": 0,
+        "radiusBottomRight": 0,
+        "radiusTopLeft": 0,
+        "radiusTopRight": 0
+      },
+      "isTooltipEnabled": true,
+      "padding": {
+        "bottomPadding": 5,
+        "isCustomPaddingSize": false,
+        "isEnabled": true,
+        "leftPadding": 5,
+        "rightPadding": 5,
+        "topPadding": 5
+      },
+      "rotation": {
+        "isEnabled": false,
+        "transform": 0
+      },
+      "shadow": {
+        "angle": 135,
+        "blur": 8,
+        "color": "#0000003f",
+        "distance": 10,
+        "isEnabled": false,
+        "opacity": 100,
+        "placement": "outer",
+        "side": "bottom",
+        "width": 0
+      },
+      "showHelperTooltips": true,
+      "showSelectedSeriesInTooltip": false,
+      "tooltipPageId": "auto",
+      "tooltipStyle": {
+        "backgroundColor": "#FFFFFF",
+        "bold": false,
+        "fontFamily": "Segoe UI",
+        "fontSize": 12,
+        "italic": false,
+        "labelColor": "#252423",
+        "underline": false,
+        "valueColor": "#252423"
+      },
+      "tooltipType": "default",
+      "varianceInTooltip": true,
+      "varianceTooltipType": "both"
+    },
+    "visualType": 80
+  }
+}
