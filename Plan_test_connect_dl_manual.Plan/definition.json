@@ -79,6 +79,19 @@
           "visualType": "PLANNING"
         }
       ]
+    },
+    {
+      "displayName": "Planning 3",
+      "isHidden": false,
+      "recordGuid": "01a16404-41ce-7219-add8-e3e664a130a7",
+      "sheetType": "PLANNING",
+      "workloadItemEntityVisuals": [
+        {
+          "isEmbedded": false,
+          "visualId": "01a16404-51fd-761d-9f35-e4c6fe87a765",
+          "visualType": "PLANNING"
+        }
+      ]
     }
   ],
   "workloadItemName": "Plan_test_connect_dl_manual"
