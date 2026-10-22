@@ -4,23 +4,23 @@
     "partitionRefIds": []
   },
   "semanticModelReference": {
-    "artifactId": 2725426,
+    "artifactId": 2725442,
     "connectionId": "fe43ff61-f8bd-448c-b809-e27528098916",
     "datasetRelations": [
       {
-        "dependentArtifactId": 2725426,
+        "dependentArtifactId": 2725442,
         "settings": "Association"
       }
     ],
     "directLakeMode": false,
     "directQueryMode": false,
-    "recordGuid": "01a16382-df44-70bb-bf64-1a1262de4d83",
-    "semanticModelId": "852d8d09-4b13-4519-ba09-4ec31c5847d7",
-    "semanticModelName": "AV_ContosoRetailDW (1)",
+    "recordGuid": "01a1638f-4ac7-73de-b2e7-f951479e17a2",
+    "semanticModelId": "c89bdb6c-193f-4320-be26-b68f959ccceb",
+    "semanticModelName": "contoso_dl_test1",
     "semanticModelWorkspaceId": "a3cd8064-25ec-4464-81e8-4c62e4c01cbd",
     "semanticModelWorkspaceName": "planning-test",
     "sourceType": "WORKLOAD",
-    "url": "https://app.powerbi.com/groups/a3cd8064-25ec-4464-81e8-4c62e4c01cbd/datasets/852d8d09-4b13-4519-ba09-4ec31c5847d7"
+    "url": "https://app.powerbi.com/groups/a3cd8064-25ec-4464-81e8-4c62e4c01cbd/datasets/c89bdb6c-193f-4320-be26-b68f959ccceb"
   },
   "sheets": [
     {
