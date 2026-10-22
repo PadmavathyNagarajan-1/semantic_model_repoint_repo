@@ -78,6 +78,7 @@
       }
     },
     "commentary": {
+      "activeBookmarkId": null,
       "annotation": {
         "settings": {
           "annotationText": {},
@@ -161,7 +162,6 @@
     "excludedFilterContextAssignments": {},
     "filterContextUserConfig": {},
     "filterPanePosition": "RIGHT",
-    "pageLevelFilterAssignments": [],
     "sourceVisualsMeta": {},
     "topPositionFilterExpandConfig": {
       "expandedHeight": 250,
